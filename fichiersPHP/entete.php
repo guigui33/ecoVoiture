@@ -7,8 +7,7 @@ session_start();
 	else {
 		$connexion=true;
 		$nom=$_SESSION['nom'];
-		}
-	
+		}	
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +15,7 @@ session_start();
 <head>
 	<title><?php echo $titre; ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
 </head>
 <body>
 	<header>

@@ -2,7 +2,7 @@
 include("entete.php?titre=Inscription");//inclus le fichier entete
 ?>
 
-<h2> Inscription </h2>
+<h2 style="background:blue"> Inscription </h2>
 
 <form>
 <fieldset>
@@ -20,8 +20,8 @@ Last name:<br>
 <form action="verification_creation_compte.php" method="POST">
 	<fieldset>
 	<legend>Informations de connexion</legend>
-	Indiquez une adresse email valide: <input type="email" name="email" value="">
-	Choisissez un nom d'utilisateur: <input type="email" name="email" value="">
-	Choisissez un mot de passe: <input type="password"
+	Indiquez une adresse email valide: <input type="email" name="email"><br/>
+	Choisissez un nom d'utilisateur: <input type="email" name="email"><br/>
+	Choisissez un mot de passe: <input type="password" name="psswd"><br/>
 	</fieldset>
 </form>
