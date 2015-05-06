@@ -8,8 +8,6 @@ session_start();
 		$connexion=true;
 		$nom=$_SESSION['nom'];
 		}
-
-echo coucou;
 	
 ?>
 
