@@ -1,21 +1,8 @@
 <?PHP
-include("entete.php?titre=Inscription");//inclus le fichier entete
+include("entete.php");//inclus le fichier entete
 ?>
 
 <h2 style="background:blue"> Inscription </h2>
-
-<form>
-<fieldset>
-<legend>Personal information:</legend>
-First name:<br>
-<input type="text" name="firstname" value="Mickey">
-<br>
-Last name:<br>
-<input type="text" name="lastname" value="Mouse">
-<br><br>
-<input type="submit" value="Submit">
-</fieldset>
-</form>
 
 <form action="verification_creation_compte.php" method="POST">
 	<fieldset>
@@ -25,6 +12,7 @@ Last name:<br>
 	Choisissez un mot de passe: <input type="password" name="psswd"><br/>
 	confirmer mot de passe: <input type="password" name="psswdBis"><br/>
 	</fieldset>
+	<br/>
 	<fieldset>
 	<legend>Informations Personnelles</legend>
 	Nom: <input type="text" name="nom"> Téléphone: <input type="tel" name="telephone"> <br/>
