@@ -26,7 +26,7 @@ entete('inscription');
 	</fieldset>
 	<input type="checkbox" name="validerCondGeneral" value="validerCondGeneral" required> En cochant cette case, je certifie être étudiant et j'accepte 
 	<a href="condGeneralEcovoiture.php">les conditions génrales d'utilisation d'Ecovoiture</a> <br/><br/>
-	<button type="button">Je m'inscris!</button>
+	<input type="submit">Je m'inscris!</input>
 </form>
 <br/>
 
