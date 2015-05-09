@@ -13,7 +13,6 @@ $codePostal=isset($_POST['codePostal'])?$_POST['codePostal']:'';
 $ville=isset($_POST['ville'])?$_POST['ville']:'';
 
 $connexion=pg_connect("host=localhost dbname=exoPHP user=postgres password=postgres") or die('connexion impossible.');
-pg_query($connexion,'INSERT INTO login VALUES ("$Login,$Mail,");//insert value dans table login
+pg_query($connexion,'INSERT INTO login VALUES ("$Login,$Mail,")');//insert value dans table login
 pg_close($connexion);
-
 ?>
