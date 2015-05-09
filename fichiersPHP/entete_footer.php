@@ -1,4 +1,9 @@
 <?php
+/*ajouter fichier require_once(entete_footer.php) dans les fichiers.
+pour appeler l'entete faite au debut du fichier entete($titre);
+$titre=nom de la page 
+puis a la fin du fichier faite footer();
+*/
 session_start();
 	$connexion;
 	if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
