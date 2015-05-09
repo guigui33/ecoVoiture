@@ -51,13 +51,13 @@ function entete($titre){ ?>
 <?php } 
 
 function footer(){ ?>
-	</body>
 	<footer>
 	<button type="button" onclick="href='a_propos.php'">A propos d'Ecovoiture</button>
 	<button type="button" onclick="href='foire_questions.php'">Foire aux questions</button>
 	<button type="button" onclick="href='conditions_generales_utilisation.php'">Conditions générales d'utilisation</button>
 	<button type="button" onclick="href='nous_contacter.php'">Nous contacter</button>
 	</footer>
+	</body>
 	</html>
 <?php } ?>
 
