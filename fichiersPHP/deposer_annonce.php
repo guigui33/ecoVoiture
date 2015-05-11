@@ -135,6 +135,7 @@ entete('Proposer un trajet');
 					<option selected>moyen
 					<option> grand
 				</select><br/>
+				
 	Autres informations : <textarea name="infos_trajet" required></textarea>
 
 	</fieldset>
