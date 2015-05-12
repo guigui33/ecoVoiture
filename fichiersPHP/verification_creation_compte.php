@@ -18,7 +18,7 @@ if($email=='' || $login=='' || $passwd=='' || $passwdBis=='' || $passwdBis!=$pas
 
 $connexion=pg_connect("host=localhost dbname=exoPHP user=postgres password=postgres") or die('connexion impossible.');
 
-pg_query($connexion,'INSERT INTO login VALUES ("$Mail,$login,$passwd,$nom,$prenom,$telephone,$date");//insert value dans table login
+pg_query($connexion,'INSERT INTO login VALUES ("$Mail,$login,$passwd,$nom,$prenom,$telephone,$date"');//insert value dans table login
 
 pg_close($connexion);
 
