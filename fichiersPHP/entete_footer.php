@@ -21,7 +21,7 @@ function entete($titre){ ?>
 		<title><?php echo $titre; ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" href="../bootstrap-3.3.4-dist/css/bootstrap.min.css">
-		<link href="../bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet" media="screen">
+		<link href="../bootstrap-3.3.4-dist/css/bootstrap2.css" rel="stylesheet" media="screen">
 		<link href="css/custom.css" rel="stylesheet">
 		 <meta charset="utf-8">
   <script src="../bootstrap-3.3.4-dist/js/jquery.js"></script>
