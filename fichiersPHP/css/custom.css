@@ -1,0 +1,39 @@
+ul.notes-echelle li.note-off label {
+	background-position:center -60px;
+	
+}
+ul.notes-echelle {
+    padding-top: 0px;
+    padding-bottom: 50px;
+    width: 150px;
+    padding-left: auto;
+	margin-left:0px;	
+    width: 190px;
+    padding-left: 20px;
+
+}
+ul.notes-echelle li {
+  float: left;
+  margin: auto;
+  padding: auto;
+  list-style: none;
+}
+/* Correctif IE6 sur min-width & min-height */
+html ul.notes-echelle.js li {
+	width:30px;
+	height:20px;
+}
+ul.notes-echelle li label {
+  display: block;
+  text-align: center;
+  line-height: 20px;
+  background: url(etoiles.gif) center top no-repeat;
+  cursor: pointer;
+}
+.footer{
+  bottom: 0;
+  height: 100px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}

@@ -16,42 +16,56 @@ function entete($titre){ ?>
 		<title><?php echo $titre; ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
+		<link href="bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet" media="screen">
+		<link href="css/custom.css" rel="stylesheet">
+		 <meta charset="utf-8">
+  <script src="bootstrap-3.3.4-dist/js/jquery.js"></script>
+  <script type="text/javascript" src="bootstrap-3.3.4-dist/js/bootstrap.js"></script>
+  <link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  
 	</head>
 	<body>
 		<header>
-			<div style="">
-				<img src="logoEcoVoiture.jpg" alt="logo Eco Voiture" width="600px" height="100px" style="border:45px black;"/>
-				<img src="banniereEcoVoiture.jpg" alt="banniereEcoVoiture" width="600px" height="100px" style="border:45px black;"/>
-			</div>
-			<div>				
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">	
+				<img src="logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:150px;"/>
+				<img src="banniereEcoVoiture.jpg" alt="banniereEcoVoiture"style="height:150px; width:650px;" />
+			
 				<?php if($GLOBALS['connexion']==false){ ?>
+				<div class="nav navbar-nav navbar-right" >
+				
 				Se connecter: </br>
-				<form action="verificationCompte.php" method="POST">
-				 Identifiant	Mot de passe <br/>
-				 <input type="login" name="login"> <br/>
+				<form action="verificationCompte.php" method="POST" style="margin-bottom: 0px;">
+				 Identifiant	:
+				 <input type="text" name="login"> <br/>
+				 Mot de passe :
 				 <input type="password" name="password"> <br/>
-				 <input type="submit" value="Connexion">
+				 <input class="btn btn-default" type="submit" value="Connexion" >
+				 
 				</form>
 				<a href="inscription.php?">Pas encore inscrit?</a>
+				</div></div>
 				<?php }			
 				else{?>
 					Bienvenue <?php echo $GLOBALS['nom'];?>
-					<button type="button" onclick="href='mesAnnonces.php'">Mes annonces</button>
-					<button type="button" onclick="href='monProfil.php'">Mon profil</button>
-					<button type="button" onclick="href='mesReservations.php'">Mes reservations</button>
-					<button type="button" onclick="href='seDeconnecter.php'">Se deconnecter</button>
+					<input class="btn btn-default" type="button" onclick="href='mesAnnonces.php'">Mes annonces</input>
+					<input class="btn btn-default" type="button" onclick="href='monProfil.php'">Mon profil</input>
+					<input class="btn btn-default" type="button" onclick="href='mesReservations.php'">Mes reservations</input>
+					<input class="btn btn-default" type="button" onclick="href='seDeconnecter.php'">Se deconnecter</input>
 				<?php } ?>
-				</div>
+				
 		</header>
 <?php } 
 
 function footer(){ ?>
-	<button type="button" onclick="href='a_propos.php'">A propos d'Ecovoiture</button>
-	<button type="button" onclick="href='foire_questions.php'">Foire aux questions</button>
-	<button type="button" onclick="href='conditions_generales_utilisation.php'">Conditions générales d'utilisation</button>
-	<button type="button" onclick="href='nous_contacter.php'">Nous contacter</button>
+<center>
+<div class="footer">
+<br><a href="apropos.php">A propos d'EcoVoiture</a> | <a href="FAQ.php">Foire aux questions</a> | <a href="Condition.php">Condition géneral d'utilisation</a> | <a href="Nouscontacter.php">Nous contacter</a>	
+</div>
+</center>
 	</body>
-	</html>
+	</html>	
 <?php } ?>
 
 
