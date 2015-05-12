@@ -7,8 +7,9 @@ entete('avis');
 ?>
 <center>
 <legend> Donner un avis :  </legend>
+
 <?php
-try
+/*try
 {
 $mydb = mysqli_connect('localhost','root','','ecoVoiture');
 }
@@ -16,6 +17,7 @@ catch(Exception $e)
 {
     die('Erreur : '.$e->getMessage());
 }
+*/
 ?>
 <form method="post" action="traitement.php">
  
@@ -23,7 +25,7 @@ catch(Exception $e)
     <select name="utilisateur" id="utilisateur">
  
 <?php
- 
+ /*
 $reponse = mysqli_query ($mydb,'SELECT Login FROM utilisateurs');
  
 while ($donnees = mysqli_fetch_assoc($reponse))
@@ -32,7 +34,7 @@ while ($donnees = mysqli_fetch_assoc($reponse))
 		echo '<option value="'.$donnees[0].'">'.$donnees['Login'];
 		echo '</option>'."\n";
 }
-
+*/
 ?> 
 </select>
     <p>
