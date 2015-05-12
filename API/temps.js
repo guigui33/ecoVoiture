@@ -46,7 +46,7 @@ function duree(response, status)
 					if(statut=='OK')
 					{
 						var duree = element.duration.text;
-						alert("La duree du trajet est de : "+duree);
+						document.getElementById('TempsTrajet').innerHTML = 'Temps : ' + duree;
 					}
 					else if(statut=='NOT_FOUND')
 					{
