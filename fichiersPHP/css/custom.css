@@ -31,5 +31,5 @@ ul.notes-echelle li label {
   cursor: pointer;
 }
 
-footer {position: absolute; bottom: 0; left: 0; right: 0;}
+footer {position:relative; bottom: 0; left: 0; right: 0;}
 
