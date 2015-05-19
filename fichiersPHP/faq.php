@@ -25,18 +25,18 @@ $(document).ready(function() {
 	<div id="contenu">		
 			<h4>Comment je peux deposer une annonce ?</h4>
 			<div class="accordeon">
-				Pour deposer une annonce, il faut vous rendre sur la page d'accueil en cliquant sur le logo ou la bannière du site présent en haut de chaque page.
-				Vous trouverez ensuite sur la page un formulaire pour deposer une annonce.
+				Pour deposer une annonce, il faut vous rendre sur la page d'accueil en cliquant sur le logo ou la banniere du site present en haut de chaque page.
+				Vous trouverez ensuite sur la page d'accueil un formulaire pour deposer une annonce.
 			</div>
 			
 			<h4>Comment puis-je supprimer mon compte</h4>
 			<div class="accordeon">
-				Pour supprimer votre compte, il vous faut utiliser le formulaire de contact dont l'accès se trouve en bas de chaque page en cliquant sur "contact". Preciser le motif de votre demande dans le menu déroulant et un administrateur vous répondra sous 24 à 48h
+				Pour supprimer votre compte, il vous faut utiliser le formulaire de contact dont l'accès se trouve en bas de chaque page en cliquant sur "contact". Preciser le motif de votre demande dans le menu déroulant et un administrateur vous répondra sous 48h.
 			</div>
 			
 			<h4>Est-il possible d'avoir plusieurs vehicules ?</h4>
 			<div class="accordeon">
-				Il est possible d'avoir plusieurs vehicules pour un même profil, rendez vous sur les options de votre profil pour ajouter des voitures. Lorsque vous deposerez une annonce, vous pourrez choisir quelle voiture utiliser pour le voyage.
+				Un meme profil utilisateur peut compter plusieurs vehicules, rendez vous sur les options de votre profil pour ajouter des voitures. Lorsque vous deposerez une annonce de voyage, vous pourrez choisir quel vehicule utiliser.
 			</div>	
 		<hr />
 	</div>
