@@ -45,7 +45,7 @@ function distance(response, status)
 					if(statut=='OK')
 					{
 						var dist = element.distance.value;
-						alert("La distance est de " +dist/1000+"Km");
+						document.getElementById('DistanceTrajet').innerHTML = 'Distance : ' + dist/1000 + 'km';
 					}
 					else if(statut=='NOT_FOUND')
 					{

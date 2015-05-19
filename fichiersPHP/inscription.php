@@ -21,12 +21,17 @@ entete('inscription');
 	Prénom: <input type="text" name="prenom" required> 
 	Date de naissance: <input type="date" name="date" required> <br/>
 	Adresse: <textarea name="adresse" required></textarea><br/>
-	Code postal: <input type="number" name="codePostal" required><br/>
+	Code postal: <input type="text" name="codePostal" required><br/>
 	Ville: <input type="text" name="ville" required><br/>
 	</fieldset>
 	<input type="checkbox" name="validerCondGeneral" value="validerCondGeneral" required> En cochant cette case, je certifie être étudiant et j'accepte 
+<<<<<<< HEAD
 	<a href="condGeneralEcovoiture.php">les conditions générales d'utilisation d'Ecovoiture</a> <br/><br/>
 	<input type="submit" value="Je m'inscris!"></input>
+=======
+	<a href="condGeneralEcovoiture.php">les conditions génrales d'utilisation d'Ecovoiture</a> <br/><br/>
+	<input type="submit" value="Je m'inscris!">
+>>>>>>> c51f5d1a5afe7ff876710de4eae791aa8fd5008f
 </form>
 <br/>
 

@@ -5,10 +5,9 @@ var calculate;
 var direction;
 
 initialize = function(){
-  var latLng = new google.maps.LatLng(50.6371834, 3.063017400000035); // Correspond au coordonnées de Lille
+  var latLng;
   var myOptions = {
     zoom      : 14, // Zoom par défaut
-    center    : latLng, // Coordonnées de départ de la carte de type latLng 
     mapTypeId : google.maps.MapTypeId.TERRAIN, // Type de carte, différentes valeurs possible HYBRID, ROADMAP, SATELLITE, TERRAIN
     maxZoom   : 20
   };
@@ -69,4 +68,4 @@ calculate = function(){
     }
 };
 
-initialize();
+

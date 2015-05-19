@@ -20,12 +20,12 @@ function entete($titre){ ?>
 	<head>
 		<title><?php echo $titre; ?></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
-		<link href="bootstrap-3.3.4-dist/css/bootstrap.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="../bootstrap-3.3.4-dist/css/bootstrap.min.css">
+		<link href="../bootstrap-3.3.4-dist/css/bootstrap2.css" rel="stylesheet" media="screen">
 		<link href="css/custom.css" rel="stylesheet">
 		 <meta charset="utf-8">
-  <script src="bootstrap-3.3.4-dist/js/jquery.js"></script>
-  <script type="text/javascript" src="bootstrap-3.3.4-dist/js/bootstrap.js"></script>
+  <script src="../bootstrap-3.3.4-dist/js/jquery.js"></script>
+  <script type="text/javascript" src="../bootstrap-3.3.4-dist/js/bootstrap.js"></script>
   <link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   
@@ -64,11 +64,19 @@ function entete($titre){ ?>
 <?php } 
 
 function footer(){ ?>
+<<<<<<< HEAD
 <center>
 <div class="footer">
 <br><a href="apropos.php">A propos d'EcoVoiture</a> | <a href="FAQ.php">Foire aux questions</a> | <a href="Condition.php">Conditions génerales d'utilisation</a> | <a href="Nouscontacter.php">Nous contacter</a>	
 </div>
 </center>
+=======
+<footer>
+	<center>
+	<br><a href="apropos.php">A propos d'EcoVoiture</a> | <a href="FAQ.php">Foire aux questions</a> | <a href="Condition.php">Condition géneral d'utilisation</a> | <a href="Nouscontacter.php">Nous contacter</a>	
+	</center>
+</footer>
+>>>>>>> c51f5d1a5afe7ff876710de4eae791aa8fd5008f
 	</body>
 	</html>	
 <?php } ?>

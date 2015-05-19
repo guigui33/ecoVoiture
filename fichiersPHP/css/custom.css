@@ -30,6 +30,7 @@ ul.notes-echelle li label {
   background: url(etoiles.gif) center top no-repeat;
   cursor: pointer;
 }
+<<<<<<< HEAD
 .footer{
   bottom: 0;
   height: 100px;
@@ -37,3 +38,8 @@ ul.notes-echelle li label {
   position: relative;
   right: 0;
 }
+=======
+
+footer {position:relative; bottom: 0; left: 0; right: 0;}
+
+>>>>>>> c51f5d1a5afe7ff876710de4eae791aa8fd5008f

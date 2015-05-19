@@ -16,16 +16,15 @@
                 <input type="text" name="origin" id="origin">
                 <label>Destination :</label>
                 <input type="text" name="destination" id="destination">
-                <input type="button" value="Calculer l'itinéraire" onclick="javascript:calculate()">
-				<input type="button" value="Calculer Duree trajet" onclick="javascript:calculDuree()">
-				<input type="button" value="Calculer Distance trajet" onclick="javascript:calculDistance()">
+                <input type="button" value="Calculer l'itinéraire" onclick="javascript:initialize();javascript:calculate();javascript:calculDistance();javascript:calculDuree()">
             </form>
         </div>
 
         <div id="map">
             <p>Veuillez patienter pendant le chargement de la carte...</p>
         </div>
-		<div id="total"></div> 
+		<div id="TempsTrajet"></div>
+		<div id="DistanceTrajet"></div>
     </div>
     
     <!-- Include Javascript -->
