@@ -6,9 +6,21 @@ if($login=='' || $passwd=''){
 	}
 else {
 	//connex on la base de donnée à remplacer
-	$connexion=pg_connect("host=localhost dbname=exoPHP user=postgres password=postgres") or die('connexion impossible.');
+	//$connexion=pg_connect("host=localhost dbname=exoPHP user=postgres password=postgres") or die('connexion impossible.');
+	//$connexion=pg_connect("host=sql.free.fr port=5432 dbname=ecovoiture user=ecovoiture password=ecovoiturestri");
 	
+	$conn_string = "host=sql.free.fr port=5432 dbname=ecovoiture user=ecovoiture password=ecovoiturestri";
+	$connexion = pg_connect($conn_string);
 	
+	if (!$connexion) {
+	echo "<p><strong>Impossible de se connecter au serveur PostgreSQL</strong></p>";
+	echo pg_last_error();
+	}
+	else{
+	echo "<p>Connexion réussie au serveur PostgreSQL</p>";}
+	}
+	
+	/*
 	$result=pg_query($connexion,'SELECT Login FROM Utilisateurs WHERE Login=\''.$login.'\'AND MotDePasse=\''.md5($passwd).'\'');	
 	if(!$result){
 		pg_close($connexion);
@@ -28,5 +40,5 @@ else {
 		header('location:accueil.php?error=2');
 	}
 		
-	}
+	}*/
 ?>
