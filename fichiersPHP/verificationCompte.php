@@ -7,14 +7,7 @@ if($login=='' || $passwd==''){
 		header('location:index.php?error=1');
 	}
 else {
-	/*
-	$connexion=pg_connect("host=postgresql1.alwaysdata.com port=542 dbname=ecovoiture_ecovoiture user=ecovoiture password=ecovoiturestri");
-	
-	if(!$connexion){
-		echo "Impossible de se connecter à la base Postgres";
-	}
-	else{
-	*/
+
 	require('connexion.php');
 	
 		$requete = ('SELECT login FROM utilisateurs WHERE login=\''.$login.'\' AND motdepasse=\''.$passwd.'\'');
