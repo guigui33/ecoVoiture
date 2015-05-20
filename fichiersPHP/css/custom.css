@@ -1,29 +1,3 @@
-.box {
-/* basic styling */
-width: 100%;
-height: 150px;
-font: 14px Arial;
-
-/* flexbox setup */
-display: -webkit-box;
--webkit-box-orient: horizontal;
-
-display: box;
-box-orient: horizontal;
-}
-
-#logo {
--webkit-box-flex: 1;
-}
-
-#banniere{
--webkit-box-flex: 3;
-}
-
-#menu_header{
--webkit-box-flex: 2;
-}
-
 ul.notes-echelle li.note-off label {
 	background-position:center -60px;
 	

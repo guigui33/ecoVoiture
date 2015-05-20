@@ -33,16 +33,34 @@ function entete($titre){ ?>
 	<body>
 		<header>
 		
-		<div class="box">
-		  <div id="logo"><img src="includes/logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:250px;"/></div>
-		  <div id="banniere"><img src="banniereEcoVoiture.jpg" alt="banniereEcoVoiture"style="height:150px; width:650px;" /></div>
-		  <div id="menu_header">trois</div>
-		</div>
-		
-		
-		
-		
-		
+		<nav class="navbar navbar-default">
+				<div class="container-fluid">	
+				<img src="includes/logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:20%;"/>
+				<img src="includes/banniereEcoVoiture.jpg" alt="banniereEcoVoiture"style="height:150px; width:50%;" />
+				
+			
+				<?php if($GLOBALS['connexion']==false){ ?>
+				<div class="nav navbar-nav navbar-right" >
+				
+				Se connecter: </br>
+				<form action="verificationCompte.php" method="POST" style="margin-bottom: 0px;">
+				 Identifiant	:
+				 <input type="text" name="login"> <br/>
+				 Mot de passe :
+				 <input type="password" name="password"> <br/>
+				 <input class="btn btn-default" type="submit" value="Connexion" >
+				 
+				</form>
+				<a href="inscription.php?">Pas encore inscrit?</a>
+				</div></div>
+				<?php }			
+				else{?>
+					Bienvenue <?php echo $GLOBALS['nom'];?>
+					<input class="btn btn-default" type="button" onclick="location.href='mesAnnonces.php'" value='Mes annonces'></input>
+					<input class="btn btn-default" type="button" onclick="location.href='monProfil.php'" value='Mon profil'></input>
+					<input class="btn btn-default" type="button" onclick="location.href='mesReservations.php'" value='Mes reservations'></input>
+					<input class="btn btn-default" type="button" onClick="location.href='seDeconnecter.php'" value='Se deconnecter'></input>
+				<?php } ?>
 			
 				
 		</header>
