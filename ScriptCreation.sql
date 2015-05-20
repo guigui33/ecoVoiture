@@ -8,7 +8,7 @@ CREATE TABLE Utilisateurs (
     Telephone INTEGER,
     DateNaissance DATE,
     APropos VARCHAR(200),
-    UrlImage VARCHAR(100)
+    UrlImage VARCHAR(100),
 	IdResidence INTEGER
     );
  
@@ -106,9 +106,7 @@ CREATE TABLE Arriver (
     );
 
 ALTER TABLE Utilisateurs
-	ADD CONSTRAINT fk_LieuDeResidence
-	FOREIGN KEY IdResidence
-	REFERENCES Lieux (IdLieu);
+	ADD CONSTRAINT fk_LieuDeResidence FOREIGN KEY (IdResidence) REFERENCES Lieux (IdLieu);
 
 /* Commandes de mise en place de l'auto incrémentation des clés primaires 
     pour les tables Trajets, Utilisateurs, Voitures et Lieux. 
