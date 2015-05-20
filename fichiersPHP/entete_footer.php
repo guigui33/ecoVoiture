@@ -54,10 +54,10 @@ function entete($titre){ ?>
 				<?php }			
 				else{?>
 					Bienvenue <?php echo $GLOBALS['nom'];?>
-					<input class="btn btn-default" type="button" onclick="href='mesAnnonces.php'">Mes annonces</input>
-					<input class="btn btn-default" type="button" onclick="href='monProfil.php'">Mon profil</input>
-					<input class="btn btn-default" type="button" onclick="href='mesReservations.php'">Mes reservations</input>
-					<input class="btn btn-default" type="button" onclick="href='seDeconnecter.php'">Se deconnecter</input>
+					<input class="btn btn-default" type="button" onclick="href='mesAnnonces.php'" value='Mes annonces'></input>
+					<input class="btn btn-default" type="button" onclick="href='monProfil.php'" value='Mon profil'></input>
+					<input class="btn btn-default" type="button" onclick="href='mesReservations.php'" value='Mes reservations'></input>
+					<input class="btn btn-default" type="button" onClick="location.href='seDeconnecter.php'" value='Se deconnecter'></input>
 				<?php } ?>
 				
 		</header>
