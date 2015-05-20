@@ -7,6 +7,8 @@ if($login=='' || $passwd=''){
 else {
 	//connex on la base de donnée à remplacer
 	$connexion=pg_connect("host=localhost dbname=exoPHP user=postgres password=postgres") or die('connexion impossible.');
+	
+	
 	$result=pg_query($connexion,'SELECT Login FROM Utilisateurs WHERE Login=\''.$login.'\'AND MotDePasse=\''.md5($passwd).'\'');	
 	if(!$result){
 		pg_close($connexion);
