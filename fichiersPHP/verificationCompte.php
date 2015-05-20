@@ -7,15 +7,16 @@ if($login=='' || $passwd==''){
 		header('location:index.php?error=1');
 	}
 else {
-	//connex on la base de donnée à remplacer
-	//$connexion=pg_connect("host=localhost dbname=exoPHP user=postgres password=postgres") or die('connexion impossible.');
-	$connexion=pg_connect("host=postgresql1.alwaysdata.com port=5432 dbname=ecovoiture_ecovoiture user=ecovoiture password=ecovoiturestri");
+	/*
+	$connexion=pg_connect("host=postgresql1.alwaysdata.com port=542 dbname=ecovoiture_ecovoiture user=ecovoiture password=ecovoiturestri");
 	
 	if(!$connexion){
-		echo "Impossible de se connecter à la base PostgresSQL7!!!";
+		echo "Impossible de se connecter à la base Postgres";
 	}
 	else{
-		//$result=pg_query($connexion,'SELECT Login FROM Utilisateurs WHERE Login=\''.$login.'\'AND MotDePasse=\''.md5($passwd).'\'');
+	*/
+	require('connexion.php');
+	
 		$requete = ('SELECT login FROM utilisateurs WHERE login=\''.$login.'\' AND motdepasse=\''.$passwd.'\'');
 		$result=pg_query($connexion, $requete);
 		
@@ -48,6 +49,4 @@ else {
 		}
 			
 		}
-	
-}
 ?>
