@@ -11,7 +11,7 @@ entete('inscription');
 	Indiquez une adresse email valide: <input type="email" name="email" required><br/>
 	Choisissez un nom d'utilisateur: <input type="text" name="login" required><br/>
 	Choisissez un mot de passe: <input type="password" name="psswd" required><br/>
-	confirmer mot de passe: <input type="password" name="psswdBis" required><br/>
+	Confirmez mot de passe: <input type="password" name="psswdBis" required><br/>
 	</fieldset>
 	<br/>
 	<fieldset>
@@ -25,8 +25,13 @@ entete('inscription');
 	Ville: <input type="text" name="ville" required><br/>
 	</fieldset>
 	<input type="checkbox" name="validerCondGeneral" value="validerCondGeneral" required> En cochant cette case, je certifie être étudiant et j'accepte 
+<<<<<<< HEAD
+	<a href="condGeneralEcovoiture.php">les conditions générales d'utilisation d'Ecovoiture</a> <br/><br/>
+	<input type="submit" value="Je m'inscris!"></input>
+=======
 	<a href="condGeneralEcovoiture.php">les conditions génrales d'utilisation d'Ecovoiture</a> <br/><br/>
 	<input type="submit" value="Je m'inscris!">
+>>>>>>> c51f5d1a5afe7ff876710de4eae791aa8fd5008f
 </form>
 <br/>
 

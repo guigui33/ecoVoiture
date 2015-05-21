@@ -32,10 +32,16 @@ function entete($titre){ ?>
 	</head>
 	<body>
 		<header>
+<<<<<<< HEAD
 			<nav class="navbar navbar-inverse" >
+=======
+		
+		<nav class="navbar navbar-default">
+>>>>>>> f6fe6952f6b29eecb6e72343127d5869fed21c80
 				<div class="container-fluid">	
-				<img src="logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:150px;"/>
-				<img src="banniereEcoVoiture.jpg" alt="banniereEcoVoiture"style="height:150px; width:650px;" />
+				<img src="includes/logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:20%;"/>
+				<img src="includes/banniereEcoVoiture.jpg" alt="banniereEcoVoiture"style="height:150px; width:50%;" />
+				
 			
 				<?php if($GLOBALS['connexion']==false){ ?>
 				<div class="nav navbar-right " >
@@ -54,23 +60,30 @@ function entete($titre){ ?>
 				<?php }			
 				else{?>
 					Bienvenue <?php echo $GLOBALS['nom'];?>
-					<input class="btn btn-default" type="button" onclick="href='mesAnnonces.php'">Mes annonces</input>
-					<input class="btn btn-default" type="button" onclick="href='monProfil.php'">Mon profil</input>
-					<input class="btn btn-default" type="button" onclick="href='mesReservations.php'">Mes reservations</input>
-					<input class="btn btn-default" type="button" onclick="href='seDeconnecter.php'">Se deconnecter</input>
+					<input class="btn btn-default" type="button" onclick="location.href='mesAnnonces.php'" value='Mes annonces'></input>
+					<input class="btn btn-default" type="button" onclick="location.href='monProfil.php'" value='Mon profil'></input>
+					<input class="btn btn-default" type="button" onclick="location.href='mesReservations.php'" value='Mes reservations'></input>
+					<input class="btn btn-default" type="button" onClick="location.href='seDeconnecter.php'" value='Se deconnecter'></input>
 				<?php } ?>
+			
 				
 		</header>
 <?php } 
 
 function footer(){ ?>
-<footer>
+<center>
+<div class="footer">
+<br><a href="apropos.php">A propos d'EcoVoiture</a> | <a href="faq.php">Foire aux questions</a> | <a href="Conditions.php">Conditions générales d'utilisation</a> | <a href="Nouscontacter.php">Nous contacter</a>	
+</div>
+</center>
+
+<!-- <footer>
 	<center>
 	<br><a href="apropos.php">A propos d'EcoVoiture</a> | <a href="FAQ.php">Foire aux questions</a> | <a href="Condition.php">Condition géneral d'utilisation</a> | <a href="Nouscontacter.php">Nous contacter</a>	
 	</center>
 </footer>
 	</body>
-	</html>	
+	</html>	-->
 <?php } ?>
 
 
