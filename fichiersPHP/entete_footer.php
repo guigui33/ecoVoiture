@@ -32,19 +32,19 @@ function entete($titre){ ?>
 	</head>
 	<body>
 		<header>
-			<nav class="navbar navbar-default">
+			<nav class="navbar navbar-inverse" >
 				<div class="container-fluid">	
 				<img src="logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:150px;"/>
 				<img src="banniereEcoVoiture.jpg" alt="banniereEcoVoiture"style="height:150px; width:650px;" />
 			
 				<?php if($GLOBALS['connexion']==false){ ?>
-				<div class="nav navbar-nav navbar-right" >
+				<div class="nav navbar-right " >
 				
 				Se connecter: </br>
 				<form action="verificationCompte.php" method="POST" style="margin-bottom: 0px;">
 				 Identifiant	:
 				 <input type="text" name="login"> <br/>
-				 Mot de passe :
+				Mot de passe :
 				 <input type="password" name="password"> <br/>
 				 <input class="btn btn-default" type="submit" value="Connexion" >
 				 
