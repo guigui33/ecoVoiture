@@ -27,8 +27,22 @@ entete('home');
 	<input class="bginput"  name="date" id="date"  placeholder="Date du trajet" type="date" onchange="checkText(this.id)">
 	<a style="font-size: 36px;" ><button class="btn btn-default" type="submit">Proposer</button></a>
 </div>
-<div class="row marketing">
-        <div class="col-lg-4">
+</br></br>
+<div class=" col-lg-offset-3">
+        <div class="col-lg-3  information">
+			
+				<h4>TOULOUSE - PARIS</h4>
+					<ul >
+						<li class="list-unstyled">Conducteur : Pierre</li>
+						<li class="list-unstyled">Départ : Toulouse 31000</li>
+						<li class="list-unstyled">Arrivée : Paris, 75000</li>
+						<li class="list-unstyled">Date : 20/05/2015</li>
+						<li class="list-unstyled">Heure de Départ : 10h15 &nbsp; Heure d'Arrrivée prévue : 2h15</li>
+						<li class="list-unstyled">Heure d'Arrrivée prévue : 2h15 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
+					</ul>
+		
+		</div>
+		    <div class="col-lg-3 information">
 			
 				<h4>TOULOUSE - PARIS</h4>
 					<ul >
@@ -41,20 +55,7 @@ entete('home');
 					</ul>
 			
 		</div>
-		    <div class="col-lg-4">
-			
-				<h4>TOULOUSE - PARIS</h4>
-					<ul >
-						<li class="list-unstyled">Conducteur : Pierre</li>
-						<li class="list-unstyled">Départ : Toulouse 31000</li>
-						<li class="list-unstyled">Arrivée : Paris, 75000</li>
-						<li class="list-unstyled">Date : 20/05/2015</li>
-						<li class="list-unstyled">Heure de Départ : 10h15 &nbsp; Heure d'Arrrivée prévue : 2h15</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 2h15 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
-					</ul>
-			
-		</div>
-		    <div class="col-lg-4">
+		    <div class="col-lg-3 information">
 			
 				<h4>TOULOUSE - PARIS</h4>
 					<ul >
@@ -68,7 +69,7 @@ entete('home');
 			
 		</div>
 		
-		  <div class="col-lg-4">
+		  <div class="col-lg-3 information">
 			
 				<h4>TOULOUSE - PARIS</h4>
 					<ul >
@@ -81,7 +82,7 @@ entete('home');
 					</ul>
 			
 		</div>
-		  <div class="col-lg-4">
+		  <div class="col-lg-3 information">
 			
 				<h4>TOULOUSE - PARIS</h4>
 					<ul >
@@ -94,7 +95,7 @@ entete('home');
 					</ul>
 			
 		</div>
-		  <div class="col-lg-4">
+		  <div class="col-lg-3 information">
 			
 				<h4>TOULOUSE - PARIS</h4>
 					<ul >
@@ -107,7 +108,7 @@ entete('home');
 					</ul>
 			
 		</div>
-	</div>	
+</div>	
 </form>
 </fieldset>
 <?php footer();

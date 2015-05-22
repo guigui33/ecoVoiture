@@ -26,7 +26,6 @@ function entete($titre){ ?>
 		 <meta charset="utf-8">
   <script src="../bootstrap-3.3.4-dist/js/jquery.js"></script>
   <script type="text/javascript" src="../bootstrap-3.3.4-dist/js/bootstrap.js"></script>
-  <link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   
 	</head>
