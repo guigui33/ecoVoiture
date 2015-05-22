@@ -33,7 +33,6 @@ function entete($titre){ ?>
 	<body>
 		<header>
 		<nav class="navbar navbar-default">
-
 				<div class="container-fluid">	
 				<img src="includes/logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:20%;"/>
 				<img src="includes/banniereEcoVoiture.jpg" alt="banniereEcoVoiture"style="height:150px; width:50%;" />
@@ -73,13 +72,6 @@ function footer(){ ?>
 </div>
 </center>
 
-<!-- <footer>
-	<center>
-	<br><a href="apropos.php">A propos d'EcoVoiture</a> | <a href="FAQ.php">Foire aux questions</a> | <a href="Condition.php">Condition géneral d'utilisation</a> | <a href="Nouscontacter.php">Nous contacter</a>	
-	</center>
-</footer>
-	</body>
-	</html>	-->
 <?php } ?>
 
 
