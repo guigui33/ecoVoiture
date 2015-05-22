@@ -1,7 +1,6 @@
 <?PHP
 require_once("entete_footer.php");//inclus le fichier entete
 entete('inscription');
-$error=
 ?>
 
 <h2 style="background:blue"> Inscription </h2>
@@ -9,8 +8,8 @@ $error=
 <form action="verification_creation_compte.php" method="POST">
 	<fieldset>
 	<legend>Informations de connexion</legend>
-	Indiquez une adresse email valide: <input type="email" name="email"  required><br/>
-	Choisissez un nom d'utilisateur: <input type="text" name="login" required><br/>
+	Indiquez une adresse email valide: <input type="email" name="email" maxlength="320" size="50" required><br/>
+	Choisissez un nom d'utilisateur: <input type="text" name="login" maxlength="30" size="20" required><br/>
 	Choisissez un mot de passe: <input type="password" name="psswd" required><br/>
 	Confirmez mot de passe: <input type="password" name="psswdBis" required><br/>
 	</fieldset>

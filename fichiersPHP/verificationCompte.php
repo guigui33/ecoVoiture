@@ -4,7 +4,7 @@ $passwd=isset($_POST['password'])?$_POST['password']:'';
 
 
 if($login=='' || $passwd==''){
-		header('location:index.php?error=1');
+		header('location:home.php?error=1');
 	}
 else {
 

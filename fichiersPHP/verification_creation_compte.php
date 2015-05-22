@@ -1,4 +1,6 @@
 <?php
+require('connexion.php');
+
 /*verification des informations donnés par le client avant de les inclurent dans la BD*/
 $email=isset($_POST['email'])?$_POST['email']:'';
 $login=isset($_POST['login'])?$_POST['login']:'';
@@ -13,11 +15,9 @@ $codePostal=isset($_POST['codePostal'])?$_POST['codePostal']:'';
 $ville=isset($_POST['ville'])?$_POST['ville']:'';
 
 if($email=='' || $login=='' || $passwd=='' || $passwdBis=='' || $passwdBis!=$passwd || $nom=='' || $prenom=='' || $date=='' || $ville==''){
-		header('location:inscription.php');
+		header('location:inscription.php?error=1');//si erreur on retourne error=1
 	}
-
-$connexion=pg_connect("host=localhost dbname=exoPHP user=postgres password=postgres") or die('connexion impossible.');
-
+	
 pg_query($connexion,'INSERT INTO login VALUES ("$Mail,$login,$passwd,$nom,$prenom,$telephone,$date"');//insert value dans table login
 
 pg_close($connexion);
