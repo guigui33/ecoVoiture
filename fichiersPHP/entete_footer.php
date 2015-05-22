@@ -69,12 +69,6 @@ function footer(){ ?>
 <br><a href="apropos.php">A propos d'EcoVoiture</a> | <a href="faq.php">Foire aux questions</a> | <a href="Conditions.php">Conditions générales d'utilisation</a> | <a href="Nouscontacter.php">Nous contacter</a>	
 </div>
 </center>
-
-<!-- <footer>
-	<center>
-	<br><a href="apropos.php">A propos d'EcoVoiture</a> | <a href="FAQ.php">Foire aux questions</a> | <a href="Condition.php">Condition géneral d'utilisation</a> | <a href="Nouscontacter.php">Nous contacter</a>	
-	</center>
-</footer>
 	</body>
 	</html>	-->
 <?php } ?>

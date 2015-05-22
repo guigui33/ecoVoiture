@@ -6,7 +6,6 @@ entete('Trajet Disponible');
 <?php
 				$mydb = mysqli_connect('localhost','root','','ecoVoiture2');
 
-
 					$destination=$_POST['destination'];
 					$depart=$_POST['depart'];
 					$cbn=0;

@@ -1,6 +1,7 @@
 <?PHP
 require_once("entete_footer.php");//inclus le fichier entete
 entete('inscription');
+$error=
 ?>
 
 <h2 style="background:blue"> Inscription </h2>
@@ -8,7 +9,7 @@ entete('inscription');
 <form action="verification_creation_compte.php" method="POST">
 	<fieldset>
 	<legend>Informations de connexion</legend>
-	Indiquez une adresse email valide: <input type="email" name="email" required><br/>
+	Indiquez une adresse email valide: <input type="email" name="email"  required><br/>
 	Choisissez un nom d'utilisateur: <input type="text" name="login" required><br/>
 	Choisissez un mot de passe: <input type="password" name="psswd" required><br/>
 	Confirmez mot de passe: <input type="password" name="psswdBis" required><br/>
@@ -25,13 +26,8 @@ entete('inscription');
 	Ville: <input type="text" name="ville" required><br/>
 	</fieldset>
 	<input type="checkbox" name="validerCondGeneral" value="validerCondGeneral" required> En cochant cette case, je certifie être étudiant et j'accepte 
-<<<<<<< HEAD
 	<a href="condGeneralEcovoiture.php">les conditions générales d'utilisation d'Ecovoiture</a> <br/><br/>
 	<input type="submit" value="Je m'inscris!"></input>
-=======
-	<a href="condGeneralEcovoiture.php">les conditions génrales d'utilisation d'Ecovoiture</a> <br/><br/>
-	<input type="submit" value="Je m'inscris!">
->>>>>>> c51f5d1a5afe7ff876710de4eae791aa8fd5008f
 </form>
 <br/>
 

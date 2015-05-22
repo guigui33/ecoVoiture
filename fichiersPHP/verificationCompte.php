@@ -15,7 +15,7 @@ else {
 		
 		if(!$result){
 			pg_close($connexion);
-			//header('location:home.php?error=2');
+			header('location:home.php?error=2');
 			echo "Erreur dans la requete";
 			}
 		$tab=pg_fetch_array($result);
@@ -32,7 +32,6 @@ else {
 				$_SESSION['nom']=$data['nom'];
 				
 			pg_close($connexion);
-			echo "Connexion reussie biatch";
 			header('location:home.php');
 		}
 		else{
