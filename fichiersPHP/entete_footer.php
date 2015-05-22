@@ -69,9 +69,8 @@ function footer(){ ?>
 <br><a href="apropos.php">A propos d'EcoVoiture</a> | <a href="faq.php">Foire aux questions</a> | <a href="Conditions.php">Conditions générales d'utilisation</a> | <a href="Nouscontacter.php">Nous contacter</a>	
 </div>
 </center>
-<<<<<<< HEAD
 	</body>
-	</html>	-->
+	</html>	
 <?php } ?>
 
 
