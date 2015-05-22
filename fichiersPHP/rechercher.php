@@ -4,16 +4,20 @@ entete('Trajet Disponible');
 ?>
 
 <?php
+<<<<<<< HEAD
 				$mydb = mysqli_connect('localhost','root','','ecoVoiture2');
+=======
+				require('connexion.php');
+>>>>>>> f4c23c56294673db92363ed64e1364d7f67ff4df
 
 					$destination=$_POST['destination'];
 					$depart=$_POST['depart'];
 					$cbn=0;
 										
 					$query = "SELECT DateDepart, HeureDepart, IdDepart, IdArrivee, PlacesDispo, InfosTrajet FROM Trajets WHERE IdArrivee='$destination' AND IdDepart='$depart' ";
-					$result = mysqli_query($mydb,$query) or die("Query failed : ".mysqli_error($mydb));
+					$result = pg_query($connexion,$query) or die("Query failed : ".pg_error($connexion));
 					
-					while ($donnees = mysqli_fetch_array($result)) 
+					while ($donnees = pg_fetch_array($result)) 
 					{
 ?>
 <div class="col-lg-4">

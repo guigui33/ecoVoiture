@@ -9,33 +9,12 @@ entete('home');
 <form name="rechercher" action="rechercher.php" method="POST">
 	<div id="entrerfavoris">
 	
-	<!--AUTOCOMPLETION VILLE API-->
-	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
-	
-	<script>
-      function initialize() {
-		var input = document.getElementById('searchTextField');
-		var options = {
-		  types: ['(cities)'],
-		  componentRestrictions: {country: 'fr'}
-		};
- 
-		autocomplete = new google.maps.places.Autocomplete(input, options);
- 
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-	
-	
-	<!--FIN AUTOCOMPLETION VILLE API<input id="searchTextField" type="text" size="50">-->
-	
-	
-	<input class="bginput"  name="depart" id="searchTextField" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)">
-	<input class="bginput"  name="destination" id="searchTextField" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)">
+	<input class="bginput"  name="depart" id="RechercherDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)">
+	<input class="bginput"  name="destination" id="RechercherDestination" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)">
 	<input class="bginput"  name="date" id="date"  placeholder="Date du trajet" type="date" onchange="checkText(this.id)">
-	
 	<a style="font-size: 36px;" ><button class="btn btn-default" type="submit">Rechercher</button></a>
-</div>
+
+	</div>
 </form>
 </fieldset>
 <form action="proposer.php" method="post" >
@@ -43,8 +22,8 @@ entete('home');
  <legend> Proposer un trajet : </legend>
 <form name="rechercher" action="rechercher.php" method="POST">
 	<div id="entrerfavoris">
-	<input class="bginput"  name="depart" id="searchTextField" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)">
-	<input class="bginput"  name="destination" id="searchTextField" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)">
+	<input class="bginput"  name="depart" id="ProposerDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)">
+	<input class="bginput"  name="destination" id="ProposerDesitnation" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)">
 	<input class="bginput"  name="date" id="date"  placeholder="Date du trajet" type="date" onchange="checkText(this.id)">
 	<a style="font-size: 36px;" ><button class="btn btn-default" type="submit">Proposer</button></a>
 </div>
@@ -133,3 +112,60 @@ entete('home');
 </fieldset>
 <?php footer();
 ?>
+<!--AUTOCOMPLETION VILLE API-->
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+	<script>
+      function initialize() {
+		var input = document.getElementById('RechercherDepart');
+		var options = {
+		  types: ['(cities)'],
+		  componentRestrictions: {country: 'fr'}
+		};
+ 
+		autocomplete = new google.maps.places.Autocomplete(input, options);
+ 
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+	<script>
+      function initialize() {
+		var input = document.getElementById('ProposerDepart');
+		var options = {
+		  types: ['(cities)'],
+		  componentRestrictions: {country: 'fr'}
+		};
+ 
+		autocomplete = new google.maps.places.Autocomplete(input, options);
+ 
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+	<script>
+      function initialize() {
+		var input = document.getElementById('ProposerDesitnation');
+		var options = {
+		  types: ['(cities)'],
+		  componentRestrictions: {country: 'fr'}
+		};
+ 
+		autocomplete = new google.maps.places.Autocomplete(input, options);
+ 
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+	<script>
+      function initialize() {
+		var input = document.getElementById('RechercherDestination');
+		var options = {
+		  types: ['(cities)'],
+		  componentRestrictions: {country: 'fr'}
+		};
+ 
+		autocomplete = new google.maps.places.Autocomplete(input, options);
+ 
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+	
+	
+	<!--FIN AUTOCOMPLETION VILLE API<input id="searchTextField" type="text" size="50">-->
