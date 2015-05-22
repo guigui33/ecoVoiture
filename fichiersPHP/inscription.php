@@ -5,7 +5,7 @@ entete('inscription');
 
 <h2 style="background:blue"> Inscription </h2>
 
-<form action="verification_creation_compte.php" method="POST">
+<form action="verification_creation_compte.php" method="GET">
 	<fieldset>
 	<legend>Informations de connexion</legend>
 	Indiquez une adresse email valide: <input type="email" name="email" maxlength="320" size="50" required><br/>
