@@ -34,10 +34,8 @@ function entete($titre){ ?>
 		<header>
 		<nav class="navbar navbar-default">
 				<div class="container-fluid">	
-				<img src="includes/logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:20%;"/>
-				<img src="includes/banniereEcoVoiture.jpg" alt="banniereEcoVoiture"style="height:150px; width:50%;" />
-				
-			
+				<a href="home.php"><img src="includes/logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:20%;"/></a>
+				<img src="includes/banniereEcoVoiture.jpg" alt="banniereEcoVoiture"style="height:150px; width:50%;"/>		
 				<?php if($GLOBALS['connexion']==false){ ?>
 				<div class="nav navbar-right " >
 				
@@ -71,7 +69,9 @@ function footer(){ ?>
 <br><a href="apropos.php">A propos d'EcoVoiture</a> | <a href="faq.php">Foire aux questions</a> | <a href="Conditions.php">Conditions générales d'utilisation</a> | <a href="Nouscontacter.php">Nous contacter</a>	
 </div>
 </center>
-
+<<<<<<< HEAD
+	</body>
+	</html>	-->
 <?php } ?>
 
 

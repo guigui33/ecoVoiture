@@ -4,7 +4,11 @@ entete('Trajet Disponible');
 ?>
 
 <?php
+<<<<<<< HEAD
+				$mydb = mysqli_connect('localhost','root','','ecoVoiture2');
+=======
 				require('connexion.php');
+>>>>>>> f4c23c56294673db92363ed64e1364d7f67ff4df
 
 					$destination=$_POST['destination'];
 					$depart=$_POST['depart'];
