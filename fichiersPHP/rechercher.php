@@ -10,7 +10,7 @@ entete('Trajet Disponible');
 					$depart=$_POST['depart'];
 					$cbn=0;
 										
-					$query = "SELECT DateDepart, HeureDepart, IdDepart, IdArrivee, PlacesDispo, InfosTrajet FROM Trajets WHERE IdArrivee='$destination' AND IdDepart='$depart' ";
+					$query = "SELECT DateDepart, HeureDepart, IdDepart, IdArrivee, PlacesDispo, InfosTrajet FROM Trajets WHERE IdArrivee=0 AND IdDepart=0 ";
 					$result = pg_query($connexion,$query) or die("Query failed : ".pg_error($connexion));
 					
 					while ($donnees = pg_fetch_array($result)) 
