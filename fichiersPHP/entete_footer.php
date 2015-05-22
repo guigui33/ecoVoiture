@@ -32,12 +32,8 @@ function entete($titre){ ?>
 	</head>
 	<body>
 		<header>
-<<<<<<< HEAD
-			<nav class="navbar navbar-inverse" >
-=======
-		
 		<nav class="navbar navbar-default">
->>>>>>> f6fe6952f6b29eecb6e72343127d5869fed21c80
+
 				<div class="container-fluid">	
 				<img src="includes/logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:20%;"/>
 				<img src="includes/banniereEcoVoiture.jpg" alt="banniereEcoVoiture"style="height:150px; width:50%;" />
