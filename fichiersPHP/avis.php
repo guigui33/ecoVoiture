@@ -42,7 +42,7 @@ while ($donnees = mysqli_fetch_assoc($reponse))
 	   Commentaire:
        </label>
        <br />
-       <textarea name="commentaire" id="commentaire" rows="10" >
+       <textarea name="commentaire" id="commentaire" rows="10" onFocus="javascript:this.value=''"  >
 Poster un commentaire sur l'utilisateur (500 caracteres max)	
        </textarea>       
    </p>
