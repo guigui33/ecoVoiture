@@ -31,15 +31,26 @@ ul.notes-echelle li label {
   cursor: pointer;
 }
 
-footer {position:relative; bottom: 0; left: 0; right: 0;}
-
+footer {
+ position:relative;
+ bottom: 0; 
+ left: 0;
+ right: 0;
+}
+label
+{
+ display: block;
+ width: 175px;
+ float : left;
+ margin-left:40%;
+}
 
 .information{
 background-color:#c3c3c3;
 border:1px solide #c3c3c3;
 border-radius:5px 5px 5px 5px ;
 box-shadow: 10px 10px 5px #888888;
-margin-bottom:25px;
+margin-bottom:15px;
 padding:5px;
 margin-lefr:5px;
 margin-right:5px;

@@ -6,7 +6,7 @@ entete('home');
 <center>
 <fieldset>
  <legend> Trouver le covoiturage qui correspond a vos attentes : </legend>
-<form name="rechercher" action="rechercher.php" method="POST">
+<form name="rechercher" action="rechercher_annonce.php" method="POST">
 	<div id="entrerfavoris">
 	
 	<input class="bginput"  name="depart" id="RechercherDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)">
@@ -20,15 +20,15 @@ entete('home');
 <form action="proposer.php" method="post" >
 <fieldset>
  <legend> Proposer un trajet : </legend>
-<form name="rechercher" action="rechercher.php" method="POST">
+<form name="rechercher" action="rechercher_annonce.php" method="POST">
 	<div id="entrerfavoris">
 	<input class="bginput"  name="depart" id="ProposerDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)">
 	<input class="bginput"  name="destination" id="ProposerDesitnation" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)">
 	<input class="bginput"  name="date" id="date"  placeholder="Date du trajet" type="date" onchange="checkText(this.id)">
 	<a style="font-size: 36px;" ><button class="btn btn-default" type="submit">Proposer</button></a>
 </div>
-</br></br>
-<div class=" col-lg-offset-3">
+</br>
+<div class=" col-lg-offset-3" style=" margin-left:20%;">
         <div class="col-lg-3  information">
 			
 				<h4>TOULOUSE - PARIS</h4>

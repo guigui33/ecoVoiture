@@ -1,7 +1,9 @@
 <?php
 require('connexion.php');
 
-/*verification des informations donnés par le client avant de les inclurent dans la BD*//*
+//verification des informations donnés par le client avant de les inclurent dans la BD
+
+
 $email=isset($_POST['email'])?$_POST['email']:'';
 $login=isset($_POST['login'])?$_POST['login']:'';
 $psswd=isset($_POST['psswd'])?$_POST['psswd']:'';
@@ -15,15 +17,30 @@ $codePostal=isset($_POST['codePostal'])?$_POST['codePostal']:'';
 $ville=isset($_POST['ville'])?$_POST['ville']:'';
 
 
-if($email=='' || $login=='' || $passwd=='' || $passwdBis=='' || $nom=='' || $prenom=='' || $date=='' || $ville==''){
+if($email=='' && $login=='' && $passwd=='' && $passwdBis=='' && $nom=='' && $prenom=='' && $date=='' && $ville=='' && $codePostal='' && $adresse=''){
+
 		header('location:inscription.php?error=1');//si erreur on retourne error=1
-	}*/
-if($passwdBis!=$passwd){
-	header('location:inscription.php?error=2');//si erreur on retourne error=1
+		exit;
 	}
-	
-pg_query($connexion,"INSERT INTO login VALUES ('$Mail','$login','$passwd','$nom','$prenom'$telephone','$date');");//insert value dans table login
+if($psswdBis!=$psswd){
+	echo("Erreur Mot de passe different");
+	header('location:inscription.php?error=2');//si erreur on retourne error=1
+	exit;
+}
 
-pg_close($connexion);
-
+$query=pg_query($connexion,"SELECT idlieu FROM Lieux WHERE LOWER (ville) LIKE  LOWER ('%$ville%') ");
+				if(pg_num_rows($query) === 0){
+					
+					echo("La ville est incorrecte. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)");
+					header('location:inscription.php?error=ville');
+					exit;
+				}while ($row = pg_fetch_assoc($query)) {
+							$IdLieu=$row['idlieu'];
+							echo $row['idlieu'];
+							  
+							}
+				pg_query($connexion,"INSERT INTO utilisateurs VALUES ('3','$email','$login','$psswd','$nom','$prenom','$telephone','$date','test','test','$IdLieu');");//insert value dans table login
+				pg_close($connexion);
+				header('location:home.php');
+			
 ?>
