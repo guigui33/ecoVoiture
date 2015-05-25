@@ -57,15 +57,16 @@ function entete($titre){ ?>
 					<input class="btn btn-default" type="button" onclick="location.href='mesReservations.php'" value='Mes reservations'></input>
 					<input class="btn btn-default" type="button" onClick="location.href='seDeconnecter.php'" value='Se deconnecter'></input>
 				<?php } ?>
+				<?php } ?>
 			
 				
 		</header>
-<?php } 
+<?php  
 
 function footer(){ ?>
 <center>
 <div class="footer">
-<a href="apropos.php">A propos d'EcoVoiture</a> | <a href="faq.php">Foire aux questions</a> | <a href="Conditions.php">Conditions générales d'utilisation</a> | <a href="Nouscontacter.php">Nous contacter</a>	
+<a href="a_propos.php">A propos d'EcoVoiture</a> | <a href="faq.php">Foire aux questions</a> | <a href="conditions_generales.php">Conditions générales d'utilisation</a> | <a href="Nouscontacter.php">Nous contacter</a>	
 </div>
 </center>
 	</body>
