@@ -1,11 +1,9 @@
-
-
 <?php include('entete_footer.php'); 
 entete('home');
 ?>
 <center>
 <fieldset>
- <legend> Trouver le covoiturage qui correspond a vos attentes : </legend>
+ <legend> Trouvez le covoiturage qui correspond a vos attentes : </legend>
 <form name="rechercher" action="rechercher_annonce.php" method="POST">
 
 	
@@ -34,10 +32,10 @@ entete('home');
 					<ul >
 						<li class="list-unstyled">Conducteur : Pierre</li>
 						<li class="list-unstyled">Départ : Toulouse 31000</li>
-						<li class="list-unstyled">Arrivée : Paris, 75000</li>
+						<li class="list-unstyled">Arrivée : Paris, 75001</li>
 						<li class="list-unstyled">Date : 20/05/2015</li>
-						<li class="list-unstyled">Heure de Départ : 10h15 &nbsp; Heure d'Arrrivée prévue : 2h15</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 2h15 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
+						<li class="list-unstyled">Heure de Départ : 10h15</li>
+						<li class="list-unstyled">Heure d'Arrrivée prévue : 16h15 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
 					</ul>
 		
 		</div>
@@ -45,12 +43,12 @@ entete('home');
 			
 				<h4>TOULOUSE - PARIS</h4>
 					<ul >
-						<li class="list-unstyled">Conducteur : Pierre</li>
+						<li class="list-unstyled">Conducteur : Lea</li>
 						<li class="list-unstyled">Départ : Toulouse 31000</li>
-						<li class="list-unstyled">Arrivée : Paris, 75000</li>
+						<li class="list-unstyled">Arrivée : Paris, 75016</li>
 						<li class="list-unstyled">Date : 20/05/2015</li>
-						<li class="list-unstyled">Heure de Départ : 10h15 &nbsp; Heure d'Arrrivée prévue : 2h15</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 2h15 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
+						<li class="list-unstyled">Heure de Départ : 10h20</li>
+						<li class="list-unstyled">Heure d'Arrrivée prévue : 16h20 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
 					</ul>
 			
 		</div>
@@ -58,12 +56,12 @@ entete('home');
 			
 				<h4>TOULOUSE - PARIS</h4>
 					<ul >
-						<li class="list-unstyled">Conducteur : Pierre</li>
+						<li class="list-unstyled">Conducteur : Thomas</li>
 						<li class="list-unstyled">Départ : Toulouse 31000</li>
-						<li class="list-unstyled">Arrivée : Paris, 75000</li>
+						<li class="list-unstyled">Arrivée : Paris, 75013</li>
 						<li class="list-unstyled">Date : 20/05/2015</li>
-						<li class="list-unstyled">Heure de Départ : 10h15 &nbsp; Heure d'Arrrivée prévue : 2h15</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 2h15 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
+						<li class="list-unstyled">Heure de Départ : 15h00</li>
+						<li class="list-unstyled">Heure d'Arrrivée prévue : 21h00 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
 					</ul>
 			
 		</div>
@@ -72,12 +70,12 @@ entete('home');
 			
 				<h4>TOULOUSE - PARIS</h4>
 					<ul >
-						<li class="list-unstyled">Conducteur : Pierre</li>
+						<li class="list-unstyled">Conducteur : Martine</li>
 						<li class="list-unstyled">Départ : Toulouse 31000</li>
-						<li class="list-unstyled">Arrivée : Paris, 75000</li>
+						<li class="list-unstyled">Arrivée : Paris, 75004</li>
 						<li class="list-unstyled">Date : 20/05/2015</li>
-						<li class="list-unstyled">Heure de Départ : 10h15 &nbsp; Heure d'Arrrivée prévue : 2h15</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 2h15 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
+						<li class="list-unstyled">Heure de Départ : 15h45</li>
+						<li class="list-unstyled">Heure d'Arrrivée prévue : 21h45 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
 					</ul>
 			
 		</div>
@@ -85,12 +83,12 @@ entete('home');
 			
 				<h4>TOULOUSE - PARIS</h4>
 					<ul >
-						<li class="list-unstyled">Conducteur : Pierre</li>
+						<li class="list-unstyled">Conducteur : Jean</li>
 						<li class="list-unstyled">Départ : Toulouse 31000</li>
-						<li class="list-unstyled">Arrivée : Paris, 75000</li>
+						<li class="list-unstyled">Arrivée : Paris, 75008</li>
 						<li class="list-unstyled">Date : 20/05/2015</li>
-						<li class="list-unstyled">Heure de Départ : 10h15 &nbsp; Heure d'Arrrivée prévue : 2h15</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 2h15 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
+						<li class="list-unstyled">Heure de Départ : 18h10</li>
+						<li class="list-unstyled">Heure d'Arrrivée prévue : 00h10 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
 					</ul>
 			
 		</div>
@@ -98,12 +96,12 @@ entete('home');
 			
 				<h4>TOULOUSE - PARIS</h4>
 					<ul >
-						<li class="list-unstyled">Conducteur : Pierre</li>
+						<li class="list-unstyled">Conducteur : Clara</li>
 						<li class="list-unstyled">Départ : Toulouse 31000</li>
-						<li class="list-unstyled">Arrivée : Paris, 75000</li>
+						<li class="list-unstyled">Arrivée : Paris, 75009</li>
 						<li class="list-unstyled">Date : 20/05/2015</li>
-						<li class="list-unstyled">Heure de Départ : 10h15 &nbsp; Heure d'Arrrivée prévue : 2h15</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 2h15 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
+						<li class="list-unstyled">Heure de Départ : 18h30</li>
+						<li class="list-unstyled">Heure d'Arrrivée prévue : 00h30 </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
 					</ul>
 			
 		</div>
