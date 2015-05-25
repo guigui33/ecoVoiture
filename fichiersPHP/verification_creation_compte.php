@@ -28,7 +28,8 @@ if($psswdBis!=$psswd){
 	exit;
 }
 
-$query=pg_query($connexion,"SELECT idlieu FROM Lieux WHERE LOWER (ville) LIKE  LOWER ('%$ville%') ");
+$query=pg_query($connexion,"SELECT idlieu FROM Lieux WHERE LOWER (ville) LIKE  LOWER ('$ville') ");
+				
 				if(pg_num_rows($query) === 0){
 					
 					echo("La ville est incorrecte. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)");
@@ -39,7 +40,7 @@ $query=pg_query($connexion,"SELECT idlieu FROM Lieux WHERE LOWER (ville) LIKE  L
 							echo $row['idlieu'];
 							  
 							}
-				pg_query($connexion,"INSERT INTO utilisateurs VALUES ('3','$email','$login','$psswd','$nom','$prenom','$telephone','$date','test','test','$IdLieu');");//insert value dans table login
+				pg_query($connexion,"INSERT INTO utilisateurs (mail, login, motdepasse, nom, prenom, telephone, datenaissance, apropos, urlimage, idresidence) VALUES ('$email','$login','$psswd','$nom','$prenom','$telephone','$date','test','test','$IdLieu');");//insert value dans table login
 				pg_close($connexion);
 				header('location:home.php');
 			
