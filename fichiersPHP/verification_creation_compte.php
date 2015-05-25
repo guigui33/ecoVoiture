@@ -23,9 +23,8 @@ if($email=='' && $login=='' && $passwd=='' && $passwdBis=='' && $nom=='' && $pre
 		exit;
 	}
 if($psswdBis!=$psswd){
-	echo("Erreur Mot de passe different");
-	header('location:inscription.php?error=2');//si erreur on retourne error=1
-	exit;
+header('location:inscription.php?error=motdepasse')
+exit;
 }
 
 $query=pg_query($connexion,"SELECT idlieu FROM Lieux WHERE LOWER (ville) LIKE  LOWER ('$ville') ");
@@ -37,8 +36,6 @@ $query=pg_query($connexion,"SELECT idlieu FROM Lieux WHERE LOWER (ville) LIKE  L
 					exit;
 				}while ($row = pg_fetch_assoc($query)) {
 							$IdLieu=$row['idlieu'];
-							echo $row['idlieu'];
-							  
 							}
 				pg_query($connexion,"INSERT INTO utilisateurs (mail, login, motdepasse, nom, prenom, telephone, datenaissance, apropos, urlimage, idresidence) VALUES ('$email','$login','$psswd','$nom','$prenom','$telephone','$date','test','test','$IdLieu');");//insert value dans table login
 				pg_close($connexion);
