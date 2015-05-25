@@ -22,7 +22,7 @@ if($depart=='' && $destination=='' && $date=='' && $heure=='' && $place=='' && $
 $queryidvilledest=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (ville) LIKE LOWER('$destination') ");
 $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (ville) LIKE LOWER('$depart') ");
 				
-				if(pg_num_rows($queryidvilledest) === 0){
+				if(pg_num_rows($queryidvilledest) === 0) {
 					echo("La ville de destination. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)");
 					header('location:inscription.php?error=ville');
 					exit;

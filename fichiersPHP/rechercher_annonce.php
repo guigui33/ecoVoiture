@@ -12,25 +12,40 @@ entete('Trajet Disponible');
 					$depart=$_POST['depart'];
 					$cbn=0;
 										
-										
-					$idvilledest="SELECT idlieu FROM lieux WHERE LOWER (ville) LIKE LOWER('$destination') ";
-					$idvilledepart="SELECT idlieu FROM lieux WHERE LOWER (ville) LIKE LOWER('$depart') ";
-					$query = "SELECT DateDepart, HeureDepart, IdDepart, IdArrivee, PlacesDispo, InfosTrajet FROM Trajets WHERE IdArrivee='$depart' AND IdDepart='$destination' ";
+
+				$queryidvilledest=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (ville) LIKE LOWER('$destination') ");
+				$queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (ville) LIKE LOWER('$depart') ");
+				
+				if(pg_num_rows($queryidvilledest) === 0) {
+					echo("La ville de destination. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)");
+					header('location:home.php?error=ville');
+					exit;
+				}
+				while ($row = pg_fetch_assoc($queryidvilledepart)) {
+							$IdDepart=$row['idlieu'];
+							}
+				while ($row = pg_fetch_assoc($queryidvilledest)) {
+							$IdDest=$row['idlieu'];
+							}	
+						
+					$query = "SELECT datedepart, heuredepart, iddepart, idarrivee, placesdispo, infostrajet FROM Trajets WHERE idarrivee=$IdDepart AND iddepart=$IdDest";
 					$result = pg_query($connexion,$query) or die("Query failed : ".pg_error($connexion));
+					//$villedepart="SELECT ville FROM lieux WHERE LOWER (ville) LIKE LOWER('$destination') ";
+					//$villedest="SELECT ville FROM lieux WHERE LOWER (ville) LIKE LOWER('$destination') ";
 					
 					while ($donnees = pg_fetch_array($result)) 
 					{
 ?>
 <div class="col-lg-4">
 			
-				<h4><?php echo $donnees['IdDepart']; ?> - <?php echo $donnees['IdArrivee']; ?></h4>
+				<h4><?php echo $donnees['iddepart']; ?> - <?php echo $donnees['idarrivee']; ?></h4>
 					<ul >
 						<li class="list-unstyled">Conducteur : Pierre</li>
-						<li class="list-unstyled">Ville de Départ : <?php echo $donnees['IdDepart']; ?></li>
-						<li class="list-unstyled">Ville d'Arrivée : <?php echo $donnees['IdArrivee']; ?></li>
-						<li class="list-unstyled">Date : <?php echo $donnees['DateDepart']; ?></li>
-						<li class="list-unstyled">Heure de Départ : <?php echo $donnees['HeureDepart']; ?> &nbsp; Nombres de place disponible : <?php echo $donnees['PlacesDispo']; ?></li>
-						<li class="list-unstyled">Information : <?php echo $donnees['InfosTrajet']; ?>  </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
+						<li class="list-unstyled">Ville de Départ : <?php echo $donnees['iddepart']; ?></li>
+						<li class="list-unstyled">Ville d'Arrivée : <?php echo $donnees['idarrivee']; ?></li>
+						<li class="list-unstyled">Date : <?php echo $donnees['datedepart']; ?></li>
+						<li class="list-unstyled">Heure de Départ : <?php echo $donnees['heuredepart']; ?> &nbsp; Nombres de place disponible : <?php echo $donnees['placesdispo']; ?></li>
+						<li class="list-unstyled">Information : <?php echo $donnees['infostrajet']; ?>  </br><a class="btn btn-lg btn-success bouton" href="detail.html" role="button">Details Trajet</a></li>
 					</ul>
 			
 </div>
