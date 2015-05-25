@@ -17,19 +17,19 @@ entete('home');
 	<p><label for="date">Date: </label><input type="date" name="date" required  value="<?php echo date('Y-m-d', strtotime(date('Y-m-d')));?>"/> <br/>
 	<p><label for="heure">Heure de depart:</label> <input type="text" name="heure" required /> 
 	<p><label for="place">Nombre de place:</label> <input type="text" name="place" /> <br/>
-	<!--<p><label for="voiture">Voiture utilisée: </label><SELECT name="voiture" size="1">
-<OPTION>Pas de bagage
-<OPTION>Petit
-<OPTION>Moyen
-<OPTION>Grand
-</SELECT>
+	<!--<p><label for="voiture">Voiture utilisée: </label><select name="voiture" size="1">
+<option>Pas de bagage
+<option>Petit
+<option>Moyen
+<option>Grand
+</select>
 <br/>--> <br/>
-	<p><label for="bagages">Taille des bagages:</label> <SELECT name="bagage" size="1">
-<OPTION>Pas de bagage
-<OPTION>Petit
-<OPTION>Moyen
-<OPTION>Grand
-</SELECT>
+	<p><label for="bagages">Taille des bagages:</label> <select name="bagage" size="1">
+<option  value="aucun">Pas de bagage
+<option  value="petit">Petit
+<option  value="moyen">Moyen
+<option  value="grand">Grand
+</select>
 <br/>
 	<p><label for="information">Autre information:</label> <textarea name="information" required /></textarea><br/>
 	</fieldset>
@@ -40,6 +40,5 @@ entete('home');
 </form>
 
 <?php 
-
 footer();
-?>
+?> 	

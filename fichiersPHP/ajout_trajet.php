@@ -12,6 +12,7 @@ $place=isset($_POST['place'])?$_POST['place']:'';
 $bagages=isset($_POST['bagages'])?$_POST['bagages']:'';
 $information=isset($_POST['information'])?$_POST['information']:'';
 
+echo $destination;
 echo $date;
 
 if($depart=='' && $destination=='' && $date=='' && $heure=='' && $place=='' && $bagages='' && $information=''){
@@ -36,6 +37,6 @@ $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (v
 							}	
 				pg_query($connexion,"INSERT INTO trajets (datedepart, heuredepart, placesdispo, taillebagages, infostrajet, idVoitureutilisee,iddepart, idarrivee) VALUES ('$date','$heure','$place','$bagages','$information',1,'$IdDepart','$IdDest');");//insert value dans table login
 				pg_close($connexion);
-				//header('location:home.php');
+				header('location:home.php');
 			
 ?>
