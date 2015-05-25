@@ -24,12 +24,13 @@ entete('home');
 <option>Grand
 </select>
 <br/>--> <br/>
-	<p><label for="bagages">Taille des bagages:</label> <select name="bagage" size="1">
-<option  value="aucun">Pas de bagage
-<option  value="petit">Petit
-<option  value="moyen">Moyen
-<option  value="grand">Grand
-</select>
+	<p><label for="bagages">Taille des bagages:</label> 
+	<select name="bagages" id="bagages">
+		<option  value="aucun">Pas de bagage
+		<option  value="petit">Petit
+		<option  value="moyen">Moyen
+		<option  value="grand">Grand
+	</select>
 <br/>
 	<p><label for="information">Autre information:</label> <textarea name="information" required /></textarea><br/>
 	</fieldset>

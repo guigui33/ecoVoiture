@@ -23,7 +23,7 @@ if($email=='' && $login=='' && $passwd=='' && $passwdBis=='' && $nom=='' && $pre
 		exit;
 	}
 if($psswdBis!=$psswd){
-header('location:inscription.php?error=motdepasse')
+header('location:inscription.php?error=motdepasse');
 exit;
 }
 
