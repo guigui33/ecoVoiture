@@ -5,7 +5,7 @@ entete('contact_admin');
 
 <h2 style="background:#46bcde"> Contacter un administrateur </h2>
 
-<form action="verification_creation_compte.php" method="POST" >
+<form action="contacter_admin.php" method="POST" >
 	<fieldset>
 	<legend align="center">Formulaire de contact</legend>
 	
@@ -17,5 +17,6 @@ entete('contact_admin');
 	
 	<input class="btn btn-default" type="submit" value="Envoyer ma demande !" /></input></center>
 	
+
 </form>
 <?php footer(); ?>
