@@ -66,7 +66,7 @@ function entete($titre){ ?>
 function footer(){ ?>
 <center>
 <div class="footer">
-<a href="a_propos.php">A propos d'EcoVoiture</a> | <a href="faq.php">Foire aux questions</a> | <a href="conditions_generales.php">Conditions générales d'utilisation</a> | <a href="Nouscontacter.php">Nous contacter</a>	
+<a href="a_propos.php">A propos d'EcoVoiture</a> | <a href="faq.php">Foire aux questions</a> | <a href="conditions_generales.php">Conditions générales d'utilisation</a> | <a href="contact_admin.php">Nous contacter</a>	
 </div>
 </center>
 	</body>
