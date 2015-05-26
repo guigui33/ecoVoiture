@@ -8,29 +8,36 @@ else
 {
 	$passage_ligne = "\n";
 }
-//=====Déclaration des messages au format texte et au format HTML.
+//Recupération des premières données
 $message_initial=isset($_POST['message'])?$_POST['message']:'';
 $email=isset($_POST['email'])?$_POST['email']:'';
 $nom = strtok($email, "@");
 $telephone=isset($_POST['telephone'])?$_POST['telephone']:'';
-$message_html = "<html><head></head><body>$message_initial <br><br> $email <br> $telephone </body></html>";
+
+//Définition de l'objet
+$objet="Objet du contact : ";
+$objet.=isset($_POST['objet'])?$_POST['objet']:'';
+
+//Déclaration des messages au format HTML.
+$message_html = "<html><head>$objet</head><br><br><body>$message_initial<br><br>-------------------------------------------<br>$email<br>$telephone</body></html>";
  
-//=====Création de la boundary
+//réation de la boundary
 $boundary = "-----=".md5(rand());
  
-//=====Définition du sujet.
-$sujet=isset($_POST['objet'])?$_POST['objet']:'';
- 
-//=====Création du header de l'e-mail.
+//Définition du sujet
+$sujet="Question sur : ";
+$sujet.=isset($_POST['sujet'])?$_POST['sujet']:'';
+  
+//Création du header de l'e-mail.
 $header = "From: \"$nom\"<$email>".$passage_ligne;
 $header.= "Reply-to: \"$nom\" <$email>".$passage_ligne;
 $header.= "MIME-Version: 1.0".$passage_ligne;
 $header.= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
 
-//=====Création du message.
+//Création du message
 $message = $passage_ligne."--".$boundary.$passage_ligne;
 
-//=====Ajout du message au format HTML
+//Ajout du message au format HTML
 $message.= "Content-Type: text/html; charset=\"ISO-8859-1\"".$passage_ligne;
 $message.= "Content-Transfer-Encoding: 8bit".$passage_ligne;
 $message.= $passage_ligne.$message_html.$passage_ligne;
