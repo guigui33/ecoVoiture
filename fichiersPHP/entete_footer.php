@@ -24,9 +24,11 @@ function entete($titre){ ?>
 		<link href="../bootstrap-3.3.4-dist/css/bootstrap2.css" rel="stylesheet" media="screen">
 		<link href="css/custom.css" rel="stylesheet">
 		 <meta charset="utf-8">
-  <script src="../bootstrap-3.3.4-dist/js/jquery.js"></script>
-  <script type="text/javascript" src="../bootstrap-3.3.4-dist/js/bootstrap.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		  <script src="../bootstrap-3.3.4-dist/js/jquery.js"></script>
+		  <script type="text/javascript" src="../bootstrap-3.3.4-dist/js/bootstrap.js"></script>
+		  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		  <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.1.min.js"></script>
+		  <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery.ui/1.8.10/jquery-ui.js"></script>
   
 	</head>
 	<body>
