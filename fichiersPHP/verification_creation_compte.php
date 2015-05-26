@@ -1,5 +1,5 @@
 <?php
-require('connexion.php');
+//require('connexion.php');
 
 //verification des informations donnés par le client avant de les inclurent dans la BD
 
@@ -18,13 +18,17 @@ $ville=isset($_POST['ville'])?$_POST['ville']:'';
 
 
 if($email=='' && $login=='' && $passwd=='' && $passwdBis=='' && $nom=='' && $prenom=='' && $date=='' && $ville=='' && $codePostal='' && $adresse=''){
-
-		header('location:inscription.php?error=1');//si erreur on retourne error=1
 		exit;
 	}
 if($psswdBis!=$psswd){
-header('location:inscription.php?error=motdepasse');
+?>
+<script>
+alert("Erreur mot de passe different"); 
+ document.location.href = 'http://localhost/ecoVoiture/fichiersPHP/inscription.php';
+ </script>
+<?php 
 exit;
+
 }
 
 $query=pg_query($connexion,"SELECT idlieu FROM Lieux WHERE LOWER (ville) LIKE  LOWER ('$ville') ");
@@ -32,7 +36,7 @@ $query=pg_query($connexion,"SELECT idlieu FROM Lieux WHERE LOWER (ville) LIKE  L
 				if(pg_num_rows($query) === 0){
 					
 					echo("La ville est incorrecte. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)");
-					header('location:inscription.php?error=ville');
+					header('location:inscription.php');
 					exit;
 				}while ($row = pg_fetch_assoc($query)) {
 							$IdLieu=$row['idlieu'];

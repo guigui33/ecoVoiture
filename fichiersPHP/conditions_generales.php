@@ -3,7 +3,7 @@ require_once("entete_footer.php");//inclus le fichier entete
 entete('Conditions générales d utilisation');
 ?>
 
-<h2 style="background:#46bcde"> Conditions generales d'utilisations </h2>
+<h2 style="background:#46bcde" align="center"> Conditions generales d'utilisations </h2>
 
 
 
