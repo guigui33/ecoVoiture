@@ -34,7 +34,9 @@ entete('A propos');
 		
 		<h4>Le futur de "Ecovoiture"</h4>
 		<div>
-			Nous souhaitons proposé un service de qualité tout sans oublier nos objectifs de gratuité et d’écologie. Nous restons à votre écoute et vos avis seront d’une aide précieuse afin de mieux satisfaire de vos attentes. Si vous avez des idées, que ce soit dans le design, des options, des services, des manques ou toutes autres partie que vous pensez de nécessaires, contactez-nous via le formulaire de contact dont l'accès se trouve en bas de chaque page en cliquant sur "<a href="nousContacter.php">Nous contacter</a>".
+			Nous souhaitons proposé un service de qualité tout sans oublier nos objectifs de gratuité et d’écologie. Nous restons à votre écoute et vos avis seront d’une aide précieuse afin de mieux satisfaire de vos attentes. 
+			Si vous avez des idées, que ce soit dans le design, des options, des services, des manques ou toutes autres partie que vous pensez de nécessaires, contactez-nous via le formulaire de contact dont l'accès se trouve 
+			en bas de chaque page en cliquant sur "<a href="contact_admin.php">Nous contacter</a>".
 
 			<br><br>Un message de la part de toute notre équipe : <b>nous vous remercions d’utiliser notre plateforme et sommes reconnaissant pour votre confiance.</b>
 
