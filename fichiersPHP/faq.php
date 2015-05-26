@@ -32,7 +32,7 @@ $(document).ready(function() {
 			<h4>Comment se connecter au site ?</h4>
 			<div class="accordeon">
 				Pour vous incrire sur le site, il faut vous rendre dans la partie gauche de la banière présente en haut du site puis renseigner votre identifiant et votre mot de passe. Si vos identifiants sont correctes, vous serez 
-				redirigé sur la page d'accueil en étant authentifié. Dans le cas contraire, vous serez redirigé sur le page d'accueil avecu n message d'erreur de connexion.
+				redirigé sur la page d'accueil en étant authentifié. Dans le cas contraire, vous serez redirigé sur le page d'accueil avec un message d'erreur de connexion.
 			</div>
 	
 			<h4>Comment rechercher un trajet ?</h4>
@@ -49,7 +49,7 @@ $(document).ready(function() {
 			
 			<h4>Comment supprimer mon compte</h4>
 			<div class="accordeon">
-				Pour supprimer votre compte, il vous faut utiliser le formulaire de contact dont l'accès se trouve en bas de chaque page en cliquant sur "<a href="nousContacter.php">Nous contacter</a>". Préciser le motif de 
+				Pour supprimer votre compte, il vous faut utiliser le formulaire de contact dont l'accès se trouve en bas de chaque page en cliquant sur "<a href="contact_admin.php">Nous contacter</a>". Préciser le motif de 
 				votre demande dans le menu déroulant et un administrateur vous répondra sous 48h.
 			</div>
 			
@@ -60,7 +60,7 @@ $(document).ready(function() {
 			
 			<h4>Je rencontre un problème non recensé dans la FAQ, que faire ?</h4>
 			<div class="accordeon">
-				Vous pouvez nous contacter via le formulaire de contact dont l'accès se trouve en bas de chaque page en cliquant sur "<a href="nousContacter.php">Nous contacter</a>" pour envoyer votre demande à un administrateur qui saura vous repondre.
+				Vous pouvez nous contacter via le formulaire de contact dont l'accès se trouve en bas de chaque page en cliquant sur "<a href="contact_admin.php">Nous contacter</a>" pour envoyer votre demande à un administrateur qui saura vous repondre.
 				
 				<br><br>Votre requete sera traitée entre 24h et 48h. Soyez le plus précis possible dans votre demande afin que votre problème soit resolu le plus rapidement possible.
 			</div>	
