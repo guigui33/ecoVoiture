@@ -37,8 +37,10 @@ $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (v
 				while ($row = pg_fetch_assoc($queryidvilledest)) {
 							$IdDest=$row['idlieu'];
 							}	
-				pg_query($connexion,"INSERT INTO trajets (datedepart, heuredepart, placesdispo, taillebagages, infostrajet, idVoitureutilisee,iddepart, idarrivee) VALUES ('$date','$heure','$place','$bagage','$information',1,'$IdDepart','$IdDest');");//insert value dans table login
+				
+				$requete=pg_query($connexion,"INSERT INTO trajets (datedepart, heuredepart, placesdispo, taillebagages, infostrajet, idVoitureutilisee,iddepart, idarrivee) VALUES ('$date','$heure','$place','$bagage','$information',1,'$IdDepart','$IdDest');");//insert value dans table login
+				//echo $requete;
 				pg_close($connexion);
-				header('location:home.php');
+				//header('location:home.php');
 			
 ?>

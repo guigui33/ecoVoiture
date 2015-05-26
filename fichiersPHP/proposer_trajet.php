@@ -25,7 +25,7 @@ entete('home');
 </select>
 <br/>--> <br/>
 	<p><label for="bagages">Taille des bagages:</label> 
-	<select name="bagages" id="bagages">
+	<select name="bagage" id="bagage">
 		<option  value="aucun">Pas de bagage
 		<option  value="petit">Petit
 		<option  value="moyen">Moyen
