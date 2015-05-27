@@ -6,8 +6,7 @@ entete('A propos');
 <h2 style="background:#46bcde"> A propos d'Ecovoiture </h2>
 
 <body>
-<div id="container">
-	<div id="contenu">	
+	<div style="margin-left:25px; margin-right:25px" align="justify">	
 		<h4>Qui sommes nous ?</h4>
 		<div>
 			Au cours d'un projet étudiant, nous avons décidé de mettre en place une plateforme de covoiturage gratuit pour les étudiants. Le site a été développé par nos soins et subira de régulières mises à jour pour améliorer les services proposés. Notre site web et notre base de données sont hébergées chez "Alwaysdata.com". 
@@ -40,7 +39,6 @@ entete('A propos');
 		</div>
 		<br>
 	</div>
-</div>
 </body>
 
 <?php footer(); ?>

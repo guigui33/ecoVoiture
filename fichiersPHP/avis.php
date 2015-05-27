@@ -1,7 +1,4 @@
-
-
 <?php 
-//include('header.php');
 include('entete_footer.php'); 
 entete('avis');
 ?>
@@ -105,5 +102,3 @@ Poster un commentaire sur l'utilisateur (500 caracteres max)
 <?php
 footer();
 ?>
-
-
