@@ -26,11 +26,13 @@ $queryidvilledest=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (vil
 $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (ville) LIKE LOWER('$depart') ");
 				
 				if(pg_num_rows($queryidvilledest) === 0) {
-                    <script>
-                        alert("La ville de destination est incorrecte, il se peut qu'elle ne soit pas en France"); 
-                        document.location.href = 'http://localhost/ecoVoiture/fichiersPHP/inscription.php';
-                    </script>
-					header('location:ajout_trajet.php?error=ville');
+?>
+<script>
+    alert("La ville de destination est incorrecte, il se peut qu'elle ne soit pas en France"); 
+    document.location.href = 'http://localhost/ecoVoiture/fichiersPHP/inscription.php';
+</script>
+<?php
+                header('location:ajout_trajet.php?error=ville');
 					exit;
 				}
 				echo $queryidvilledest;
