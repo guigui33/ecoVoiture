@@ -26,8 +26,11 @@ $queryidvilledest=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (vil
 $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (ville) LIKE LOWER('$depart') ");
 				
 				if(pg_num_rows($queryidvilledest) === 0) {
-					echo("La ville de destination. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)");
-					header('location:inscription.php?error=ville');
+                    <script>
+                        alert("La ville de destination. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)"); 
+                        document.location.href = 'http://localhost/ecoVoiture/fichiersPHP/inscription.php';
+                    </script>
+					header('location:ajout_trajet.php?error=ville');
 					exit;
 				}
 				echo $queryidvilledest;
@@ -41,6 +44,6 @@ $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (v
 				$requete=pg_query($connexion,"INSERT INTO trajets (datedepart, heuredepart, placesdispo, taillebagages, infostrajet, idVoitureutilisee,iddepart, idarrivee) VALUES ('$date','$heure','$place','$bagage','$information',1,'$IdDepart','$IdDest');");//insert value dans table login
 				//echo $requete;
 				pg_close($connexion);
-				//header('location:home.php');
+				header('location:home.php');
 			
 ?>
