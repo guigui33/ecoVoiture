@@ -29,7 +29,7 @@ $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (v
 ?>
 <script>
     alert("La ville de destination est incorrecte, il se peut qu'elle ne soit pas en France"); 
-    document.location.href = 'http://localhost/ecoVoiture/fichiersPHP/inscription.php';
+    document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/ajout_trajet.php';
 </script>
 <?php
                 header('location:ajout_trajet.php?error=ville');
