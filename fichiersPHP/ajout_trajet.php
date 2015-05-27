@@ -27,7 +27,7 @@ $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (v
 				
 				if(pg_num_rows($queryidvilledest) === 0) {
                     <script>
-                        alert("La ville de destination. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)"); 
+                        alert("La ville de destination est incorrecte, il se peut qu'elle ne soit pas en France"); 
                         document.location.href = 'http://localhost/ecoVoiture/fichiersPHP/inscription.php';
                     </script>
 					header('location:ajout_trajet.php?error=ville');
