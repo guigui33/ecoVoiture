@@ -4,10 +4,7 @@ entete('Trajet Disponible');
 ?>
 
 <?php
-
 				require('connexion.php');
-
-
 					$destination=$_POST['destination'];
 					$depart=$_POST['depart'];
 					$cbn=0;			
