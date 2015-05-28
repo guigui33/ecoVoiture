@@ -54,7 +54,7 @@ entete('Conditions générales d utilisation');
 			
 			<h4>5 - La Ponctualité</h4>
 			<p>
-				pToutes les personnes doivent être présentes au rendez-vous à l'heure et au lieu indiqué sur le trajet. Le conducteur est en droit de refuser un passager si ce dernier se présente avec un retard trop important. Les passagers sont en droit de signaler aux administrateurs d'Ecovoiture tout conducteur refusant des passagers de manière abusive en nous contactant via la page "<a href="nousContacter.php">Nous contacter</a>". Les passagers sont également en droit d'annuler un trajet si le conduteur se présente plus d'une heure après l'heure de départ prévue.
+				Toutes les personnes doivent être présentes au rendez-vous à l'heure et au lieu indiqué sur le trajet. Le conducteur est en droit de refuser un passager si ce dernier se présente avec un retard trop important. Les passagers sont en droit de signaler aux administrateurs d'Ecovoiture tout conducteur refusant des passagers de manière abusive en nous contactant via la page "<a href="nousContacter.php">Nous contacter</a>". Les passagers sont également en droit d'annuler un trajet si le conduteur se présente plus d'une heure après l'heure de départ prévue.
 			</p>
 			<br>
 			

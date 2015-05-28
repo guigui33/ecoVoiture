@@ -47,7 +47,7 @@ function entete($titre){ ?>
 		<nav class="navbar navbar-default">
 				<div class="container-fluid">	
 				<!-- <a href="home.php"><img src="includes/logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:20%;"/></a> -->
-				<center><img style="margin-bottom: 5px;" src="includes/banniere_finale.png" alt="banniereEcoVoiture"/></center>
+				<center><a href="home.php"><img style="margin-bottom: 5px;" src="includes/banniere_finale.png" alt="banniereEcoVoiture"/></a></center>
 				<?php if($GLOBALS['connexion']==false){ ?>
 				<center>Connectez vous pour profiter pleinement d'EcoVoiture <a href="inscription.php?">(Pas encore inscrit?)</a></center>
 				<form action="verificationCompte.php" method="POST" style="margin-bottom: 0px;">
@@ -62,9 +62,9 @@ function entete($titre){ ?>
 				<?php }			
 				else{?>
 					<center>Bienvenue <?php echo $GLOBALS['nom'];?>, bonne visite sur EcoVoiture !</center>
-					<center><input class="btn btn-default" type="button" onclick="location.href='mesAnnonces.php'" value='Mes annonces'></input>
-					<input class="btn btn-default" type="button" onclick="location.href='monProfil.php'" value='Mon profil'></input>
-					<input class="btn btn-default" type="button" onclick="location.href='mesReservations.php'" value='Mes reservations'></input>
+					<center><input class="btn btn-default" type="button" onclick="location.href='mes_annonces.php'" value='Mes annonces'></input>
+					<input class="btn btn-default" type="button" onclick="location.href='profil_utilisateur.php'" value='Mon profil'></input>
+					<input class="btn btn-default" type="button" onclick="location.href='mes_reservations.php'" value='Mes reservations'></input>
 					<input class="btn btn-default" type="button" onClick="location.href='seDeconnecter.php'" value='Se deconnecter'></input></center><br>
 				<?php } ?>
 				<?php } ?>
