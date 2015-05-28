@@ -6,14 +6,14 @@ entete('Profil de ...');
 <center>
 <legend> Profil de ... :  </legend></center>
 
-<TABLE width="60%"> 
-<Td style="border:solid 1px black;">
+<p style="color:#333333; font-size: 21px;"> Mes informations</p>
+
 Evaluation moyenne du conducteur : 
-<br>
+<br><br>
 Préférences pendant un trajet : 
-<br>
+<br><br>
 Je covoiture depuis le : 
-<br>
+<br><br>
 Ma voiture préférée : 
-</Td>
-</TABLE> 
+<br><br>
+<p style="color:#333333; font-size: 21px;"> A propos de mois</p>
