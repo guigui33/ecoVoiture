@@ -37,8 +37,6 @@ var chkZ = 1;
    return false;
   }
 }
-
-
 </script>
 
 <h2 class="alerte alert-info" align="center"> Inscription </h2>
