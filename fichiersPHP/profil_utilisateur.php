@@ -10,10 +10,10 @@ entete('Profil de ...');
 <Td style="border:solid 1px black;">
 Evaluation moyenne du conducteur : 
 <br>
-Preferences pendant un trajet : 
+Préférences pendant un trajet : 
 <br>
 Je covoiture depuis le : 
 <br>
-Ma voiture preferee : 
+Ma voiture préférée : 
 </Td>
 </TABLE> 

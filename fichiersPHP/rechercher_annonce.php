@@ -18,14 +18,14 @@ entete('Trajet Disponible');
 				
 				if(pg_num_rows ($queryidvilledepart) === 0 ) {
 				?><script> alert("La ville de depart est inconnue. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)");
-				document.location.href = 'http://localhost/ecoVoiture/fichiersPHP/home.php';
+				document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/home.php';
 				<?php
 				}				
 				
 				if(pg_num_rows($queryidvilledest) === 0) {
 					?>
 					<script> alert("La ville de destination est inconnue. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)");
-					 document.location.href = 'http://localhost/ecoVoiture/fichiersPHP/home.php';
+					 document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/home.php';
 					 </script>
 					<?php
 					exit;
@@ -51,8 +51,8 @@ entete('Trajet Disponible');
 						<li class="list-unstyled">Ville de Départ : <?php echo $donnees['iddepart']; ?></li>
 						<li class="list-unstyled">Ville d'Arrivée : <?php echo $donnees['idarrivee']; ?></li>
 						<li class="list-unstyled">Date : <?php echo $donnees['datedepart']; ?></li>
-						<li class="list-unstyled">Heure de Départ : <?php echo $donnees['heuredepart']; ?> &nbsp; Nombres de place disponible : <?php echo $donnees['placesdispo']; ?></li>
-						<li class="list-unstyled">Information : <?php echo $donnees['infostrajet']; ?>  </br><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button">Details Trajet</a></li>
+						<li class="list-unstyled">Heure de Départ : <?php echo $donnees['heuredepart']; ?> &nbsp; Nombres de places disponibles : <?php echo $donnees['placesdispo']; ?></li>
+						<li class="list-unstyled">Informations : <?php echo $donnees['infostrajet']; ?>  </br><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button">Details Trajet</a></li>
 					</ul>
 			
 </div>

@@ -37,7 +37,7 @@ else {
 		else{
 			pg_close($connexion);
 			echo "Erreur combinaison login/mdp";
-			//header('location:home.php?error=2');
+			header('location:home.php?error=2');
 		}
 			
 		}

@@ -3,7 +3,7 @@
 <?php
 require('connexion.php');
 
-//verification des informations donnés par le client avant de les inclurent dans la BD
+//verification des informations données par le client avant de les inclurent dans la BD
 
 
 $depart=isset($_POST['depart'])?$_POST['depart']:'';

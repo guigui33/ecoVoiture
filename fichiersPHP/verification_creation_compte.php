@@ -35,7 +35,7 @@ $query=pg_query($connexion,"SELECT idlieu FROM Lieux WHERE LOWER (ville) LIKE  L
 				
 				if(pg_num_rows($query) === 0){
 					
-					echo("La ville est incorrecte. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)");
+					echo("La ville est incorrecte. (Il se peut qu'elle ne soit pas dans la base de données. Si c'est le cas, veuillez faire une requête à l'administrateur)");
 					header('location:inscription.php');
 					exit;
 				}while ($row = pg_fetch_assoc($query)) {
