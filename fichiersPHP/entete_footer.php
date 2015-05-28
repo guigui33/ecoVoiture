@@ -47,7 +47,7 @@ function entete($titre){ ?>
 		<nav class="navbar navbar-default">
 				<div class="container-fluid">	
 				<!-- <a href="home.php"><img src="includes/logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:20%;"/></a> -->
-				<center><img style="margin-bottom: 5px;" src="includes/banniere_finale.png" alt="banniereEcoVoiture"/></center>
+				<center><a href="home.php"><img style="margin-bottom: 5px;" src="includes/banniere_finale.png" alt="banniereEcoVoiture"/></a></center>
 				<?php if($GLOBALS['connexion']==false){ ?>
 				<center>Connectez vous pour profiter pleinement d'EcoVoiture <a href="inscription.php?">(Pas encore inscrit?)</a></center>
 				<form action="verificationCompte.php" method="POST" style="margin-bottom: 0px;">
