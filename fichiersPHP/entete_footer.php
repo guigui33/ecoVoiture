@@ -4,15 +4,26 @@ pour appeler l'entete faite au debut du fichier entete($titre);
 $titre=nom de la page 
 puis a la fin du fichier faite footer();
 */
+include('droitAccesPage.php');
+
 session_start();
 	$connexion;
-	if(!isset($_SESSION['logged']) || !$_SESSION['logged']){
+	if(!isset($_SESSION['logged']) || !$_SESSION['logged'])//si l'utilisateur n'est pas connecté
+	{
 		$connexion=false;
+		/*test si l'utilisateur peut accèder à la page*/
+		$titreFichier=$_SERVER['SCRIPT_NAME'];
+		$titreFichier=basename ( $titreFichier );
+		if(!isDroitAccesPage($titreFichier)){
+				header('location:home.php');
+		}
 	}
 	else {
 		$connexion=true;
 		$nom=$_SESSION['nom'];
 		}	
+		
+		
 		
 function entete($titre){ ?>
 	<!DOCTYPE html>
