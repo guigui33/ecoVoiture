@@ -3,49 +3,42 @@ require_once("entete_footer.php");//inclus le fichier entete
 entete('A propos');
 ?>
 
-<h2 style="background:#46bcde"> A propos de Ecovoiture </h2>
+<h2 style="background:#46bcde"> A propos d'Ecovoiture </h2>
 
 <body>
-<div id="container">
-	<div id="contenu">	
-		<h4>Qui somme nous ?</h4>
+	<div style="margin-left:25px; margin-right:25px" align="justify">	
+		<h4>Qui sommes nous ?</h4>
 		<div>
-			Nous sommes 4 étudiants qui avons décidé de mettre en place une plateforme de covoiturage gratuit pour les étudiants. Nous utilisons l’hébergeur « Alwaysdata » pour notre base de données ainsi que notre site web. 
-			Nous avons développé ce site de nos propres manières du début jusqu’à la fin, pouvant modifier ou améliorer les services proposés.
+			Au cours d'un projet étudiant, nous avons décidé de mettre en place une plateforme de covoiturage gratuit pour les étudiants. Le site a été développé par nos soins et subira de régulières mises à jour pour améliorer les services proposés. Notre site web et notre base de données sont hébergées chez "Alwaysdata.com". 
 		</div>
 		<br>
 		
-		<h4>Le but de "Ecovoiture"</h4>
+		<h4>Le but d'Ecovoiture</h4>
 		<div>
-			Ecovoiture est comme cité plus haut, totalement gratuit dont l’objectif est de solliciter la solidarité des étudiants pour permettre une entraide. Cela signifie différents points à nos yeux :
+			Ecovoiture est un site web totalement gratuit dont le fonctionnement est basé sur la solidarité des étudiants. À nos yeux, la solidarité siginifie :
 			
 			<ul TYPE="circle">
-			<li>Aider les étudiants qui ont besoins de se déplacer pour une raison personnelle et ayant peu de moyens financiers. Cela peut rapidement devenir compliqué dans notre société où il est demandé de 
-			payer sa part des que l’on souhaite faire quelque chose
+			<li>Aider les étudiants qui ont besoin de se déplacer pour une raison personnelle mais n'ayant que peu de moyens financiers.
 			
-			<li>Renouer des liens sociaux entre les personnes et faire de nouvelles rencontres. Il faut s’ouvrir et faire le pas pour faire de nouvelles rencontres et nouer de nouveaux liens. Facebook, Tweeter et autres réseaux 
-			sociaux ne sont pas les seuls moyens d’interaction sociale, de même pour les rencontres amoureuses de site spécialisé, durant un covoiturage il est possible de faire La rencontre que vous attendez depuis longtemps !!
+			<li>Nouer des liens sociaux entre les personnes et faire de nouvelles rencontres. Il faut savoir s’ouvrir aux autres et franchir le pas pour faire des rencontres et nouer des liens. Facebook, Twitter et autres réseaux sociaux ne sont pas les seuls moyens d’interaction sociale. Il en va de même pour les rencontres amoureuses sur les sites spécialisés. Durant un covoiturage il est possible de faire "LA" rencontre que vous n'attendiez plus !!
 			
-			<li>Mais aussi faire une action écologique pour la planète quand de nos jours, la pollution est un sujet quotidien de nos vie. Au lieu que chaque personne prenne sa voiture seul et fasse son trajet, autant remplir 
-			cette même voiture et permette d’éviter la consommation de carburant de 3 autres véhicule ou plus.
+			<li>Faire un geste pour la planète, quand de nos jours, la pollution est un sujet quotidien. Plutôt que de prendre sa voiture seul, autant en profiter pour faire votre trajet à plusieurs et ainsi diminuer la pollution de plusieurs véhicules.
 			</ul>
 		</div>
 		<br>
 		
-		<h4>Le futur de "Ecovoiture"</h4>
+		<h4>Le futur d'Ecovoiture</h4>
 		<div>
-			Nous souhaitons proposé un service de qualité tout sans oublier nos objectifs de gratuité et d’écologie. Nous restons à votre écoute et vos avis seront d’une aide précieuse afin de mieux satisfaire de vos attentes. 
-			Si vous avez des idées, que ce soit dans le design, des options, des services, des manques ou toutes autres partie que vous pensez de nécessaires, contactez-nous via le formulaire de contact dont l'accès se trouve 
-			en bas de chaque page en cliquant sur "<a href="contact_admin.php">Nous contacter</a>".
+			Nous souhaitons proposer un service de qualité, gratuit et écologique. Pour cela, nous restons à votre écoute et vos avis seront une aide précieuse afin de faire évoluer ce projet. 
+			Si vous avez des idées, que ce soit pour le design, le contenu, les services ou toute autre partie, contactez-nous via le formulaire de contact en cliquant sur le lien "<a href="contact_admin.php">Nous contacter</a>" présent au bas de chaque page.
 
-			<br><br>Un message de la part de toute notre équipe : <b>nous vous remercions d’utiliser notre plateforme et sommes reconnaissant pour votre confiance.</b>
+			<br><br>Un message de la part de toute notre équipe : <b>nous vous remercions d’utiliser notre plateforme de covoiturage et vous souhaitons une bonne navigation.</b>
 
 			<br><br><center><b>Ecovoiture</b></center>
 
 		</div>
 		<br>
 	</div>
-</div>
 </body>
 
 <?php footer(); ?>

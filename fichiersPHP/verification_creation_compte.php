@@ -24,7 +24,7 @@ if($psswdBis!=$psswd){
 ?>
 <script>
 alert("Erreur mot de passe different"); 
- document.location.href = 'http://localhost/ecoVoiture/fichiersPHP/inscription.php';
+ document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/inscription.php';
  </script>
 <?php 
 exit;
