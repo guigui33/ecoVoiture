@@ -1,5 +1,5 @@
 <?php
-//require('connexion.php');
+require('connexion.php');
 
 //verification des informations donnés par le client avant de les inclurent dans la BD
 
@@ -17,19 +17,12 @@ $codePostal=isset($_POST['codePostal'])?$_POST['codePostal']:'';
 $ville=isset($_POST['ville'])?$_POST['ville']:'';
 
 
+echo $date;
+
 if($email=='' && $login=='' && $passwd=='' && $passwdBis=='' && $nom=='' && $prenom=='' && $date=='' && $ville=='' && $codePostal='' && $adresse=''){
 		exit;
 	}
-if($psswdBis!=$psswd){
 
-header("location:inscription.php?mdp=erreur");
-/*<script>
-alert("Erreur mot de passe different"); 
- document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/inscription.php';
- </script>*/
-exit;
-
-}
 
 $query=pg_query($connexion,"SELECT idlieu FROM Lieux WHERE LOWER (ville) LIKE  LOWER ('$ville') ");
 				
@@ -41,7 +34,7 @@ $query=pg_query($connexion,"SELECT idlieu FROM Lieux WHERE LOWER (ville) LIKE  L
 				}while ($row = pg_fetch_assoc($query)) {
 							$IdLieu=$row['idlieu'];
 							}
-				pg_query($connexion,"INSERT INTO utilisateurs (mail, login, motdepasse, nom, prenom, telephone, datenaissance, apropos, urlimage, idresidence) VALUES ('$email','$login','$psswd','$nom','$prenom','$telephone','$date','test','test','$IdLieu');");//insert value dans table login
+				pg_query($connexion,"INSERT INTO utilisateurs (mail, login, motdepasse, nom, prenom, telephone, datenaissance, apropos, urlimage, idresidence) VALUES ('$email','$login','$psswd','$nom','$prenom','$telephone','$date','test','test','$IdLieu');");
 				pg_close($connexion);
 				header('location:home.php');
 			
