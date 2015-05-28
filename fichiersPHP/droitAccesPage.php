@@ -5,7 +5,8 @@
 function isDroitAccesPage($titreFichier){ 
 	$listeFichiersInterdits=array(
 	"profil_utilisateur.php",
-	"fiche_annonce.php"
+	"fiche_annonce.php",
+	"proposer_trajet.php"
 	);
 	$i=0;
 	while($i<count($listeFichiersInterdits)){ 
