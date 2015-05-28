@@ -62,9 +62,9 @@ function entete($titre){ ?>
 				<?php }			
 				else{?>
 					<center>Bienvenue <?php echo $GLOBALS['nom'];?>, bonne visite sur EcoVoiture !</center>
-					<center><input class="btn btn-default" type="button" onclick="location.href='mesAnnonces.php'" value='Mes annonces'></input>
-					<input class="btn btn-default" type="button" onclick="location.href='monProfil.php'" value='Mon profil'></input>
-					<input class="btn btn-default" type="button" onclick="location.href='mesReservations.php'" value='Mes reservations'></input>
+					<center><input class="btn btn-default" type="button" onclick="location.href='mes_annonces.php'" value='Mes annonces'></input>
+					<input class="btn btn-default" type="button" onclick="location.href='profil_utilisateur.php'" value='Mon profil'></input>
+					<input class="btn btn-default" type="button" onclick="location.href='mes_reservations.php'" value='Mes reservations'></input>
 					<input class="btn btn-default" type="button" onClick="location.href='seDeconnecter.php'" value='Se deconnecter'></input></center><br>
 				<?php } ?>
 				<?php } ?>
