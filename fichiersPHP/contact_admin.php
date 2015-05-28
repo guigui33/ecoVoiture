@@ -3,7 +3,7 @@ require_once("entete_footer.php");//inclus le fichier entete
 entete('contact_admin');
 ?>
 
-<h2 style="background:#46bcde"> Contacter un administrateur </h2>
+<h2 style="background:#46bcde" align="center"> Contacter un administrateur </h2>
 
 <form action="contacter_admin.php" method="POST" >
 	<fieldset>
@@ -11,7 +11,7 @@ entete('contact_admin');
 	<center><div>
 		Avez vous pensé à consulter la FAQ avant de nous contacter ?
 		<br>La réponse a votre question s'y trouve peut-être !
-		<br><input type="button" name="lien1" value="Accéder à la FAQ" onclick="self.location.href='faq.php'" style="background-color:#BLUE" style="color:white; font-weight:bold"onclick>
+		<br><input class="btn btn-default"  type="button" name="lien1" value="Accéder à la FAQ" onclick="self.location.href='faq.php'">
 		<br><br><br>
 	</div></center>
 	
