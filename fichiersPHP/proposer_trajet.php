@@ -14,18 +14,6 @@ function verif_formulaire()
    document.formulaire.heure.focus();
    return false;
   }
-  
- var chkZ = 1;
- for(i=0;i<document.formulaire.date.value.length;++i)
-   if(document.formulaire.date.value.charAt(i) < "0"
-   || document.formulaire.date.value.charAt(i) > "9"
-   || document.formulaire.date.value.charAt(i) != '/')
-     chkZ = -1;
- if(chkZ == -1) {
-   alert("La date saisie n'est pas valide. Format = JJ/MM/AAAA");
-   document.formulaire.date.focus();
-   return false;
-  }
 }
 </script>
 
