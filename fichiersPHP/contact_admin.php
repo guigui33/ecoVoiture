@@ -3,9 +3,25 @@ require_once("entete_footer.php");//inclus le fichier entete
 entete('contact_admin');
 ?>
 
+<script type="text/javascript">
+function verif_formulaire()
+{
+ var chkZ = 1;
+ for(i=0;i<document.formulaire.telephone.value.length;++i)
+   if(document.formulaire.telephone.value.charAt(i) < "0"
+   || document.formulaire.telephone.value.charAt(i) > "9")
+     chkZ = -1;
+ if(chkZ == -1) {
+   alert("Le numéro de téléphone saisi n'est pas valide");
+   document.formulaire.telephone.focus();
+   return false;
+  }
+}
+</script>
+
 <h2 style="background:#46bcde" align="center"> Contacter un administrateur </h2>
 
-<form action="contacter_admin.php" method="POST" >
+<form name="formulaire" action="contacter_admin.php" method="POST" onSubmit="return verif_formulaire()">
 	<fieldset>
 	<legend align="center">Formulaire de contact</legend>
 	<center><div>
@@ -15,15 +31,15 @@ entete('contact_admin');
 		<br><br><br>
 	</div></center>
 	
-	<p><label for="sujet">Sujet</label> 
+	<p><label for="sujet">Sujet de votre question : </label> 
 	<select name="sujet" id="sujet">
-		<option  value="Fonctionnement du site">J'ai une question sur le fonctionnement du site
-		<option  value="Reservations de trajets">J'ai une question sur les réservations de trajet
-		<option  value="Propositions de trajet">J'ai une question sur les propositions de trajet
-		<option  value="Supprimer mon compte">Je veux supprimer mon compte
-		<option  value="Victime de propos inapproprie">J'ai été victime de propos inapproprié (insultes, discriminations, ...) 
-		<option  value="Probleme technique">J'ai un problème technique
-		<option  value="Autre">Autre
+		<option  value="Fonctionnement du site">Le fonctionnement du site
+		<option  value="Reservations de trajets">Les réservations de trajets
+		<option  value="Propositions de trajet">Les propositions de trajets
+		<option  value="Supprimer mon compte">Supprimer mon compte
+		<option  value="Signaler un abus">Signaler un abus 
+		<option  value="Probleme technique">Problème technique
+		<option  value="Autre probleme">Autre problème
 	</select>
 	</p>
 	

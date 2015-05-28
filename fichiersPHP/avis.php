@@ -18,7 +18,7 @@ catch(Exception $e)
 ?>
 <form method="post" action="traitement.php">
  
-    <label for="utilisateur">Quel utilisateur voulez vous noter ? :</label><br />
+    <label for="utilisateur">Quel utilisateur voulez vous noter ?</label><br />
     <select name="utilisateur" id="utilisateur">
  
 <?php
@@ -36,7 +36,7 @@ while ($donnees = mysqli_fetch_assoc($reponse))
 </select>
     <p>
        <label for="commentaire">
-	   Commentaire:
+	   Commentaires :
        </label>
        <br />
        <textarea name="commentaire" id="commentaire" rows="10" onFocus="javascript:this.value=''"  >
