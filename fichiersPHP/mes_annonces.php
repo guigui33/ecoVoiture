@@ -5,14 +5,16 @@ require('connexion.php');
 
 function afficherTrajet($tabTrajet){	
 	$idlieux=$tabTrajet['iddepart'];
-	//$voiture=pg_query($connexion,"SELECT modele FROM voitures v WHERE modele=(SELECT modele from trajet t where v.idvoiture=t.idvoitureutilisee)");
 	$depart=pg_query($GLOBALS['connexion'],"SELECT ville FROM lieux WHERE idlieu =$idlieux") ;
 	$depart=pg_fetch_assoc($depart);
 	$idlieux=$tabTrajet['idarrivee'];
 	$arrivee=pg_query($GLOBALS['connexion'],"SELECT ville FROM lieux WHERE idlieu=$idlieux") ;
 	$arrivee=pg_fetch_assoc($arrivee);
-	echo $depart['ville']." >> ".$arrivee['ville']." - ". $tabTrajet['datedepart'].' à '.$tabTrajet['heuredepart'].'</br>';
-	echo "Vehicule: "."clio2"."</br>";
+	$model=pg_query($GLOBALS['connexion'],'SELECT modele from voitures where idvoiture='.$tabTrajet['idvoitureutilisee'].'') ;
+	$model=pg_fetch_assoc($model);
+	echo $depart['ville'].' >> '.$arrivee['ville'].' - '. $tabTrajet['datedepart'].' à '.$tabTrajet['heuredepart'].'</br>';
+	echo 'Vehicule: '.$model['modele'].'      places disponibles: '. $tabTrajet['placesdispo']."\t";
+	echo '<a href="fiche_annonce.php">Accèder aux details</a></br>';
 	} //fin fonction afficherTrajet
 	
 function testDateHeure(){
