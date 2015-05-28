@@ -2,6 +2,11 @@
 require_once("entete_footer.php");//inclus le fichier entete
 entete('inscription');
 ?>
+   <?php if ( (isset($_GET ['mdp']))  &&  ($_GET ['mdp']))
+	{
+		echo ('Mdp Erreur'); 
+	}
+	?>
 
 <h2 class="alerte alert-info" align="center"> Inscription </h2>
 
@@ -27,6 +32,10 @@ entete('inscription');
     <center>
 	<input  type="checkbox" name="validerCondGeneral" value="validerCondGeneral"  required /> En cochant cette case, je certifie être étudiant et j'accepte 
 	<a href="condGeneralEcovoiture.php">les conditions générales d'utilisation d'Ecovoiture</a> <br/><br/>
-	<input class="btn btn-default" type="submit" value="Je m'inscris!" /></input></center>
+	<input class="btn btn-default" type="submit" value="Je m'inscris!"/></input></center>
 </form>
-<?php footer(); ?>
+<?php
+
+footer();
+
+ ?>

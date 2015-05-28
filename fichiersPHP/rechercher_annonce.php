@@ -59,9 +59,6 @@ entete('Trajet Disponible');
 <?php 
 }
 ?>
-</tbody>
-	</table>
-</form> 
 
 <?php 
 footer(); 

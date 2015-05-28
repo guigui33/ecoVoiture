@@ -21,12 +21,12 @@ if($email=='' && $login=='' && $passwd=='' && $passwdBis=='' && $nom=='' && $pre
 		exit;
 	}
 if($psswdBis!=$psswd){
-?>
-<script>
+
+header("location:inscription.php?mdp=erreur");
+/*<script>
 alert("Erreur mot de passe different"); 
  document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/inscription.php';
- </script>
-<?php 
+ </script>*/
 exit;
 
 }

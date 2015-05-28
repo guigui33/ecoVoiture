@@ -18,7 +18,7 @@
   print_r ($ville);
   ?>
   <script>
- $(function() {
+ $(function($ville[]) {
 	 
     var availableTags = [  
 
