@@ -4,7 +4,6 @@ pour appeler l'entete faite au debut du fichier entete($titre);
 $titre=nom de la page 
 puis a la fin du fichier faite footer();
 */
-session_start();
 include('droit_acces_page.php');
 
 session_start();
