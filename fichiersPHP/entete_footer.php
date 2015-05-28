@@ -46,29 +46,26 @@ function entete($titre){ ?>
 		<header>
 		<nav class="navbar navbar-default">
 				<div class="container-fluid">	
-				<a href="home.php"><img src="includes/logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:20%;"/></a>
-				<img src="includes/banniereEcoVoiture.jpg" alt="banniereEcoVoiture"style="height:150px; width:50%;"/>		
+				<!-- <a href="home.php"><img src="includes/logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:20%;"/></a> -->
+				<center><img style="margin-bottom: 5px;" src="includes/banniere_finale.png" alt="banniereEcoVoiture"/></center>
 				<?php if($GLOBALS['connexion']==false){ ?>
-				<div class="nav navbar-right " >
-				
-				Se connecter: </br>
+				<center>Connectez vous pour profiter pleinement d'EcoVoiture <a href="inscription.php?">(Pas encore inscrit?)</a></center>
 				<form action="verificationCompte.php" method="POST" style="margin-bottom: 0px;">
-				 Identifiant	:
-				 <input type="text" name="login"> <br/>
-				Mot de passe :
-				 <input type="password" name="password"> <br/>
+				<center>
+				
+				 <input type="text" name="login" placeholder="Identifiant" style="margin-bottom: 0px; margin-top: 6px;">
+				 <input type="password" name="password" placeholder="Mot de passe"style="margin-bottom: 0px; margin-top: 6px;">
 				 <input class="btn btn-default" type="submit" value="Connexion" >
-				 
+				 </center>
 				</form>
-				<a href="inscription.php?">Pas encore inscrit?</a>
-				</div></div>
+				</div>
 				<?php }			
 				else{?>
-					Bienvenue <?php echo $GLOBALS['nom'];?>
-					<input class="btn btn-default" type="button" onclick="location.href='mesAnnonces.php'" value='Mes annonces'></input>
+					<center>Bienvenue <?php echo $GLOBALS['nom'];?>, bonne visite sur EcoVoiture !</center>
+					<center><input class="btn btn-default" type="button" onclick="location.href='mesAnnonces.php'" value='Mes annonces'></input>
 					<input class="btn btn-default" type="button" onclick="location.href='monProfil.php'" value='Mon profil'></input>
 					<input class="btn btn-default" type="button" onclick="location.href='mesReservations.php'" value='Mes reservations'></input>
-					<input class="btn btn-default" type="button" onClick="location.href='seDeconnecter.php'" value='Se deconnecter'></input>
+					<input class="btn btn-default" type="button" onClick="location.href='seDeconnecter.php'" value='Se deconnecter'></input></center><br>
 				<?php } ?>
 				<?php } ?>
 			
