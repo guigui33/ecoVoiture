@@ -83,12 +83,14 @@ $requete = ("SELECT modele, marque FROM voitures WHERE idvoiture = (SELECT COUNT
 $result=pg_query($connexion, $requete);
 if(!$result){
 			pg_close($connexion);
-			//header('location:home.php?error=2');
+			header('location:home.php?error=2');
 			echo "Erreur dans la requete";
 			}
 			$data = pg_fetch_array($result);
 			$voiturepreferee = $data['marque'];
 			$voiturepreferee .= " " . $data['modele'];
+			if($voiturepreferee == ' ')
+				$voiturepreferee = "Aucune voiture préférée pour le moment";
 
 
 
@@ -104,7 +106,7 @@ if(!$result){
 			}
 			$data = pg_fetch_array($result);
 			$apropos=$data['apropos'];
-			if ($apropos==NULL){
+			if ($apropos=='NULL'){
 				$apropos="Aucun renseignements à propos de $login";
 				}
 			
