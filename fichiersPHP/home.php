@@ -36,7 +36,7 @@ entete('home');
 						<li class="list-unstyled">Arrivée : Paris, 75001</li>
 						<li class="list-unstyled">Date : 20/05/2015</li>
 						<li class="list-unstyled">Heure de Départ : 10h15</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 16h15 </br><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button">Details Trajet</a></li>
+						<li class="list-unstyled">Heure d'Arrrivée prévue : 16h15 </br><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button" onClick="">Details Trajet</a></li>
 					</ul>
 		
 		</div>

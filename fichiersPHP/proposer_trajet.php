@@ -24,7 +24,6 @@ function verif_formulaire()
 	<legend align="center">Itinéraire</legend>
 	<p><label for="depart">Ville de départ:</label><input  type="text"   id="depart" name="depart"  value="<?php echo $depart?>" required  /><br /></p>
 	<p><label for="destination">Ville d'arrivée :</label><input type="text" name="destination" id="destination"  value="<?php echo $destination?>"required /><br /></p>
-	<label for="detour">Détours:</label><input type="radio" name="detour" id="detour" />Oui <input type="radio" name="detour" />Non<br /></p>
 	</fieldset>
 	<fieldset >
 	<legend align="center">Horaires et Disponibilités</legend>
