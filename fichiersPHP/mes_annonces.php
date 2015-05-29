@@ -1,3 +1,14 @@
+<!-- 
+Fichier Appelant : entete_footer.php
+
+Fichier Appelé : entete_footer.php, connexion.php, 
+
+Role : Permet de visualiser les annonces de la session active.
+
+
+-->
+
+
 <?php
 include('entete_footer.php'); 
 entete('Mes Annonces');
@@ -27,8 +38,6 @@ $iduser=$_SESSION['iduser'];
 $queryIdTrajetProposer=pg_query($connexion,"SELECT * FROM proposer WHERE idchauffeur='$iduser'");
 	
 ?>
-
-
 
 <h2 class="alerte alert-info" align="center"> Mes annonces </h2>
  <h4> Voici les annonces que vous avez déposées sur Ecovoiture </h4>

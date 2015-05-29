@@ -2,9 +2,11 @@
 
 <?php
 require('connexion.php');
-session_start();
-//verification des informations données par le client avant de les inclurent dans la BD
 
+// On crée une session 
+session_start();
+
+//verification des informations données par le client avant de les inclurent dans la BD
 $residutilisateur=pg_query($connexion, "SELECT iduser FROM utilisateurs WHERE login ='".$_SESSION['login']."' ");
 while ($row = pg_fetch_assoc($residutilisateur)) {
 							$idutilisateur=$row['iduser'];
@@ -23,7 +25,9 @@ $information=isset($_POST['information'])?$_POST['information']:'';
 if($depart=='' && $destination=='' && $date=='' && $heure=='' && $place=='' && $bagage='' && $information=''){
 		exit;
 	}
+	//Requete Pour recuperer l'id de la ville destination
 $queryidvilledest=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (ville) LIKE LOWER('$destination') ");
+	//Requete pour recuperer l'id de la ville de depart
 $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (ville) LIKE LOWER('$depart') ");
 				
 				if(pg_num_rows($queryidvilledest) === 0) {
@@ -37,11 +41,14 @@ $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (v
 							$IdDest=$row['idlieu'];
 							}	
 				
+				//Insertion du trajet avec auto implementation de L'id
 				$requete=pg_query($connexion,"INSERT INTO trajets (datedepart, heuredepart, placesdispo, taillebagages, infostrajet, idVoitureutilisee,iddepart, idarrivee) VALUES ('$date','$heure','$place','$bagage','$information',1,$IdDepart,$IdDests);");
 				$residtrajet=pg_query($connexion,"SELECT MAX (idtrajet) AS id FROM trajets");
 				while ($row = pg_fetch_assoc($residtrajet)) {
 							$idtrajet=$row['id'];
 				}
+				
+				//Insertion de l'id utilisateur et de l'id du trajet recuperer
 				$proposer=pg_query($connexion,"INSERT INTO proposer(idchauffeur, idroute)  VALUES ($idutilisateur,$idtrajet)");
 				pg_close($connexion);
 				if ($proposer)

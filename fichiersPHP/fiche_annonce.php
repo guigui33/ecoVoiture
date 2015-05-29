@@ -1,12 +1,24 @@
+<!-- 
+Fichier Appelant : rechercher_annonce.php
+
+Fichier Appelé : fichier_annonce.php?trajet
+
+Role : Permet d'afficher lors de l'appuie sur 'Detail trajet' les information de celui ci a l'aide d'un get passé en url contenant l'id du trajet selectionner.
+
+-->
+
+
 <?php include('entete_footer.php'); 
-entete('home');
+entete('Detail Trajet');
 require("connexion.php");
 
 $trajet=false;
 
-if(isset($_GET['trajet']))
+//Recuperation de l'id du trajet a l'aide d'un get
+if(isset($_GET['idtrajet']))
 {
-    $res=pg_query($connexion, "SELECT * FROM trajets WHERE idtrajet=' " .$_GET['trajet']. " ' ");
+	//Selection du trajet correspondant a l'id passer en parametre de l'URL
+    $res=pg_query($connexion, "SELECT * FROM trajets WHERE idtrajet=' " .$_GET['idtrajet']. " ' ");
     $trajet=pg_fetch_array($res);
 }
 if($trajet===0)
@@ -20,14 +32,16 @@ else
     if(isset($_POST['Postuler']) && isset($_SESSION['iduser']))
     {
 		
-        $res=pg_query($connexion, "INSERT INTO reserver ( iduserclient, idtrajetreserve ) VALUES (".$_SESSION['iduser']." ,".$_GET['trajet'].") ");
+        $res=pg_query($connexion, "INSERT INTO reserver ( iduserclient, idtrajetreserve ) VALUES (".$_SESSION['iduser']." ,".$_GET['idtrajet'].") ");
         ?>
         <div class="col-lg-12 alert alert-success">Vous avez bien postulé sur ce trajet !</div>
         <?php
     }
 
+	//Requete imbriquer afin de recuperer les information concernant le conducteur du trajet
     $resConducteur=pg_query($connexion,"SELECT * FROM utilisateurs WHERE iduser= (SELECT idchauffeur FROM proposer WHERE idroute=' ".$trajet['idtrajet']." ' ) ");
     $conducteur=pg_fetch_array($resConducteur);
+
 	
     $reqVilleDepart = "SELECT * FROM lieux WHERE idlieu='" . $trajet['iddepart'] . "'";
     $resVilleDepart = pg_query($connexion, $reqVilleDepart);
@@ -71,7 +85,7 @@ else
 							$preferences .= "musique pendant le trajet";
 						}
 						
-//Recuperation de la note moyenne
+	//Recuperation de la note moyenne
 $requete = ("SELECT AVG(note) AS notemoyenneuser FROM noter WHERE idusernote= ' ".$conducteur['iduser']."' ");
 $result=pg_query($connexion, $requete);
 if(!$result){
@@ -82,7 +96,7 @@ if(!$result){
 			$notemoyenne=$data['notemoyenneuser'];
 			$notemoyenne = number_format($notemoyenne,1);
     ?>
-    
+    <!--    Mis en page de la page    -->
       <div class="row">
         <div class="col-lg-4">
           <div class="annonce panel">
@@ -90,10 +104,12 @@ if(!$result){
               <h3><strong><i><?=$villeDepart['ville']?> &rArr; <?=$villeArrivee['ville']?></i></strong></h3>
             </div>
             <div class="panel-body">
-                    <script src="https://maps.googleapis.com/maps/api/js"></script>
-                    
-                    
+			
+			<!--    Script Concernant l'API Google Afin de recuperer la carte, Afficher les markers depart et destination Aisin que le calcul de Durée et de Distance en Km.  -->
+                    <script src="https://maps.googleapis.com/maps/api/js"></script>                
   <script>
+  
+/* Affiche de la carte avec les parametre recu par CalculTrajet();*/
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
@@ -104,9 +120,10 @@ function initialize() {
   }
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   directionsDisplay.setMap(map);
-  calcRoute();
+  calculTrajet();
 }
-function calcRoute() {
+//Fonction permetant de calculer le trajet Origin prend en parametre la ville de depart et Destionation la destination
+function calculTrajet() {
   var request = {
       origin: '<?=$villeDepart['ville']?>',
       destination: '<?=$villeArrivee['ville']?>',
@@ -182,7 +199,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
       <div class="col-lg-12">
 	  
       <?php
-	  
+/*  Verification de la Session */ 	  
       if(isset($_SESSION['iduser']))
       {
           // On vérifie si on a pas déjà postulé à ce trajet
@@ -191,12 +208,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
           if(pg_num_rows($res) != 0)
           {
               ?>
-          <div class="alert alert-info">Vous avez déjà postulé à ce trajet !</div>
+          <div class="alert alert-info">Vous etes deja inscrit à ce trajet !</div>
           <?php
           }
           
           // On vérifie si on est pas le conducteur
-          else if ($conducteur['iduser'] == $_SESSION['iduser'])
+          else if ($conducteur['iduser'] === $_SESSION['iduser'])
           {
               
               ?>
@@ -206,7 +223,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
           else
           {  
           ?>
-      <form method="post" action="fiche_annonce.php?trajet=<?echo $_GET['idtrajet']?>">
+      <form method="post" action="fiche_annonce.php?idtrajet=<?=$_GET['idtrajet']?>">
         <button type="submit" name="Postuler" class="btn btn-xl btn-success" id="submit" />Postuler à ce trajet !</button>
       </form>
       <?php

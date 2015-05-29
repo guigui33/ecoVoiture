@@ -1,3 +1,16 @@
+<!-- 
+Fichier Appelant : entete_footer.php lors de l'appuie sur le bouton ' Connexion'
+
+Fichier Appelé : 
+
+Role : Permet de verifier la connexion d'un utilisateur.
+
+Si identifiant et mot de passe ok alors connexion et affichage du nouvel entete sinon pop up afin de signaler l'echec de la connexionet redirection vers la page home.php dans les deux cas.
+
+-->
+
+
+
 <?php
 $login=isset($_POST['login'])?$_POST['login']:'';
 $passwd=isset($_POST['password'])?$_POST['password']:'';

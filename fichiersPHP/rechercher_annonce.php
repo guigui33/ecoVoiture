@@ -1,16 +1,29 @@
+<!-- 
+Fichier Appelant : home.php lors de l'appuie sur rechercher
+
+Fichier Appelé : fiche_annonce.php, 
+
+Role : Permet de visualiser les annonces correspondant a la ville de depart et la destination rentrée dans les champs de la page home.php.
+
+-->
+
 
 <?php include('entete_footer.php'); 
 entete('Trajet Disponible');
 ?>
 
 <?php
-				require('connexion.php');
+					
+					require('connexion.php');
+					
+					//retrait de la virgule apres l'auto implementation 
 					$destination=$_POST['destination'];
 					$destination=strtok($destination , ',');
 					$depart=$_POST['depart'];
 					$depart=strtok($depart, ',');
 					$cbn=0;			
 
+					//REcuperation de l'id de la ville rentré et la comparaison est forcé en minuscule 
 				$queryidvilledest=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (ville) LIKE LOWER('$destination') ");
 				$queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (ville) LIKE LOWER('$depart') ");
 				
@@ -36,7 +49,7 @@ entete('Trajet Disponible');
 							}
 				while ($row = pg_fetch_assoc($queryidvilledest)) {
 							$IdDest=$row['idlieu'];
-							}	
+							}	//On recupere l'id du trajet si tout est Valide
 					$trajet = pg_query($connexion,"SELECT idtrajet FROM trajets WHERE iddepart=$IdDepart AND idarrivee=$IdDest ");
 					while($row=pg_fetch_array($trajet) ){
 						$idtrajet=$row['idtrajet'];
@@ -53,8 +66,7 @@ entete('Trajet Disponible');
 						$query=pg_query($connexion,"SELECT ville FROM lieux WHERE idlieu=$IdDest ");
 						while($row=pg_fetch_assoc($query)){
 							$nomdest=$row['ville'];
-						}
-					
+						}// On fais une boucle while afin d'afficher tous les trajets concernant le depart et la destination concerné. 
 					while ($donnees = pg_fetch_array($result)) 
 					{			
 ?>

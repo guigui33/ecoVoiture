@@ -5,7 +5,7 @@ $depart=$_POST['depart'] ;
 $destination=$_POST['destination'];
 $date = isset($_POST['date'])?$_POST['date']:'';
 ?>
-
+<!--  Verification de la date afin de bien l'ajotuer a la bdd sous le format HH:mm-->
 <script type="text/javascript">
 function verif_formulaire()
 {
@@ -18,7 +18,7 @@ function verif_formulaire()
 </script>
 
 <h2 style="background:#46bcde" align="center"> Proposer un trajet </h2>
-
+<!--  Required signifie que le champ est obligatoire si l'on envoie ce formulaire.-->
 <form name="formulaire" action="ajout_trajet.php" method="POST" onSubmit="return verif_formulaire()">
 	<fieldset>
 	<legend align="center">Itinéraire</legend>
@@ -30,13 +30,16 @@ function verif_formulaire()
 	<p><label for="date">Date: </label><input type="date" name="date" required  value="<?php echo $date;?>"/> <br/>
 	<p><label for="heure">Heure de départ:</label> <input type="text" name="heure" required /> 
 	<p><label for="place">Nombre de places:</label> <input type="text" name="place" /> <br/>
-	<!--<p><label for="voiture">Voiture utilisée: </label><select name="voiture" size="1">
+	
+	<!--GESTION VOITURE A COMPLETER(Faire requete Ajouter voiture)
+	<p><label for="voiture">Voiture utilisée: </label><select name="voiture" size="1">
 <option>Pas de bagage
 <option>Petit
 <option>Moyen
 <option>Grand
 </select>
-<br/>--> <br/>
+<br/>
+--> <br/>
 	<p><label for="bagages">Taille des Bagages</label> 
 	<select name="bagage" id="bagage">
 		<option  value="aucun">Pas de bagages

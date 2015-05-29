@@ -1,37 +1,38 @@
+<!-- 
+Fichier Appelant : entete_footer.php lorsque l'on appuie sur avis ou poster un avis.
+
+Fichier Appelé :
+
+Role :Permet d'ajouter un avis  a un utilisateur apres avoir effectuer un trajet avec l'utilisateur
+
+-->
+
+
+
 <?php 
 include('entete_footer.php'); 
 entete('avis');
+require('$connexion.php');
 ?>
 <center>
 <legend> Donner un avis :  </legend>
 
-<?php
-/*try
-{
-$mydb = mysqli_connect('localhost','root','','ecoVoiture');
-}
-catch(Exception $e)
-{
-    die('Erreur : '.$e->getMessage());
-}
-*/
-?>
 <form method="post" action="traitement.php">
  
     <label for="utilisateur">Quel utilisateur voulez vous noter ?</label><br />
     <select name="utilisateur" id="utilisateur">
  
 <?php
- /*
-$reponse = mysqli_query ($mydb,'SELECT Login FROM utilisateurs');
  
-while ($donnees = mysqli_fetch_assoc($reponse))
+$reponse = pg_query ($connexion,'SELECT Login FROM utilisateurs');
+ 
+while ($donnees = pg_fetch_assoc($reponse))
 {
 
 		echo '<option value="'.$donnees[0].'">'.$donnees['Login'];
 		echo '</option>'."\n";
 }
-*/
+
 ?> 
 </select>
     <p>

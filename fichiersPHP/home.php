@@ -1,3 +1,14 @@
+<!-- 
+Fichier Appelant : Cette page est appelé lors de redirection vers l'acceuil.
+
+Fichier Appelé : proposer_trajet.php, rechercher_annonce.php
+
+Role :Joue le role de page d'acceuil.
+
+-->
+
+
+
 <?php include('entete_footer.php'); 
 entete('home');
 require('connexion.php');
@@ -21,7 +32,7 @@ function afficherTrajet($tabTrajet){
 						<li class="list-unstyled">Arrivée : <?php echo $arrivee['ville']?></li>
 						<li class="list-unstyled">Date : <?php echo $tabTrajet['datedepart'] ?></li>
 						<li class="list-unstyled">Heure de Départ : <?php echo $tabTrajet['heuredepart']?></li>
-						<li><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button" onClick="">Details Trajet</a></li>
+						<a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button" onClick="">Details Trajet</a>
 					</ul>
 				</div>
 		<?php
@@ -52,6 +63,8 @@ function testDateHeure($date){
 
 	<input class="bginput"  name="depart" id="ProposerDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)" required>
 	<input class="bginput"  name="destination" id="ProposerDesitnation" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)" required>
+	
+	<!--On passe la date sous la forme AAAA/MM/JJ a l'aide de la fonction date() --> 
 	<input class="bginput"  name="date" id="date"  placeholder="Date du trajet" type="date" value="<?php echo date('Y-m-d', strtotime(date('Y-m-d')));?>">
 	<a style="font-size: 36px;" ><button class="btn btn-default" type="submit">Proposer</button></a>
 </form>
