@@ -18,11 +18,12 @@ function afficherTrajet($tabTrajet){
 	} //fin fonction afficherTrajet
 	
 function testDateHeure($date){
-	$now   = time();
-	$date = strtotime($date);
-	$diff  = abs($date1 - $date2);
-		
+	$now = new DateTime("now");
+	$date = new DateTime("$date");
+	return $now<$date;		
 	}
+	
+	
 //$iduser=$_SESSION['iduser'];
 $iduser=1;
 $queryIdTrajetProposer=pg_query($connexion,"SELECT * FROM proposer WHERE idchauffeur='$iduser'");
@@ -38,18 +39,28 @@ if(pg_num_rows ($queryIdTrajetProposer) === 0 ) {
  <h4> Voici les annonces que vous avez déposées sur Ecovoiture </h4>
 	<fielset>
 		<legend> En cours</legend>
-		<?php while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
+		<?php 
+		while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
 			$idTrajet=$tabIdTrajets['idroute'];
 			$queryTrajetInfo=pg_query($connexion,"SELECT * FROM trajets WHERE idtrajet='$idTrajet'");
 			$tabTrajet=pg_fetch_assoc($queryTrajetInfo);
-			//testDateHeure()
-			afficherTrajet($tabTrajet);	
+			if(testDateHeure($tabTrajet['datedepart'].' '.$tabTrajet['heuredepart']))
+				afficherTrajet($tabTrajet);	
 		}
 		?>
 	</fielset>
 	<fielset>
 		<legend> Passées</legend>
-	
+		<?php 
+		$queryIdTrajetProposer=pg_query($connexion,"SELECT * FROM proposer WHERE idchauffeur='$iduser'");
+		while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
+			$idTrajet=$tabIdTrajets['idroute'];
+			$queryTrajetInfo=pg_query($connexion,"SELECT * FROM trajets WHERE idtrajet='$idTrajet'");
+			$tabTrajet=pg_fetch_assoc($queryTrajetInfo);
+			if(!testDateHeure($tabTrajet['datedepart'].' '.$tabTrajet['heuredepart']))
+				afficherTrajet($tabTrajet);	
+		}
+		?>
 	</fielset>
 </fieldset>
 
