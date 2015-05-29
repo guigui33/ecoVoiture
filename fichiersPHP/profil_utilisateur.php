@@ -13,7 +13,7 @@ if(!$result){
 			$data = pg_fetch_array($result);
 			$login=$data['login'];
 
-entete('Profil de $login');
+entete('Profil de '.$login);
 
 /*Recuperation des resultats
 pour l'affichage*/
