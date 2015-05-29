@@ -1,3 +1,6 @@
+<!--
+page qui génère la page à propos
+-->
 <?PHP
 require_once("entete_footer.php");//inclus le fichier entete
 entete('A propos');

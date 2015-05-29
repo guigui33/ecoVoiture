@@ -3,10 +3,8 @@ Fichier Appelant : entete_footer.php lorsque l'on appuie sur avis ou poster un a
 
 Fichier Appelé :
 
-Role :Permet d'ajouter un avis  a un utilisateur apres avoir effectuer un trajet avec l'utilisateur
-
+Role :Permet d'ajouter un avis  à un utilisateur après avoir éffectué un trajet avec celui-ci
 -->
-
 
 
 <?php 
@@ -29,7 +27,6 @@ $reponse = pg_query ($connexion,'SELECT Login FROM utilisateurs');
  
 while ($donnees = pg_fetch_assoc($reponse))
 {
-
 		echo '<option value="'.$donnees[0].'">'.$donnees['Login'];
 		echo '</option>'."\n";
 }
@@ -47,7 +44,7 @@ Poster un commentaire sur l'utilisateur (500 caracteres max)
        </textarea>       
    </p>
    
-   <!-- La note à attribué avec un système d'étoile colorés en fonction de la note donnée -->
+   <!-- La note à attribuer avec un système d'étoiles colorées en fonction de la note donnée -->
    <p> Note : </p>
    <ul class="notes-echelle">
 	<li>
