@@ -17,8 +17,11 @@ function afficherTrajet($tabTrajet){
 	echo '<a href="fiche_annonce.php">Accèder aux details</a></br>';
 	} //fin fonction afficherTrajet
 	
-function testDateHeure(){
-	;
+function testDateHeure($date){
+	$now   = time();
+	$date = strtotime($date);
+	$diff  = abs($date1 - $date2);
+		
 	}
 //$iduser=$_SESSION['iduser'];
 $iduser=1;
@@ -39,6 +42,7 @@ if(pg_num_rows ($queryIdTrajetProposer) === 0 ) {
 			$idTrajet=$tabIdTrajets['idroute'];
 			$queryTrajetInfo=pg_query($connexion,"SELECT * FROM trajets WHERE idtrajet='$idTrajet'");
 			$tabTrajet=pg_fetch_assoc($queryTrajetInfo);
+			//testDateHeure()
 			afficherTrajet($tabTrajet);	
 		}
 		?>
