@@ -1,3 +1,6 @@
+<!--
+Rôle: permettre à un utilisateur de modifier/ajouter les informations sur les voitures 
+-->
 <?PHP
 require_once("entete_footer.php");//inclus le fichier entete
 entete('Modification du profil (voiture)');
@@ -59,7 +62,7 @@ var chkZ = 1;
 	</fieldset>
 	<br>
 	
-	<!-- Formulaire pour la ajouter des véhicule à l'utilisateur -->
+	<!-- Formulaire pour ajouter des véhicules à l'utilisateur -->
 	<div class="legend">Ajouter une voiture</div>
 		<fieldset class="fieldset1"><br>
 		

@@ -1,4 +1,8 @@
+<!--
+Page qui permet à un utilisateur de s'inscrire
+Les verifications sont effectuées sur les champs 
 
+-->
 <?PHP
 require_once("entete_footer.php");//inclus le fichier entete
 entete('inscription');
