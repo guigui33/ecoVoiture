@@ -38,14 +38,42 @@ else
     $reqVoiture = "SELECT * FROM voitures WHERE idvoiture='" . $trajet['idvoitureutilisee'] . "'";
     $resVoiture = pg_query($connexion, $reqVoiture);
     $voiture = pg_fetch_array($resVoiture);
-    
+    $requete = ("SELECT fumeur, animaux, musique FROM voitures v, conduire c WHERE v.idvoiture=c.idvoiturepossedee AND c.idconducteur ='".$conducteur['iduser']."' " );
+		$result=pg_query($connexion, $requete);
+		if(!$result){
+					pg_close($connexion);
+					header('location:home.php?error=2');
+					echo "Erreur dans la requete";
+					}
+					$data = pg_fetch_array($result);
+					if ($data['fumeur']==='f')
+						{
+							$preferences = "interdit de fumer, ";
+						}else
+						{
+							$preferences = "fumeurs autorisés, ";
+						}
+					if ($data['animaux']==='f')
+						{
+							$preferences .= "animaux interdits, ";
+						}else
+						{
+							$preferences .= "animaux autorisés, ";
+						}
+					if ($data['musique']==='f')
+						{
+							$preferences .= "pas de musique pendant le trajet";
+						}else
+						{
+							$preferences .= "musique pendant le trajet";
+						}
     ?>
     
 <div class="row">
         <div class="col-lg-4">
           <div class="annonce panel">
             <div class="panel-heading">
-              <h3><strong><i>Carte</i></strong></h3>
+              <h3><strong><i><?=$villeDepart['ville']?> &rArr; <?=$villeArrivee['ville']?></i></strong></h3>
             </div>
             <div class="panel-body">
                     <script src="https://maps.googleapis.com/maps/api/js"></script>
@@ -72,7 +100,7 @@ function calcRoute() {
   directionsService.route(request, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
-      $('#details-trajet ul').append('<br><li class="list-unstyled">Distance : <strong>' + response.routes[0].legs[0].distance.text + '</strong></li>');
+      $('#details-trajet ul').append('<br><li class="list-unstyled">Distance : <strong>' +  response.routes[0].legs[0].distance.text + '</strong></li>');
       $('#details-trajet ul').append('<li class="list-unstyled">Durée : <strong>' + response.routes[0].legs[0].duration.text + '</strong></li>');
     }
   });
@@ -85,14 +113,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-3">
           <div class="annonce panel">
             <div class="panel-heading">
-              <h3><strong><i><?=$villeDepart['ville']?> &rArr; <?=$villeArrivee['ville']?></i></strong></h3>
+              <h3><strong><i>Détail du trajet</i></strong></h3>
             </div>
-            <div class="panel-body" id="details-trajet">
+            <div class="panel-body">
                 <ul>
-                <li class="list-unstyled">Date : <strong>12</strong></li><br/>
+                <li class="list-unstyled">Date : <strong><?php echo date('d-m-Y', strtotime(date('Y-m-d')));?></strong></li><br/>
                 <li class="list-unstyled">Ville de départ : <strong><?=$villeDepart['ville']?></strong></li>
                 <li class="list-unstyled">Heure de départ : <strong><?=$trajet['heuredepart'] ?></strong></li><br/>
                 <li class="list-unstyled">Ville d'arrivée : <strong><?=$villeArrivee['ville']?></strong></li>
@@ -101,7 +129,21 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		</div>
 		</div>
           </div>
-		<div class="col-lg-3">
+		<div class="col-lg-4">
+          <div class="annonce panel">
+            <div class="panel-heading">
+              <h3><strong><i>Conducteur</i></strong></h3>
+            </div>
+            <div class="panel-body">
+                <ul>
+                <li class="list-unstyled"><strong><?=$conducteur['login']?></strong></li>
+                <li class="list-unstyled">Pays : <strong>France</strong></li>
+                <li class="list-unstyled">Téléphone : <strong><?=$conducteur['telephone']?></strong></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+		<div class="col-lg-4">
 			  <div class="annonce panel">
 				<div class="panel-heading">
 				  <h3><strong><i>Voiture</i></strong></h3>
@@ -109,38 +151,27 @@ google.maps.event.addDomListener(window, 'load', initialize);
 				<div class="panel-body">
                 <ul>
                 <li class="list-unstyled">Marque : <strong><?=$voiture['marque']?></strong></li>
+				<li class="list-unstyled">Modèle : <strong><?=$voiture['modele'] ?></strong></li>
                 <li class="list-unstyled">Couleur : <strong><?=$voiture['couleur']?></strong></li>
-                <li class="list-unstyled">Année : <strong><?=$voiture['modele'] ?></strong></li>
                 <li class="list-unstyled">Nombre de places : <strong><?=$trajet['placesdispo']?></strong></li>
+				<li class="list-unstyled">Autorisation durant le trajet : <strong><?=$preferences?></strong></li>
                 </ul>
             </div>
           </div>
         </div>
-          <div class="col-lg-3">
-          <div class="annonce panel">
-            <div class="panel-heading">
-              <h3><strong><i>Conducteur</i></strong></h3>
-            </div>
-            <div class="panel-body">
-                <ul>
-                <li class="list-unstyled"><strong><?=$conducteur['prenom']?></strong></li>
-                <li class="list-unstyled">Pays : <strong>France</strong></li>
-                <li class="list-unstyled">Téléphone : <strong><?=$conducteur['telephone']?></strong></li>
-                </ul>
-            </div>
-          </div>
-        </div>
+
       </div>
        
         
       </div>
       <div class="col-lg-12">
+	  
       <?php
-	  echo $_SESSION['iduser'];
+	  
       if(isset($_SESSION['iduser']))
       {
           // On vérifie si on a pas déjà postulé à ce trajet
-          $req="SELECT iduserclient FROM reserver WHERE iduserclient='".$_SESSION['iduser']."' AND idtrajet='".$_GET['idtrajet']."'";
+          $req='SELECT iduserclient FROM reserver WHERE iduserclient='.$_SESSION['iduser'].' AND idtrajetreserve='.$_GET['idtrajet'].' ';
           $res=pg_query($connexion, $req) ;
           if(pg_num_rows($res) != 0)
           {
