@@ -46,7 +46,14 @@ $message.= $passage_ligne."--".$boundary."--".$passage_ligne;
 $message.= $passage_ligne."--".$boundary."--".$passage_ligne;
  
 //Envoi de l'e-mail.
-mail("cerberus31@live.fr",$sujet,$message,$header);
+$result = mail("cerberus31@live.fr",$sujet,$message,$header);
 
-header('location:contact_admin.php');
+if ($result)
 ?>
+<script>
+	alert("Votre message a bien été transmis. Il sera traité dans les plus brefs délais");
+	document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/home.php';
+</script>
+	<?
+		echo "";
+	?>
