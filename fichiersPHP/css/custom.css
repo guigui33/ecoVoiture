@@ -142,3 +142,27 @@ margin-bottom: 6px;
 input.modif_profil_psswd {
 margin-bottom: 0px;
 }
+
+
+.fieldset1
+{
+    border:2px solid blue;
+    -moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px;	
+}
+.legend
+{
+  margin-bottom:0px;
+  margin-left:16px;
+}
+
+
+hr {
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+  color: #000000;
+  background-color: #000000;
+  border: 0;
+}

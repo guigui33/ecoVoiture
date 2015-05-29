@@ -33,24 +33,31 @@ if(pg_num_rows ($queryIdTrajetProposer) === 0 ) {
 	
 ?>
 
+
+
 <h2 class="alerte alert-info" align="center"> Mes annonces </h2>
 <fieldset>
  <h4> Voici les annonces que vous avez déposées sur Ecovoiture </h4>
-	<fielset>
-		<legend> En cours</legend>
-		<?php while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
-			$idTrajet=$tabIdTrajets['idroute'];
-			$queryTrajetInfo=pg_query($connexion,"SELECT * FROM trajets WHERE idtrajet='$idTrajet'");
-			$tabTrajet=pg_fetch_assoc($queryTrajetInfo);
-			//testDateHeure()
-			afficherTrajet($tabTrajet);	
-		}
-		?>
-	</fielset>
-	<fielset>
+	<fieldset>
+		<div class="legend">En cours</div>
+			<fieldset class="fieldset1">
+			
+			
+			<?php while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
+				$idTrajet=$tabIdTrajets['idroute'];
+				$queryTrajetInfo=pg_query($connexion,"SELECT * FROM trajets WHERE idtrajet='$idTrajet'");
+				$tabTrajet=pg_fetch_assoc($queryTrajetInfo);
+				//testDateHeure()
+				afficherTrajet($tabTrajet);	
+				echo '<hr>';
+			}
+			?>
+	</fieldset>
+	
+	<fieldset>
 		<legend> Passées</legend>
 	
-	</fielset>
+	</fieldset>
 </fieldset>
 
 <?php
