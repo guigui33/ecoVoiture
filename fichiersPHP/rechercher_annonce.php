@@ -66,7 +66,11 @@ entete('Trajet Disponible');
 						$query=pg_query($connexion,"SELECT ville FROM lieux WHERE idlieu=$IdDest ");
 						while($row=pg_fetch_assoc($query)){
 							$nomdest=$row['ville'];
+<<<<<<< HEAD
 						}// On fais une boucle while afin d'afficher tous les trajets concernant le depart et la destination concerné. 
+=======
+						}
+>>>>>>> 47cb2e799712c19f03e9ca04cd7d7340db3533cb
 					while ($donnees = pg_fetch_array($result)) 
 					{			
 ?>

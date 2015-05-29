@@ -14,10 +14,15 @@ require("connexion.php");
 
 $trajet=false;
 
+<<<<<<< HEAD
 //Recuperation de l'id du trajet a l'aide d'un get
 if(isset($_GET['idtrajet']))
 {
 	//Selection du trajet correspondant a l'id passer en parametre de l'URL
+=======
+if(isset($_GET['idtrajet']))
+{
+>>>>>>> 47cb2e799712c19f03e9ca04cd7d7340db3533cb
     $res=pg_query($connexion, "SELECT * FROM trajets WHERE idtrajet=' " .$_GET['idtrajet']. " ' ");
     $trajet=pg_fetch_array($res);
 }
