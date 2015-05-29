@@ -21,11 +21,9 @@ function testDateHeure($date){
 	$now = new DateTime("now");
 	$date = new DateTime("$date");
 	return $now<$date;		
-	}
+	}	
 	
-	
-//$iduser=$_SESSION['iduser'];
-$iduser=1;
+$iduser=$_SESSION['iduser'];
 $queryIdTrajetProposer=pg_query($connexion,"SELECT * FROM proposer WHERE idchauffeur='$iduser'");
 if(pg_num_rows ($queryIdTrajetProposer) === 0 ) {
 	//afficher Erreur
@@ -34,35 +32,39 @@ if(pg_num_rows ($queryIdTrajetProposer) === 0 ) {
 	
 ?>
 
+
+
 <h2 class="alerte alert-info" align="center"> Mes annonces </h2>
-<fieldset>
  <h4> Voici les annonces que vous avez déposées sur Ecovoiture </h4>
-	<fielset>
-		<legend> En cours</legend>
+		<div class="legend"> En cours </div>
+		<fieldset class="fieldset1">
 		<?php 
 		while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
 			$idTrajet=$tabIdTrajets['idroute'];
 			$queryTrajetInfo=pg_query($connexion,"SELECT * FROM trajets WHERE idtrajet='$idTrajet'");
 			$tabTrajet=pg_fetch_assoc($queryTrajetInfo);
-			if(testDateHeure($tabTrajet['datedepart'].' '.$tabTrajet['heuredepart']))
+			if(testDateHeure($tabTrajet['datedepart'].' '.$tabTrajet['heuredepart'])){
 				afficherTrajet($tabTrajet);	
+				echo '<hr>';
+			}
 		}
 		?>
-	</fielset>
-	<fielset>
-		<legend> Passées</legend>
+		</fieldset>
+		<div class="legend"> Passées </div>
+		<fieldset class="fieldset1">
 		<?php 
 		$queryIdTrajetProposer=pg_query($connexion,"SELECT * FROM proposer WHERE idchauffeur='$iduser'");
 		while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
 			$idTrajet=$tabIdTrajets['idroute'];
 			$queryTrajetInfo=pg_query($connexion,"SELECT * FROM trajets WHERE idtrajet='$idTrajet'");
 			$tabTrajet=pg_fetch_assoc($queryTrajetInfo);
-			if(!testDateHeure($tabTrajet['datedepart'].' '.$tabTrajet['heuredepart']))
+			if(!testDateHeure($tabTrajet['datedepart'].' '.$tabTrajet['heuredepart'])){
 				afficherTrajet($tabTrajet);	
+				echo '<hr>';
+			}
 		}
 		?>
-	</fielset>
-</fieldset>
+	</fieldset>
 
 <?php
 footer();
