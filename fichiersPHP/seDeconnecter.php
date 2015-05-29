@@ -1,4 +1,4 @@
-<!-- Suppresion des variables de session de l'utilisateur -->
+<!-- Suppresion des variables de session de l'utilisateur lors d'une demande de déconnexion -->
 <?php
 session_start();
 session_unset();

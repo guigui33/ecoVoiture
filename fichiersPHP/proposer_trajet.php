@@ -7,7 +7,7 @@ $depart=$_POST['depart'] ;
 $destination=$_POST['destination'];
 $date = isset($_POST['date'])?$_POST['date']:'';
 ?>
-<!--  Verification de la date afin de bien l'ajotuer a la bdd sous le format HH:mm-->
+<!--  Verification de la date afin de bien l'ajotuer à la bdd sous le format HH:mm-->
 <script type="text/javascript">
 function verif_formulaire()
 {

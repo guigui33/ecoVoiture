@@ -95,7 +95,7 @@ if(!$result){
 
 
 
-//Recuperation du a propos	
+//Recuperation du à propos	
 $requete = ('SELECT apropos FROM utilisateurs WHERE iduser=\''.$iduser.'\'');
 $result=pg_query($connexion, $requete);
 

@@ -2,7 +2,7 @@
 require('connexion.php');
 session_start();
 
-//recuperation des infos a modifier
+//recuperation des infos à modifier
 $iduser=$_SESSION['iduser'];
 
 $newPsswd = NULL;
@@ -22,7 +22,7 @@ if (isset($_POST['demandeModifPsswsd']))
 
 $psswd=isset($_POST['psswd'])?$_POST['psswd']:'';
 
-//Verification mot de passe sécurité modif
+//Verification mot de passe, sécurité modif
 $requete=('SELECT motdepasse FROM utilisateurs WHERE iduser =\''.$iduser.'\'');
 $result=pg_query($connexion, $requete);
 if(!$result){
@@ -87,9 +87,7 @@ $data = pg_fetch_array($result);
 							document.location.href = 'modification_profil.php';
 						</script>
 							<?php 
-							echo "";
-						
-						
+							echo "";		
 				
 			}
 			else

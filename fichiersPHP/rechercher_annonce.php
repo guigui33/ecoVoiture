@@ -69,7 +69,7 @@ entete('Trajet Disponible');
 
 			}
 			
-		// Gràce à une boucle while, affichage de tous les trajets concernant le départ et la destination concernées
+		// Gràce à une boucle while, affichage de tous les trajets concernant le départ et la destination
 		while ($donnees = pg_fetch_array($result)) 
 		{			
 		?>
