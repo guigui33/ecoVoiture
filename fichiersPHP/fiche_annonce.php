@@ -77,7 +77,9 @@ else
             </div>
             <div class="panel-body">
                     <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script>
+                    
+                    
+  <script>
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
@@ -100,16 +102,15 @@ function calcRoute() {
   directionsService.route(request, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
-      $('#details-trajet ul').append('<br><li class="list-unstyled">Distance : <strong>' +  response.routes[0].legs[0].distance.text + '</strong></li>');
+      $('#details-trajet ul').append('<br><li class="list-unstyled">Distance : <strong>' + response.routes[0].legs[0].distance.text + '</strong></li>');
       $('#details-trajet ul').append('<li class="list-unstyled">Durée : <strong>' + response.routes[0].legs[0].duration.text + '</strong></li>');
     }
   });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+</script>    
 
                 <div id="map-canvas" style="height:450px"></div>
-
             </div>
           </div>
         </div>
@@ -124,7 +125,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
                 <li class="list-unstyled">Ville de départ : <strong><?=$villeDepart['ville']?></strong></li>
                 <li class="list-unstyled">Heure de départ : <strong><?=$trajet['heuredepart'] ?></strong></li><br/>
                 <li class="list-unstyled">Ville d'arrivée : <strong><?=$villeArrivee['ville']?></strong></li>
-                <li class="list-unstyled">Heure d'arrrivée prévue : <strong>A rajouter </strong></li>
                 </ul>
 		</div>
 		</div>

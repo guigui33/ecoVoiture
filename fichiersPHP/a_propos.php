@@ -3,8 +3,7 @@ require_once("entete_footer.php");//inclus le fichier entete
 entete('A propos');
 ?>
 
-<h2 style="background:#46bcde"> A propos d'Ecovoiture </h2>
-
+<h2 class="alerte alert-info" align="center"> A propos d'Ecovoiture </h2>
 <body>
 	<div style="margin-left:25px; margin-right:25px" align="justify">	
 		<h4>Qui sommes nous ?</h4>
