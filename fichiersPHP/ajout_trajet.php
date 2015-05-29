@@ -10,9 +10,10 @@ while ($row = pg_fetch_assoc($residutilisateur)) {
 							$idutilisateur=$row['iduser'];
 							}
 
-echo " Id est : $idutilisateur";
 $depart=isset($_POST['depart'])?$_POST['depart']:'';
+$depart=strtok($depart, ',');
 $destination=isset($_POST['destination'])?$_POST['destination']:'';
+$destination=strtok($destination, ',');
 $date = isset($_POST['date'])?$_POST['date']:'';
 $heure=isset($_POST['heure'])?$_POST['heure']:'';
 $place=isset($_POST['place'])?$_POST['place']:'';

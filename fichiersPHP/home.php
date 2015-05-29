@@ -41,8 +41,8 @@ function testDateHeure($date){
 <form name="rechercher" action="rechercher_annonce.php" method="POST">
 
 	
-	<input   name="depart" id="RechercherDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)">
-	<input   name="destination" id="RechercherDestination" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)">
+	<input   name="depart" id="RechercherDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)" required>
+	<input   name="destination" id="RechercherDestination" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)" required>
 	<input   name="date" id="date"  placeholder="Date du trajet" type="date"  value="<?php echo date('Y-m-d', strtotime(date('Y-m-d')));?>">
 	<a style="font-size: 36px;" ><button class="btn btn-default" type="submit">Rechercher</button></a>
 </form>
@@ -52,8 +52,8 @@ function testDateHeure($date){
  <legend> Proposer un trajet : </legend>
 <form name="proposer" action="proposer_trajet.php" method="POST">
 
-	<input class="bginput"  name="depart" id="ProposerDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)">
-	<input class="bginput"  name="destination" id="ProposerDesitnation" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)">
+	<input class="bginput"  name="depart" id="ProposerDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)" required>
+	<input class="bginput"  name="destination" id="ProposerDesitnation" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)" required>
 	<input class="bginput"  name="date" id="date"  placeholder="Date du trajet" type="date" value="<?php echo date('Y-m-d', strtotime(date('Y-m-d')));?>">
 	<a style="font-size: 36px;" ><button class="btn btn-default" type="submit">Proposer</button></a>
 </form>
