@@ -6,8 +6,6 @@ entete('home');
 <fieldset>
  <legend> Trouvez le covoiturage qui correspond a vos attentes : </legend>
 <form name="rechercher" action="rechercher_annonce.php" method="POST">
-
-	
 	<input   name="depart" id="RechercherDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)">
 	<input   name="destination" id="RechercherDestination" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)">
 	<input   name="date" id="date"  placeholder="Date du trajet" type="date"  value="<?php echo date('Y-m-d', strtotime(date('Y-m-d')));?>">
