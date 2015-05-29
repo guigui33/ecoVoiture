@@ -4,10 +4,7 @@ entete('Trajet Disponible');
 ?>
 
 <?php
-
 				require('connexion.php');
-
-
 					$destination=$_POST['destination'];
 					$depart=$_POST['depart'];
 					$cbn=0;			
@@ -19,16 +16,18 @@ entete('Trajet Disponible');
 				if(pg_num_rows ($queryidvilledepart) === 0 ) {
 				?><script> alert("La ville de depart est inconnue. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)");
 				document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/home.php';
+				</script>
 				<?php
 				}				
-				
-				if(pg_num_rows($queryidvilledest) === 0) {
-					?>
-					<script> alert("La ville de destination est inconnue. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)");
-					 document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/home.php';
-					 </script>
-					<?php
-					exit;
+				else {
+					if(pg_num_rows($queryidvilledest) === 0) {
+						?>
+						<script> alert("La ville de destination est inconnue. (Il ce peut qu'elle ne soit pas dans la BDD si c'est le cas faire une requete a l'administrateur)");
+					 	document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/home.php';
+					 	</script>
+						<?php
+						exit;
+					}
 				}
 				while ($row = pg_fetch_assoc($queryidvilledepart)) {
 							$IdDepart=$row['idlieu'];

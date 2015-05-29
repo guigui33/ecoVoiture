@@ -26,11 +26,11 @@ else {
 			$_SESSION['login']=$login;
 			
 				//Recuperation du nom
-				$requete = ('SELECT nom FROM utilisateurs WHERE login=\''.$login.'\'');
+				$requete = ('SELECT iduser, nom FROM utilisateurs WHERE login=\''.$login.'\'');
 				$result=pg_query($connexion, $requete);
-				$data = pg_fetch_array($result);
+				$data = pg_fetch_assoc($result);
 				$_SESSION['nom']=$data['nom'];
-				
+				$_SESSION['iduser']=$data['iduser'];
 			pg_close($connexion);
 			header('location:home.php');
 		}
