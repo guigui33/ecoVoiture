@@ -14,15 +14,9 @@ require("connexion.php");
 
 $trajet=false;
 
-<<<<<<< HEAD
 //Recuperation de l'id du trajet a l'aide d'un get
 if(isset($_GET['idtrajet']))
 {
-	//Selection du trajet correspondant a l'id passer en parametre de l'URL
-=======
-if(isset($_GET['idtrajet']))
-{
->>>>>>> 47cb2e799712c19f03e9ca04cd7d7340db3533cb
     $res=pg_query($connexion, "SELECT * FROM trajets WHERE idtrajet=' " .$_GET['idtrajet']. " ' ");
     $trajet=pg_fetch_array($res);
 }
@@ -47,14 +41,14 @@ else
     $resConducteur=pg_query($connexion,"SELECT * FROM utilisateurs WHERE iduser= (SELECT idchauffeur FROM proposer WHERE idroute=' ".$trajet['idtrajet']." ' ) ");
     $conducteur=pg_fetch_array($resConducteur);
 
-	
+	//Recuperation de la ville de part
     $reqVilleDepart = "SELECT * FROM lieux WHERE idlieu='" . $trajet['iddepart'] . "'";
     $resVilleDepart = pg_query($connexion, $reqVilleDepart);
     $villeDepart = pg_fetch_array($resVilleDepart);
-
+	//Recuperation de la ville destination
     $resVilleArrivee = pg_query($connexion, "SELECT * FROM lieux WHERE idlieu='" . $trajet['idarrivee'] . "'") ;
     $villeArrivee = pg_fetch_array($resVilleArrivee);
-    
+    //Recuperation des caracteristique de la voiture utilisé lors du trajet
     $reqVoiture = "SELECT * FROM voitures WHERE idvoiture='" . $trajet['idvoitureutilisee'] . "'";
     $resVoiture = pg_query($connexion, $reqVoiture);
     $voiture = pg_fetch_array($resVoiture);
@@ -138,6 +132,7 @@ function calculTrajet() {
   directionsService.route(request, function(response, status) {
     if (status == google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
+	  //On affiche la durée et la distance calculée a l'aide de l'API Google
       $('#details-trajet ul').append('<br><li class="list-unstyled">Distance : <strong>' + response.routes[0].legs[0].distance.text + '</strong></li>');
       $('#details-trajet ul').append('<li class="list-unstyled">Durée : <strong>' + response.routes[0].legs[0].duration.text + '</strong></li>');
     }

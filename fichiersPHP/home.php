@@ -32,11 +32,9 @@ function afficherTrajet($tabTrajet){
 						<li class="list-unstyled">Arrivée : <?php echo $arrivee['ville']?></li>
 						<li class="list-unstyled">Date : <?php echo $tabTrajet['datedepart'] ?></li>
 						<li class="list-unstyled">Heure de Départ : <?php echo $tabTrajet['heuredepart']?></li>
-<<<<<<< HEAD
-						<a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button" onClick="">Details Trajet</a>
-=======
+						<!-- Bouton Ayant en redirection la page fiche_annonce et prenant en parametre GET l'id du trajet afin de recuperer les valeurs dans la page fiche_annonce. --> 
 						<li class="list-unstyled">Informations : <?php echo $tabTrajet['infostrajet']; ?>  </br><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php?idtrajet=<?=$tabTrajet['idtrajet']?>" role="button" >Details Trajet</a></li>
->>>>>>> 47cb2e799712c19f03e9ca04cd7d7340db3533cb
+
 					</ul>
 				</div>
 		<?php
