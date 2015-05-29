@@ -54,7 +54,7 @@ if(pg_num_rows ($queryIdTrajetProposer) === 0 ) {
 		<fieldset class="fieldset1">
 		<?php 
 		$queryIdTrajetProposer=pg_query($connexion,"SELECT * FROM proposer WHERE idchauffeur='$iduser'");
-		while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
+		while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer)) || echo ""){
 			$idTrajet=$tabIdTrajets['idroute'];
 			$queryTrajetInfo=pg_query($connexion,"SELECT * FROM trajets WHERE idtrajet='$idTrajet'");
 			$tabTrajet=pg_fetch_assoc($queryTrajetInfo);

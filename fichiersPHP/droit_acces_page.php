@@ -8,7 +8,7 @@ function isDroitAccesPage($titreFichier){
 	"fiche_annonce.php",
 	"proposer_trajet.php",
 	"modification_profil.php",
-	/*"mes_annonces.php"*/
+	"mes_annonces.php"
 	);
 	$i=0;
 	while($i<count($listeFichiersInterdits)){ 
