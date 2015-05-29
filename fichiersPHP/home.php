@@ -3,13 +3,13 @@ Fichier Appelant : Cette page est appelé lors de redirection vers l'acceuil.
 
 Fichier Appelé : proposer_trajet.php, rechercher_annonce.php
 
-Role :Joue le role de page d'acceuil.
+Role :Joue le role de page d'accueil.
 
 -->
 
 <?php include('entete_footer.php'); //inclus le fichier entete
-entete('home');
-require('connexion.php');
+entete('home'); //appel de la fonction qui genere l'entete de la page home
+require('connexion.php'); //fichier connexion BDD 
 
 // Affichage des informations des 6 derniers trajets -->
 function afficherTrajet($tabTrajet){	
@@ -44,7 +44,7 @@ function afficherTrajet($tabTrajet){
 function testDateHeure($date){
 	$now = new DateTime("now");
 	$date = new DateTime("$date");
-	return $now<$date;		
+	return $now<$date; //comparaison de la date systeme avec la date passée en paramètre
 	}	
 ?>
 
@@ -78,10 +78,11 @@ function testDateHeure($date){
 <!-- Boucle pour afficher les 6 derniers trajets -->
 <div class=" col-lg-offset-3">		
 		<?php 
-		$queryTrajets=pg_query($connexion,"SELECT * FROM trajets");
+		$queryTrajets=pg_query($connexion,"SELECT * FROM trajets");//recupere les trajets
 		$i=0;
 		while($i<6 && ($tabTrajet=pg_fetch_assoc($queryTrajets))){
-				if(testDateHeure($tabTrajet['datedepart'].' '.$tabTrajet['heuredepart'])){
+				if(testDateHeure($tabTrajet['datedepart'].' '.$tabTrajet['heuredepart']))//si la date du trajet est un date anterieure on ne l'affiche pas
+				{
 					afficherTrajet($tabTrajet);	
 					$i++;
 				}
