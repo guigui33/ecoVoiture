@@ -51,7 +51,7 @@ var chkZ = 1;
 <div class="legend">Voitures enregistrées</div>
 	<fieldset class="fieldset1"><br>
 	
-		<p>Voiture peugot</p>
+		<p>Renault Twingo</p>
 		
 	</fieldset>
 
