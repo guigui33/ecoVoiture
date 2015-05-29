@@ -1,13 +1,53 @@
 <?php include('entete_footer.php'); 
 entete('home');
+require('connexion.php');
+
+function afficherTrajet($tabTrajet){	
+	$idlieux=$tabTrajet['iddepart'];
+	$depart=pg_query($GLOBALS['connexion'],"SELECT ville FROM lieux WHERE idlieu=$idlieux") ;
+	$depart=pg_fetch_assoc($depart);
+	$idlieux=$tabTrajet['idarrivee'];
+	$arrivee=pg_query($GLOBALS['connexion'],"SELECT ville FROM lieux WHERE idlieu=$idlieux") ;
+	$arrivee=pg_fetch_assoc($arrivee);
+	$idtrajet=$tabTrajet['idtrajet'];
+	$nomCond=pg_query($GLOBALS['connexion'],"SELECT prenom FROM utilisateurs u, proposer p, trajets t WHERE u.iduser=p.idchauffeur AND p.idroute=$idtrajet") ;
+	$nomCond=pg_fetch_assoc($nomCond);
+?>				
+		<div class="col-lg-3  information">	
+				<h4><?php echo $depart['ville'] ?> - <?php echo $arrivee['ville'] ?></h4>
+					<ul >
+						<li class="list-unstyled">Conducteur : <?php echo $nomCond['prenom'] ?></li>
+						<li class="list-unstyled">Départ : <?php echo $depart['ville'] ?></li>
+						<li class="list-unstyled">Arrivée : <?php echo $arrivee['ville']?></li>
+						<li class="list-unstyled">Date : <?php echo $tabTrajet['datedepart'] ?></li>
+						<li class="list-unstyled">Heure de Départ : <?php echo $tabTrajet['heuredepart']?></li>
+						<li><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button" onClick="">Details Trajet</a></li>
+					</ul>
+				</div>
+		<?php
+	} //fin fonction afficherTrajet
+	
+function testDateHeure($date){
+	$now = new DateTime("now");
+	$date = new DateTime("$date");
+	return $now<$date;		
+	}	
+
 ?>
 
 <center>
 <fieldset>
  <legend> Trouvez le covoiturage qui correspond a vos attentes : </legend>
 <form name="rechercher" action="rechercher_annonce.php" method="POST">
+<<<<<<< HEAD
 	<input   name="depart" id="RechercherDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)">
 	<input   name="destination" id="RechercherDestination" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)">
+=======
+
+	
+	<input   name="depart" id="RechercherDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)" required>
+	<input   name="destination" id="RechercherDestination" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)" required>
+>>>>>>> 4fa7a8ebec3335e791312200ad358889e63d5c56
 	<input   name="date" id="date"  placeholder="Date du trajet" type="date"  value="<?php echo date('Y-m-d', strtotime(date('Y-m-d')));?>">
 	<a style="font-size: 36px;" ><button class="btn btn-default" type="submit">Rechercher</button></a>
 </form>
@@ -17,93 +57,24 @@ entete('home');
  <legend> Proposer un trajet : </legend>
 <form name="proposer" action="proposer_trajet.php" method="POST">
 
-	<input class="bginput"  name="depart" id="ProposerDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)">
-	<input class="bginput"  name="destination" id="ProposerDesitnation" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)">
+	<input class="bginput"  name="depart" id="ProposerDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)" required>
+	<input class="bginput"  name="destination" id="ProposerDesitnation" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)" required>
 	<input class="bginput"  name="date" id="date"  placeholder="Date du trajet" type="date" value="<?php echo date('Y-m-d', strtotime(date('Y-m-d')));?>">
 	<a style="font-size: 36px;" ><button class="btn btn-default" type="submit">Proposer</button></a>
 </form>
 </br>
 </br>
-<div class=" col-lg-offset-3" style=" margin-left:20%;">
-        <div class="col-lg-3  information">
-			
-				<h4>TOULOUSE - PARIS</h4>
-					<ul >
-						<li class="list-unstyled">Conducteur : Pierre</li>
-						<li class="list-unstyled">Départ : Toulouse 31000</li>
-						<li class="list-unstyled">Arrivée : Paris, 75001</li>
-						<li class="list-unstyled">Date : 20/05/2015</li>
-						<li class="list-unstyled">Heure de Départ : 10h15</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 16h15 </br><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button" onClick="">Details Trajet</a></li>
-					</ul>
-		
-		</div>
-		    <div class="col-lg-3 information">
-			
-				<h4>TOULOUSE - PARIS</h4>
-					<ul >
-						<li class="list-unstyled">Conducteur : Lea</li>
-						<li class="list-unstyled">Départ : Toulouse 31000</li>
-						<li class="list-unstyled">Arrivée : Paris, 75016</li>
-						<li class="list-unstyled">Date : 20/05/2015</li>
-						<li class="list-unstyled">Heure de Départ : 10h20</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 16h20 </br><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button">Details Trajet</a></li>
-					</ul>
-			
-		</div>
-		    <div class="col-lg-3 information">
-			
-				<h4>TOULOUSE - PARIS</h4>
-					<ul >
-						<li class="list-unstyled">Conducteur : Thomas</li>
-						<li class="list-unstyled">Départ : Toulouse 31000</li>
-						<li class="list-unstyled">Arrivée : Paris, 75013</li>
-						<li class="list-unstyled">Date : 20/05/2015</li>
-						<li class="list-unstyled">Heure de Départ : 15h00</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 21h00 </br><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button">Details Trajet</a></li>
-					</ul>
-			
-		</div>
-		
-		  <div class="col-lg-3 information">
-			
-				<h4>TOULOUSE - PARIS</h4>
-					<ul >
-						<li class="list-unstyled">Conducteur : Martine</li>
-						<li class="list-unstyled">Départ : Toulouse 31000</li>
-						<li class="list-unstyled">Arrivée : Paris, 75004</li>
-						<li class="list-unstyled">Date : 20/05/2015</li>
-						<li class="list-unstyled">Heure de Départ : 15h45</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 21h45 </br><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button">Details Trajet</a></li>
-					</ul>
-			
-		</div>
-		  <div class="col-lg-3 information">
-			
-				<h4>TOULOUSE - PARIS</h4>
-					<ul >
-						<li class="list-unstyled">Conducteur : Jean</li>
-						<li class="list-unstyled">Départ : Toulouse 31000</li>
-						<li class="list-unstyled">Arrivée : Paris, 75008</li>
-						<li class="list-unstyled">Date : 20/05/2015</li>
-						<li class="list-unstyled">Heure de Départ : 18h10</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 00h10 </br><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button">Details Trajet</a></li>
-					</ul>
-			
-		</div>
-		  <div class="col-lg-3 information">
-			
-				<h4>TOULOUSE - PARIS</h4>
-					<ul >
-						<li class="list-unstyled">Conducteur : Clara</li>
-						<li class="list-unstyled">Départ : Toulouse 31000</li>
-						<li class="list-unstyled">Arrivée : Paris, 75009</li>
-						<li class="list-unstyled">Date : 20/05/2015</li>
-						<li class="list-unstyled">Heure de Départ : 18h30</li>
-						<li class="list-unstyled">Heure d'Arrrivée prévue : 00h30 </br><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button">Details Trajet</a></li>
-					</ul>
-			
-		</div>
+<div class=" col-lg-offset-3" style=" margin-left:20%;">		
+		<?php 
+		$queryTrajets=pg_query($connexion,"SELECT * FROM trajets");
+		$i=0;
+		while($i<6 && ($tabTrajet=pg_fetch_assoc($queryTrajets))){
+				if(testDateHeure($tabTrajet['datedepart'].' '.$tabTrajet['heuredepart'])){
+					afficherTrajet($tabTrajet);	
+					$i++;
+				}
+			}
+		?>
 </div>	
 
 </fieldset>

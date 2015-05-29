@@ -16,9 +16,6 @@ $adresse=isset($_POST['adresse'])?$_POST['adresse']:'';
 $codePostal=isset($_POST['codePostal'])?$_POST['codePostal']:'';
 $ville=isset($_POST['ville'])?$_POST['ville']:'';
 
-
-echo $date;
-
 if($email=='' && $login=='' && $passwd=='' && $passwdBis=='' && $nom=='' && $prenom=='' && $date=='' && $ville=='' && $codePostal='' && $adresse=''){
 		exit;
 	}
@@ -34,8 +31,14 @@ $query=pg_query($connexion,"SELECT idlieu FROM Lieux WHERE LOWER (ville) LIKE  L
 				}while ($row = pg_fetch_assoc($query)) {
 							$IdLieu=$row['idlieu'];
 							}
-				pg_query($connexion,"INSERT INTO utilisateurs (mail, login, motdepasse, nom, prenom, telephone, datenaissance, apropos, urlimage, idresidence) VALUES ('$email','$login','$psswd','$nom','$prenom','$telephone','$date','test','test','$IdLieu');");
+				$result = pg_query($connexion,"INSERT INTO utilisateurs (mail, login, motdepasse, nom, prenom, telephone, datenaissance, apropos, urlimage, idresidence) VALUES ('$email','$login','$psswd','$nom','$prenom','$telephone','$date','NULL','NULL','$IdLieu');");
 				pg_close($connexion);
-				header('location:home.php');
-			
-?>
+				if ($result)
+					?>
+					<script>
+						alert("Votre compte a bien été créé");
+						document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/home.php';
+					</script>
+				<?
+					echo "";
+				?>

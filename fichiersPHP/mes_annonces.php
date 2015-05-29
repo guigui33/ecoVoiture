@@ -25,10 +25,6 @@ function testDateHeure($date){
 	
 $iduser=$_SESSION['iduser'];
 $queryIdTrajetProposer=pg_query($connexion,"SELECT * FROM proposer WHERE idchauffeur='$iduser'");
-if(pg_num_rows ($queryIdTrajetProposer) === 0 ) {
-	//afficher Erreur
-	;
-}
 	
 ?>
 
@@ -41,6 +37,7 @@ if(pg_num_rows ($queryIdTrajetProposer) === 0 ) {
 		<?php 
 		$i=0;
 		while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
+			$i++;
 			$idTrajet=$tabIdTrajets['idroute'];
 			$queryTrajetInfo=pg_query($connexion,"SELECT * FROM trajets WHERE idtrajet='$idTrajet'");
 			$tabTrajet=pg_fetch_assoc($queryTrajetInfo);

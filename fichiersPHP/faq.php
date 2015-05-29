@@ -3,8 +3,7 @@ require_once("entete_footer.php");//inclus le fichier entete
 entete('Foire aux questions');
 ?>
 
-<h2 style="background:#46bcde"> Foire aux questions </h2>
-
+<h2 class="alerte alert-info" align="center"> Foire aux questions </h2>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 
 <script type="text/javascript">
