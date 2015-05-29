@@ -64,9 +64,9 @@ function testDateHeure($date){
 		$queryTrajets=pg_query($connexion,"SELECT * FROM trajets");
 		$i=0;
 		while($i<6 && ($tabTrajet=pg_fetch_assoc($queryTrajets))){
-				$i++;
 				if(testDateHeure($tabTrajet['datedepart'].' '.$tabTrajet['heuredepart'])){
 					afficherTrajet($tabTrajet);	
+					$i++;
 				}
 			}
 		?>
