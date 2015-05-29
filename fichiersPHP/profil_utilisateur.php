@@ -13,7 +13,7 @@ if(!$result){
 			$data = pg_fetch_array($result);
 			$login=$data['login'];
 
-entete('Profil de '.$login);
+entete('Profil de '.$login);	
 
 /*Recuperation des resultats
 pour l'affichage*/
@@ -31,35 +31,51 @@ if(!$result){
 			$notemoyenne = number_format($notemoyenne,1);
 
 //Recuperation des préférences
-$requete = ('SELECT fumeur, animaux, musique FROM voitures v, conduire c WHERE v.idvoiture=c.idvoiturepossedee AND c.idconducteur =\''.$iduser.'\'');
+$requete = ('SELECT idvoiture FROM voitures v, conduire c WHERE v.idvoiture=c.idvoiturepossedee AND c.idconducteur =\''.$iduser.'\'');
 $result=pg_query($connexion, $requete);
 if(!$result){
 			pg_close($connexion);
 			header('location:home.php?error=2');
 			echo "Erreur dans la requete";
 			}
-			$data = pg_fetch_array($result);
-			if ($data['fumeur']==='f')
-				{
-					$preferences = "interdit de fumer, ";
-				}else
-				{
-					$preferences = "fumeurs autorisés, ";
+$data = pg_fetch_array($result);
+			if (!$data)
+			{
+				$preferences="Aucune preferences pour le moment";
+			}
+			else
+			{
+			
+			$requete = ('SELECT fumeur, animaux, musique FROM voitures v, conduire c WHERE v.idvoiture=c.idvoiturepossedee AND c.idconducteur =\''.$iduser.'\'');
+			$result=pg_query($connexion, $requete);
+			if(!$result){
+				pg_close($connexion);
+				header('location:home.php?error=2');
+				echo "Erreur dans la requete";
 				}
-			if ($data['animaux']==='f')
-				{
-					$preferences .= "animaux interdits, ";
-				}else
-				{
-					$preferences .= "animaux autorisés, ";
-				}
-			if ($data['musique']==='f')
-				{
-					$preferences .= "pas de musique pendant le trajet";
-				}else
-				{
-					$preferences .= "musique pendant le trajet";
-				}
+				$data = pg_fetch_array($result);
+				if ($data['fumeur']==='f')
+					{
+						$preferences = "interdit de fumer, ";
+					}else
+					{
+						$preferences = "fumeurs autorisés, ";
+					}
+				if ($data['animaux']==='f')
+					{
+						$preferences .= "animaux interdits, ";
+					}else
+					{
+						$preferences .= "animaux autorisés, ";
+					}
+				if ($data['musique']==='f')
+					{
+						$preferences .= "pas de musique pendant le trajet";
+					}else
+					{
+						$preferences .= "musique pendant le trajet";
+					}
+			}
 			
 //Recuperation de la voiture préférée
 $requete = ("SELECT modele, marque FROM voitures WHERE idvoiture = (SELECT COUNT(idvoiturepossedee) AS voiture FROM conduire WHERE idconducteur=".$iduser." ORDER BY voiture DESC)");
@@ -88,6 +104,9 @@ if(!$result){
 			}
 			$data = pg_fetch_array($result);
 			$apropos=$data['apropos'];
+			if ($apropos==NULL){
+				$apropos="Aucun renseignements à propos de $login";
+				}
 			
 			
 //Recuperation avis en tant que conducteur
@@ -114,9 +133,18 @@ if(!$avis_passager){
 			pg_close($connexion);
 ?>
 
-<h2 class="alerte alert-info" align="center"> Profil de l'utilisateur <?php echo $login; ?> </h2>
+<h2 class="alerte alert-info" align="center"> 
+
+Profil de l'utilisateur 
+
+		<?php echo $login; if($login === $_SESSION['login']){?>
+		<a href="modification_profil.php"><img style="margin-left: 15px; height:30px; width:30px;" src="includes/crayon.png" alt="Modifier votre profil"/></a>
+		<?php }
+		?> 
+</h2>
 
 <legend> Mes informations</legend>
+
 
 Evaluation moyenne du conducteur : <?php if($notemoyenne==0.0){echo "Aucune note pour le moment";}else {echo $notemoyenne."/5";}?>
 <br><br>
