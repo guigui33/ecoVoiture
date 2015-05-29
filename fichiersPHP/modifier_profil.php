@@ -1,3 +1,7 @@
+<!--
+appelé par le fichier modification_profil.php 
+rôle: charger les nouvelles informations de l'utilisateur dans la base de donnée 
+-->
 <?php
 require('connexion.php');
 session_start();

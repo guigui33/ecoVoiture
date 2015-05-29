@@ -1,3 +1,7 @@
+<!--
+Affiche la page pour permettre à un utilisateur de modifier les informations sur son profil 
+appelle la page modifier_profil.php pour valider et enregistrer les nouvelles informations dans la base de donnée
+-->
 <?PHP
 require_once("entete_footer.php");//inclus le fichier entete
 entete('Modification du profil (informations générales)');
