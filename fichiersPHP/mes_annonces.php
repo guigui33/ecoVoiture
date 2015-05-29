@@ -39,6 +39,7 @@ if(pg_num_rows ($queryIdTrajetProposer) === 0 ) {
 		<div class="legend"> En cours </div>
 		<fieldset class="fieldset1">
 		<?php 
+		$i=0;
 		while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
 			$idTrajet=$tabIdTrajets['idroute'];
 			$queryTrajetInfo=pg_query($connexion,"SELECT * FROM trajets WHERE idtrajet='$idTrajet'");
@@ -48,13 +49,18 @@ if(pg_num_rows ($queryIdTrajetProposer) === 0 ) {
 				echo '<hr>';
 			}
 		}
+		if($i==0){
+			echo "<center> Aucune annonce passée </center>";
+		}
 		?>
 		</fieldset>
 		<div class="legend"> Passées </div>
 		<fieldset class="fieldset1">
 		<?php 
 		$queryIdTrajetProposer=pg_query($connexion,"SELECT * FROM proposer WHERE idchauffeur='$iduser'");
+		$i=0;
 		while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
+			$i++;
 			$idTrajet=$tabIdTrajets['idroute'];
 			$queryTrajetInfo=pg_query($connexion,"SELECT * FROM trajets WHERE idtrajet='$idTrajet'");
 			$tabTrajet=pg_fetch_assoc($queryTrajetInfo);
@@ -62,6 +68,9 @@ if(pg_num_rows ($queryIdTrajetProposer) === 0 ) {
 				afficherTrajet($tabTrajet);	
 				echo '<hr>';
 			}
+		}
+		if($i==0){
+			echo "<center> Aucune annonce passée </center>";
 		}
 		?>
 	</fieldset>
