@@ -43,6 +43,13 @@ $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (v
 				}
 				$proposer=pg_query($connexion,"INSERT INTO proposer(idchauffeur, idroute)  VALUES ($idutilisateur,$idtrajet)");
 				pg_close($connexion);
-				header('location:home.php');
-			
-?>
+				if ($proposer)
+					?>
+
+					<script>
+						alert("Votre trajet a bien été créé");
+						document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/home.php';
+					</script>
+					<?
+					echo "";
+				?>
