@@ -3,7 +3,7 @@ Fichier Appelant : rechercher_annonce.php
 
 Fichier Appelé : fichier_annonce.php?trajet
 
-Role : Permet d'afficher lors de l'appuie sur 'Detail trajet' les information de celui ci a l'aide d'un get passé en url contenant l'id du trajet selectionner.
+Role : Permet d'afficher lors de l'appuie sur 'Detail trajet' les information de celui ci a l'aide d'un get passé en url contenant l'id du trajet selectionné.
 
 -->
 
@@ -31,14 +31,14 @@ else
 {
     if(isset($_POST['Postuler']) && isset($_SESSION['iduser']))
     {
-		//Réservation du trajet par l'utilisateur avec lui afficher un message de confirmation
+		//Réservation du trajet par l'utilisateur, on affiche un message de confirmation
         $res=pg_query($connexion, "INSERT INTO reserver ( iduserclient, idtrajetreserve ) VALUES (".$_SESSION['iduser']." ,".$_GET['idtrajet'].") ");
         ?>
         <div class="col-lg-12 alert alert-success">Vous avez bien postulé sur ce trajet !</div>
         <?php
     }
 	
-	//Requete imbriquer afin de recuperer les information concernant le conducteur du trajet
+	//Requete imbriquée afin de recuperer les informations concernants le conducteur du trajet
     $resConducteur=pg_query($connexion,"SELECT * FROM utilisateurs WHERE iduser= (SELECT idchauffeur FROM proposer WHERE idroute=' ".$trajet['idtrajet']." ' ) ");
     $conducteur=pg_fetch_array($resConducteur);
 	
@@ -51,12 +51,12 @@ else
     $resVilleArrivee = pg_query($connexion, "SELECT * FROM lieux WHERE idlieu='" . $trajet['idarrivee'] . "'") ;
     $villeArrivee = pg_fetch_array($resVilleArrivee);
     
-	//Recuperation des caracteristique de la voiture utilisé lors du trajet
+	//Recuperation des caracteristiques de la voiture utilisée lors du trajet
     $reqVoiture = "SELECT * FROM voitures WHERE idvoiture='" . $trajet['idvoitureutilisee'] . "'";
     $resVoiture = pg_query($connexion, $reqVoiture);
     $voiture = pg_fetch_array($resVoiture);
     
-	//Récuperation des informations de preference de l'utilisateur
+	//Récuperation des informations des preferences de l'utilisateur
 	$requete = ("SELECT fumeur, animaux, musique FROM voitures v, conduire c WHERE v.idvoiture=c.idvoiturepossedee AND c.idconducteur ='".$conducteur['iduser']."' " );
 		$result=pg_query($connexion, $requete);
 		if(!$result){
@@ -107,10 +107,10 @@ if(!$result){
             </div>
             <div class="panel-body">
 			
-			<!-- Script Concernant l'API Google Afin de recuperer la carte, Afficher les markers depart et destination Aisin que le calcul de Durée et de Distance en Km.  -->
+			<!-- Script Concernant l'API Google Afin de recuperer la carte, Afficher les markers depart et destination ainsi que le calcul de Durée et de Distance en Km.  -->
             <script src="https://maps.googleapis.com/maps/api/js"></script>     
   <script>
-/* Affiche de la carte avec les parametre recu par CalculTrajet();*/
+/* Affiche de la carte avec les parametres reçuent par CalculTrajet();*/
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
@@ -225,7 +225,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
             <?php
           }
           
-          //Sinon si l'utilisateur est le conducteur du trajet et on lui affiche un message pour le prévenir
+          //Sinon si l'utilisateur est le conducteur du trajet, on lui affiche un message pour le prévenir
           else if ($conducteur['iduser'] === $_SESSION['iduser'])
           {
             ?>

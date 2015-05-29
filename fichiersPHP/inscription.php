@@ -1,3 +1,6 @@
+<!--
+
+-->
 <?PHP
 require_once("entete_footer.php");//inclus le fichier entete
 entete('inscription');

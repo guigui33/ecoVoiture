@@ -4,19 +4,18 @@ ajouter fichier require_once(entete_footer.php) dans les fichiers.
 pour appeler l'entete faite au debut du fichier entete($titre);
 $titre=nom de la page 
 puis a la fin du fichier faite footer();
-
+la page permet de continuer sur une session démarrée
 */
 include('droit_acces_page.php');
 
-/* Démarage de la session */
 session_start();
-	$connexion;
+	$connexion;//permet de définir la page en fonction de l'etat(connecté ou non) de l'utilisateur
 	if(!isset($_SESSION['logged']) || !$_SESSION['logged'])//si l'utilisateur n'est pas connecté
 	{
 		$connexion=false;
 		/*test si l'utilisateur peut accèder à la page*/
 		$titreFichier=$_SERVER['SCRIPT_NAME'];
-		$titreFichier=basename ( $titreFichier );
+		$titreFichier=basename ( $titreFichier );//recupère que le nom du fichier
 		
 		/* Si l'utilisateur n'est pas authentifié */
 		if(!isDroitAccesPage($titreFichier)){

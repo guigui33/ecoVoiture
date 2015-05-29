@@ -1,6 +1,7 @@
 <?php 
 /*fonction qui teste dans une liste si l'utilisateur non connecté a le droit d'acceder à un page ou non
- * retourne true si oui, false sinon * 
+ * retourne true si le fichier est dans la liste des non accessibles, false sinon.
+ * Permet de rendre des pages inaccessibles aux utilisateurs non connectés
  * */
 function isDroitAccesPage($titreFichier){ 
 	/* Liste des pages qui ne peuvent pas être visualisées par un utilisateur non authentifié */

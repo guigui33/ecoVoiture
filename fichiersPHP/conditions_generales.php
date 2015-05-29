@@ -1,3 +1,6 @@
+<!--
+page qui génère la page conditions générales
+-->
 <?PHP
 require_once("entete_footer.php");//inclus le fichier entete
 entete('Conditions générales d utilisation');
