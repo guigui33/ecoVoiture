@@ -41,6 +41,7 @@ if(pg_num_rows ($queryIdTrajetProposer) === 0 ) {
 		<?php 
 		$i=0;
 		while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
+			$i++;
 			$idTrajet=$tabIdTrajets['idroute'];
 			$queryTrajetInfo=pg_query($connexion,"SELECT * FROM trajets WHERE idtrajet='$idTrajet'");
 			$tabTrajet=pg_fetch_assoc($queryTrajetInfo);
