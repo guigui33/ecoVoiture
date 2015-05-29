@@ -1,16 +1,19 @@
-
+<!--
+fonction pour ajouter un trajet proposé par un utilisateur
+usage de la fonction connexion à la base de donnée
+-->
 
 <?php
-require('connexion.php');
+require('connexion.php'); //connexion à la base de donnée
 
-// On crée une session 
+// continuité de la session
 session_start();
 
 //verification des informations données par le client avant de les inclurent dans la BD
 $residutilisateur=pg_query($connexion, "SELECT iduser FROM utilisateurs WHERE login ='".$_SESSION['login']."' ");
-while ($row = pg_fetch_assoc($residutilisateur)) {
-							$idutilisateur=$row['iduser'];
-							}
+	while ($row = pg_fetch_assoc($residutilisateur)) {
+			$idutilisateur=$row['iduser'];
+			}
 //Récupérations des différentes informations entrées par l'utilisateur
 $depart=isset($_POST['depart'])?$_POST['depart']:'';
 $depart=strtok($depart, ',');
@@ -49,12 +52,11 @@ $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (v
 							$idtrajet=$row['id'];
 				}
 				
-				//Insertion de l'id utilisateur et de l'id du trajet recuperer
+				//Insertion de l'id utilisateur et de l'id du trajet récuperé
 				$proposer=pg_query($connexion,"INSERT INTO proposer(idchauffeur, idroute)  VALUES ($idutilisateur,$idtrajet)");
 				pg_close($connexion);
 				if ($proposer)
-					?>
-					
+					?>					
 					<!-- Affichage d'un message de confirmation de création de trajet dans une pop-up -->
 					<script>
 						alert("Votre trajet a bien été créé");
