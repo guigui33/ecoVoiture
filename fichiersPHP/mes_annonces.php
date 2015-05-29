@@ -25,10 +25,6 @@ function testDateHeure($date){
 	
 $iduser=$_SESSION['iduser'];
 $queryIdTrajetProposer=pg_query($connexion,"SELECT * FROM proposer WHERE idchauffeur='$iduser'");
-if(pg_num_rows ($queryIdTrajetProposer) === 0 ) {
-	//afficher Erreur
-	;
-}
 	
 ?>
 
