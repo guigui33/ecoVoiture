@@ -38,16 +38,9 @@ function testDateHeure($date){
 <center>
 <fieldset>
  <legend> Trouvez le covoiturage qui correspond a vos attentes : </legend>
-<form name="rechercher" action="rechercher_annonce.php" method="POST">
-<<<<<<< HEAD
-	<input   name="depart" id="RechercherDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)">
-	<input   name="destination" id="RechercherDestination" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)">
-=======
-
-	
+<form name="rechercher" action="rechercher_annonce.php" method="POST">	
 	<input   name="depart" id="RechercherDepart" size="50" placeholder="Ville de depart" type="text" onchange="checkText(this.id)" required>
 	<input   name="destination" id="RechercherDestination" size="50"  placeholder="Ville de destination" type="text" onchange="checkText(this.id)" required>
->>>>>>> 4fa7a8ebec3335e791312200ad358889e63d5c56
 	<input   name="date" id="date"  placeholder="Date du trajet" type="date"  value="<?php echo date('Y-m-d', strtotime(date('Y-m-d')));?>">
 	<a style="font-size: 36px;" ><button class="btn btn-default" type="submit">Rechercher</button></a>
 </form>
