@@ -1,3 +1,7 @@
+<!--
+formulaire pour qu'un utilisateur puisse proposer un trajet 
+Les verifications sont faîtes
+-->
 <?php
 include('entete_footer.php'); //inclus le fichier entete
 entete('home');

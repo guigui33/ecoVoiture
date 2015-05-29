@@ -3,7 +3,7 @@ Fichier Appelant : entete_footer.php
 
 Fichier Appelé : entete_footer.php, connexion.php, redirection vers si http://ecovoiture.alwaysdata.net/fichiersPHP/home.php';
 
-Role : Verifie les valeurs et données rentré lors de l'inscription. Redirection vers si http://ecovoiture.alwaysdata.net/fichiersPHP/home.php'; Sinon renvoie l'erreur pour laquelle l'ajout n'as pas pu etre possible
+Role : Verifie les valeurs et données rentrées lors de l'inscription. Redirection vers si http://ecovoiture.alwaysdata.net/fichiersPHP/home.php'; Sinon renvoie l'erreur pour laquelle l'ajout n'as pas pu etre possible
 
 -->
 

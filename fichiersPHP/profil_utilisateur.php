@@ -1,3 +1,6 @@
+<!--
+rôle: affiche la page du profil de l'utilisateur
+-->
 <?php include('entete_footer.php'); 
 
 require('connexion.php');
