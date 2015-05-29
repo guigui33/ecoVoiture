@@ -54,7 +54,6 @@ entete('Trajet Disponible');
 						while($row=pg_fetch_assoc($query)){
 							$nomdest=$row['ville'];
 						}
-					
 					while ($donnees = pg_fetch_array($result)) 
 					{			
 ?>

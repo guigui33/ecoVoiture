@@ -4,9 +4,9 @@ require("connexion.php");
 
 $trajet=false;
 
-if(isset($_GET['trajet']))
+if(isset($_GET['idtrajet']))
 {
-    $res=pg_query($connexion, "SELECT * FROM trajets WHERE idtrajet=' " .$_GET['trajet']. " ' ");
+    $res=pg_query($connexion, "SELECT * FROM trajets WHERE idtrajet=' " .$_GET['idtrajet']. " ' ");
     $trajet=pg_fetch_array($res);
 }
 if($trajet===0)
@@ -20,7 +20,7 @@ else
     if(isset($_POST['Postuler']) && isset($_SESSION['iduser']))
     {
 		
-        $res=pg_query($connexion, "INSERT INTO reserver ( iduserclient, idtrajetreserve ) VALUES (".$_SESSION['iduser']." ,".$_GET['trajet'].") ");
+        $res=pg_query($connexion, "INSERT INTO reserver ( iduserclient, idtrajetreserve ) VALUES (".$_SESSION['iduser']." ,".$_GET['idtrajet'].") ");
         ?>
         <div class="col-lg-12 alert alert-success">Vous avez bien postulé sur ce trajet !</div>
         <?php
@@ -196,7 +196,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
           }
           
           // On vérifie si on est pas le conducteur
-          else if ($conducteur['iduser'] == $_SESSION['iduser'])
+          else if ($conducteur['iduser'] === $_SESSION['iduser'])
           {
               
               ?>
@@ -206,7 +206,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
           else
           {  
           ?>
-      <form method="post" action="fiche_annonce.php?trajet=<?echo $_GET['idtrajet']?>">
+      <form method="post" action="fiche_annonce.php?idtrajet=<?=$_GET['idtrajet']?>">
         <button type="submit" name="Postuler" class="btn btn-xl btn-success" id="submit" />Postuler à ce trajet !</button>
       </form>
       <?php

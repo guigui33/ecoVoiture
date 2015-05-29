@@ -21,7 +21,7 @@ function afficherTrajet($tabTrajet){
 						<li class="list-unstyled">Arrivée : <?php echo $arrivee['ville']?></li>
 						<li class="list-unstyled">Date : <?php echo $tabTrajet['datedepart'] ?></li>
 						<li class="list-unstyled">Heure de Départ : <?php echo $tabTrajet['heuredepart']?></li>
-						<li><a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button" onClick="">Details Trajet</a></li>
+						<a class="btn btn-lg btn-success bouton" href="fiche_annonce.php" role="button" onClick="">Details Trajet</a>
 					</ul>
 				</div>
 		<?php
