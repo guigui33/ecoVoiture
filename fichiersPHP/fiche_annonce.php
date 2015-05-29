@@ -124,7 +124,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
                 <li class="list-unstyled">Ville de départ : <strong><?=$villeDepart['ville']?></strong></li>
                 <li class="list-unstyled">Heure de départ : <strong><?=$trajet['heuredepart'] ?></strong></li><br/>
                 <li class="list-unstyled">Ville d'arrivée : <strong><?=$villeArrivee['ville']?></strong></li>
-                <li class="list-unstyled">Heure d'arrrivée prévue : <strong>A rajouter </strong></li>
                 </ul>
 		</div>
 		</div>
