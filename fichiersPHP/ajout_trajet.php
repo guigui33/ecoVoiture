@@ -37,7 +37,7 @@ $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (v
 							$IdDest=$row['idlieu'];
 							}	
 				
-				$requete=pg_query($connexion,"INSERT INTO trajets (datedepart, heuredepart, placesdispo, taillebagages, infostrajet, idVoitureutilisee,iddepart, idarrivee) VALUES ('$date','$heure','$place','$bagage','$information',1,'$IdDepart','$IdDest');");
+				$requete=pg_query($connexion,"INSERT INTO trajets (datedepart, heuredepart, placesdispo, taillebagages, infostrajet, idVoitureutilisee,iddepart, idarrivee) VALUES ('$date','$heure','$place','$bagage','$information',1,$IdDepart,$IdDests);");
 				$residtrajet=pg_query($connexion,"SELECT MAX (idtrajet) AS id FROM trajets");
 				while ($row = pg_fetch_assoc($residtrajet)) {
 							$idtrajet=$row['id'];
