@@ -143,10 +143,9 @@ input.modif_profil_psswd {
 margin-bottom: 0px;
 }
 
-
 .fieldset1
 {
-    border:2px solid blue;
+    border:2px solid #81BEF7;
     -moz-border-radius:8px;
     -webkit-border-radius:8px;	
     border-radius:8px;	

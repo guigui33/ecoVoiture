@@ -1,10 +1,19 @@
 <?php include('entete_footer.php'); 
 
 require('connexion.php');
-$login="mau5trap";
-$iduser=1;
+$iduser=$_GET["idprofil"];
 
-entete('Profil de ...');
+$requete = ('SELECT login FROM utilisateurs WHERE iduser=\''.$iduser.'\'');
+$result=pg_query($connexion, $requete);
+if(!$result){
+			pg_close($connexion);
+			header('location:home.php?error=2');
+			echo "Erreur dans la requete";
+			}
+			$data = pg_fetch_array($result);
+			$login=$data['login'];
+
+entete('Profil de '.$login);
 
 /*Recuperation des resultats
 pour l'affichage*/
@@ -131,7 +140,7 @@ Ma voiture préférée : <?php echo $voiturepreferee; ?>
 		<?php 	
 			$row=pg_fetch_array($avis_conducteur); 
 			if (!$row)
-				echo "<center>Aucun avis pour le moment</center>"; 
+				echo "<center><br>Aucun avis pour le moment<br><br></center>"; 
 			else 
 				do{
 					echo "<br>". $row['login']. " : ".$row['commentaire']." (".$row['note']."/5)<br>";
@@ -142,7 +151,7 @@ Ma voiture préférée : <?php echo $voiturepreferee; ?>
 		<?php 	
 			$row=pg_fetch_array($avis_passager); 
 			if (!$row)
-				echo "<center>Aucun avis pour le moment</center>"; 
+				echo "<center><br>Aucun avis pour le moment<br><br></center>"; 
 			else 
 				do{
 					echo "<br>". $row['login']. " : ".$row['commentaire']." (".$row['note']."/5)<br>";

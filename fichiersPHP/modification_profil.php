@@ -1,6 +1,6 @@
 <?PHP
 require_once("entete_footer.php");//inclus le fichier entete
-entete('Modification du profil');
+entete('Modification du profil (informations générales)');
 ?>
 <script type="text/javascript">
 function verif_formulaire()
@@ -49,17 +49,20 @@ var chkZ = 1;
 <form name="formulaire" action="modifier_profil.php" method="POST" onSubmit="return verif_formulaire()">
 <br><br>
 	
-	<p><label for="email">Adresse Mail :</label><input  type="email"   id="email"name="email" maxlength="320" size="50" required  /><br /></p>
-	<p><label for="telephone">Téléphone :</label> <input type="tel" name="telephone" /> <br/>
-	<p><label for="nom">Nom :</label> <input type="text" name="nom" required /> 
-	<p><label for="prenom">Prénom :</label> <input type="text" name="prenom" required /> 
-	<p><label for="adresse">Adresse :</label> <textarea name="adresse" required /></textarea><br/>	
-	<p><label for="codePostall">Code postal :</label> <input type="text" name="codePostal" required /><br/>
-	<p><label for="ville">Ville :</label><input type="text" name="ville" required /> <br/>
+	<p><label for="email">Adresse Mail :</label><input  type="email"   id="email"name="email" maxlength="320" size="50" required  /> </p>
+	<p><label for="telephone">Téléphone :</label> <input type="tel" name="telephone" /> </p>
+	<p><label for="nom">Nom :</label> <input type="text" name="nom" required /> </p>
+	<p><label for="prenom">Prénom :</label> <input type="text" name="prenom" required /> </p>
+	<p><label for="adresse">Adresse :</label> <textarea name="adresse" required /></textarea> </p>
+	<p><label for="codePostall">Code postal :</label> <input type="text" name="codePostal" required /> </p>
+	<p><label for="ville">Ville :</label><input type="text" name="ville" required /> </p>
 
-    <center>
-	<input class="modif_profil_checkbox" type="checkbox" name="validerCondGeneral" value="validerCondGeneral" required /> Je souhaite modifier mon mot de passe 
-	<input class="modif_profil_psswd" type="password"  id="newPsswd" name="newPsswd" required /><br/> <br/><br/><br/>
+	<center>
+	<p><input class="modif_profil_checkbox" type="checkbox" id="demandeModifPsswsd" name="demandeModifPsswsd" value="demandeModifPsswsd" onClick="document.getElementById('newPsswd').disabled=false"/>
+	Je souhaite modifier mon mot de passe :
+	<input class="modif_profil_psswd" type="password"  id="newPsswd" name="newPsswd" disabled /></p> <br><br><br>
+
+	
 	<p>Pour plus de sécurité, merci d'indiquer votre mot de passe pour confirmer votre identité.</p>
 	</center>
 	

@@ -21,9 +21,8 @@ session_start();
 	else {
 		$connexion=true;
 		$nom=$_SESSION['nom'];
-		}	
-		
-		
+		$prenom=$_SESSION['prenom'];
+		}			
 		
 function entete($titre){ ?>
 	<!DOCTYPE html>
@@ -61,9 +60,9 @@ function entete($titre){ ?>
 				</div>
 				<?php }			
 				else{?>
-					<center>Bienvenue <?php echo $GLOBALS['nom'];?>, bonne visite sur EcoVoiture !</center>
+					<center>Bienvenue <?php echo $GLOBALS['prenom'];?>, bonne visite sur EcoVoiture !</center>
 					<center><input class="btn btn-default" type="button" onclick="location.href='mes_annonces.php'" value='Mes annonces'></input>
-					<input class="btn btn-default" type="button" onclick="location.href='profil_utilisateur.php'" value='Mon profil'></input>
+					<input class="btn btn-default" type="button" onclick="location.href='profil_utilisateur.php?idprofil=<?php echo $_SESSION['iduser']?>'" value='Mon profil'></input>
 					<input class="btn btn-default" type="button" onclick="location.href='mes_reservations.php'" value='Mes reservations'></input>
 					<input class="btn btn-default" type="button" onClick="location.href='seDeconnecter.php'" value='Se deconnecter'></input></center><br>
 				<?php } ?>
