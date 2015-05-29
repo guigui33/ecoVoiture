@@ -20,6 +20,7 @@ $password="ecovoiturestri";
 //connexion a la base de données
 $connexion=pg_connect("host=".$hote." port=".$port." dbname=".$dbname." user=".$user." password=".$password."");
 
+//Si connexion impossible, affichage d'un message d'erreur
 if(!$connexion){
 	exit("Impossible de se connecter à la base de données Postgres");}
 

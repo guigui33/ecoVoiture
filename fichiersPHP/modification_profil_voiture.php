@@ -2,9 +2,12 @@
 require_once("entete_footer.php");//inclus le fichier entete
 entete('Modification du profil (voiture)');
 ?>
+
+<!-- Fonction de vérification des différents champs présents -->
 <script type="text/javascript">
 function verif_formulaire()
 {
+  //Vérification que les informations écrites dans le champs "téléphone" soient des nombres
 var chkZ = 1;
  for(i=0;i<document.formulaire.telephone.value.length;++i)
    if(document.formulaire.telephone.value.charAt(i) < "0"
@@ -15,6 +18,7 @@ var chkZ = 1;
    document.formulaire.telephone.focus();
    return false;
   }
+  //Vérification que les informations écrites dans les champs du mot de passe et mot de passe de confirmation soient identiques
   var chkZ = 1;
  for(i=0;i<document.formulaire.psswd.value.length;++i)
    if(document.formulaire.psswd.value.charAt(i) != document.formulaire.psswdBis.value.charAt(i) )
@@ -24,7 +28,7 @@ var chkZ = 1;
    document.formulaire.psswd.focus();
    return false;
   }
-  
+   //Vérification que les informations écrites dans le champs "code postal" soient des nombres
 var chkZ = 1;
  for(i=0;i<document.formulaire.codePostal.value.length;++i)
    if(document.formulaire.codePostal.value.charAt(i) < "0"
@@ -38,24 +42,24 @@ var chkZ = 1;
 }
 </script>
 
-<h2 class="alerte alert-info" align="center"> Modification de votre profil </h2>
+<!-- Alignement du titre et couleur bleu de la banière du titre -->
+<h2 class="alerte alert-info"> Modification de votre profil </h2>
 
+<!-- Onglet pour accéder aux modifications des informations générales et la modification des véhicules de l'utilisateur -->
 <body>
+	<ul class="menu">
+		<li class="current"><a href="modification_profil.php"><b>Informations générales</b></a></li>
+		<li class="current"><a href="modification_profil_voiture.php"><b>Voitures</b></a></li>
+	</ul>
 
-<ul class="menu">
-    <li class="current"><a href="modification_profil.php"><b>Informations générales</b></a></li>
-    <li class="current"><a href="modification_profil_voiture.php"><b>Voitures</b></a></li>
-</ul>
-
-
-<div class="legend">Voitures enregistrées</div>
+	<!-- Affichage des voitures de l'utilisateur (à faire) -->
+	<div class="legend">Voitures enregistrées</div>
 	<fieldset class="fieldset1"><br>
-	
 		<p>Renault Twingo</p>
-		
 	</fieldset>
-
-<br>
+	<br>
+	
+	<!-- Formulaire pour la ajouter des véhicule à l'utilisateur -->
 	<div class="legend">Ajouter une voiture</div>
 		<fieldset class="fieldset1"><br>
 		
@@ -87,8 +91,9 @@ var chkZ = 1;
 			
 		</fieldset>
 
-	
 </form>
 </body>
 
-<?php footer(); ?>
+<?php 
+	footer();//inclus le fichier footer
+?>

@@ -11,7 +11,7 @@ $residutilisateur=pg_query($connexion, "SELECT iduser FROM utilisateurs WHERE lo
 while ($row = pg_fetch_assoc($residutilisateur)) {
 							$idutilisateur=$row['iduser'];
 							}
-
+//Récupérations des différentes informations entrées par l'utilisateur
 $depart=isset($_POST['depart'])?$_POST['depart']:'';
 $depart=strtok($depart, ',');
 $destination=isset($_POST['destination'])?$_POST['destination']:'';
@@ -22,6 +22,7 @@ $place=isset($_POST['place'])?$_POST['place']:'';
 $bagage=isset($_POST['bagage'])?$_POST['bagage']:'';
 $information=isset($_POST['information'])?$_POST['information']:'';
 
+//Test pour vérifier que chaque champs ne soit pas vide
 if($depart=='' && $destination=='' && $date=='' && $heure=='' && $place=='' && $bagage='' && $information=''){
 		exit;
 	}
@@ -53,7 +54,8 @@ $queryidvilledepart=pg_query($connexion,"SELECT idlieu FROM lieux WHERE LOWER (v
 				pg_close($connexion);
 				if ($proposer)
 					?>
-
+					
+					<!-- Affichage d'un message de confirmation de création de trajet dans une pop-up -->
 					<script>
 						alert("Votre trajet a bien été créé");
 						document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/home.php';

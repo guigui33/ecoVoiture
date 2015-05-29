@@ -24,10 +24,11 @@ if(!$result){
 			
 ?>
 
-
+<!-- Fonction de vérification des différents champs présents -->
 <script type="text/javascript">
 function verif_formulaire()
 {
+  //Vérification que les informations écrites dans le champs "téléphone" soient des nombres
 var chkZ = 1;
  for(i=0;i<document.formulaire.telephone.value.length;++i)
    if(document.formulaire.telephone.value.charAt(i) < "0"
@@ -38,6 +39,7 @@ var chkZ = 1;
    document.formulaire.telephone.focus();
    return false;
   }
+  //Vérification que les informations écrites dans les champs du mot de passe et mot de passe de confirmation soient identiques
   var chkZ = 1;
  for(i=0;i<document.formulaire.psswd.value.length;++i)
    if(document.formulaire.psswd.value.charAt(i) != document.formulaire.psswdBis.value.charAt(i) )
@@ -47,7 +49,7 @@ var chkZ = 1;
    document.formulaire.psswd.focus();
    return false;
   }
-  
+   //Vérification que les informations écrites dans le champs "code postal" soient des nombres
 var chkZ = 1;
  for(i=0;i<document.formulaire.codePostal.value.length;++i)
    if(document.formulaire.codePostal.value.charAt(i) < "0"
@@ -61,14 +63,18 @@ var chkZ = 1;
 }
 </script>
 
-<h2 class="alerte alert-info" align="center"> Modification de votre profil </h2>
+<!-- Alignement du titre et couleur bleu de la banière du titre -->
+<h2 class="alerte alert-info"> Modification de votre profil </h2>
 
+<!-- Onglet pour accéder aux modifications des informations générales et la modification des véhicules de l'utilisateur -->
 <body>
 <ul class="menu">
     <li class="current"><a href="modification_profil.php"><b>Informations générales</b></a></li>
     <li class="current"><a href="modification_profil_voiture.php"><b>Voitures</b></a></li>
 </ul>
 
+<!-- Formulaire pour la modification des informations générales. Récupérations des informations de l'utilisateur
+     authentifié dans chaque champs dont il peut modifier -->
 <form name="formulaire" action="modifier_profil.php" method="POST" onSubmit="return verif_formulaire()">
 <br><br>
 	
@@ -84,7 +90,6 @@ var chkZ = 1;
 	Je souhaite modifier mon mot de passe :
 	<input class="modif_profil_psswd" type="password"  id="newPsswd" name="newPsswd" disabled /></p> <br><br><br>
 
-	
 	<p>Pour plus de sécurité, merci d'indiquer votre mot de passe pour confirmer votre identité.</p>
 	</center>
 	
@@ -93,9 +98,10 @@ var chkZ = 1;
 	<input class="btn btn-default" type="submit" value="Valider mes modifications" /></input>
 	</center>
 	
-	
 </form>
 </body>
 
 
-<?php footer(); ?>
+<?php 
+	footer();//inclus le fichier footer
+?>

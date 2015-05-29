@@ -1,6 +1,8 @@
 <?php
-include('entete_footer.php'); 
+include('entete_footer.php'); //inclus le fichier entete
 entete('home');
+
+//Récupération des premières informations remplies sur la page home.php
 $depart=$_POST['depart'] ;
 $destination=$_POST['destination'];
 $date = isset($_POST['date'])?$_POST['date']:'';
@@ -17,8 +19,11 @@ function verif_formulaire()
 }
 </script>
 
-<h2 style="background:#46bcde" align="center"> Proposer un trajet </h2>
-<!--  Required signifie que le champ est obligatoire si l'on envoie ce formulaire.-->
+<!-- Alignement du titre et couleur bleu de la banière du titre -->
+<h2 class="alerte alert-info"> Proposer un trajet </h2>
+
+<!-- Création d'un formulaire pour ajouter un nouveau trajet à l'utilisateur.
+     "Required" signifie que le champ est obligatoire si l'on envoie ce formulaire -->
 <form name="formulaire" action="ajout_trajet.php" method="POST" onSubmit="return verif_formulaire()">
 	<fieldset>
 	<legend align="center">Itinéraire</legend>
@@ -57,5 +62,5 @@ function verif_formulaire()
 </form>
 
 <?php 
-footer();
+footer();//inclus le fichier footer
 ?> 	

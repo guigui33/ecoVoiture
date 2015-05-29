@@ -8,6 +8,7 @@ puis a la fin du fichier faite footer();
 */
 include('droit_acces_page.php');
 
+/* Démarage de la session */
 session_start();
 	$connexion;
 	if(!isset($_SESSION['logged']) || !$_SESSION['logged'])//si l'utilisateur n'est pas connecté
@@ -16,16 +17,21 @@ session_start();
 		/*test si l'utilisateur peut accèder à la page*/
 		$titreFichier=$_SERVER['SCRIPT_NAME'];
 		$titreFichier=basename ( $titreFichier );
+		
+		/* Si l'utilisateur n'est pas authentifié */
 		if(!isDroitAccesPage($titreFichier)){
+				/* Il sera redirigé vers la page "home.php" */
 				header('location:home.php');
 		}
 	}
+	/*Sinon on lui conserve son nom et prenom dans les variables de session */
 	else {
 		$connexion=true;
 		$nom=$_SESSION['nom'];
 		$prenom=$_SESSION['prenom'];
 		}			
 		
+/* Création de l'entète des pages */
 function entete($titre){ ?>
 	<!DOCTYPE html>
 	<html lang="fr">
@@ -44,10 +50,10 @@ function entete($titre){ ?>
   
 	</head>
 	<body>
+		<!-- Création de la banière du site -->
 		<header>
 		<nav class="navbar navbar-default">
 				<div class="container-fluid">	
-				<!-- <a href="home.php"><img src="includes/logoEcoVoiture.jpg" alt="logo Eco Voiture" style="height:150px; width:20%;"/></a> -->
 				<center><a href="home.php"><img style="margin-bottom: 5px;" src="includes/banniere_finale.png" alt="banniereEcoVoiture"/></a></center>
 				<?php if($GLOBALS['connexion']==false){ ?>
 				<center>Connectez vous pour profiter pleinement d'EcoVoiture <a href="inscription.php?">(Pas encore inscrit?)</a></center>
@@ -62,6 +68,7 @@ function entete($titre){ ?>
 				</div>
 				<?php }			
 				else{?>
+					<!-- Les 4 menus accessibles uniquement si l'utilisateur est authentifié -->
 					<center>Bienvenue <?php echo $GLOBALS['prenom'];?>, bonne visite sur EcoVoiture !</center>
 					<center><input class="btn btn-default" type="button" onclick="location.href='mes_annonces.php'" value='Mes annonces'></input>
 					<input class="btn btn-default" type="button" onclick="location.href='profil_utilisateur.php?idprofil=<?php echo $_SESSION['iduser']?>'" value='Mon profil'></input>
@@ -69,19 +76,22 @@ function entete($titre){ ?>
 					<input class="btn btn-default" type="button" onClick="location.href='seDeconnecter.php'" value='Se deconnecter'></input></center><br>
 				<?php } ?>
 				<?php } ?>
-			
 				
+			</nav>				
 		</header>
-<?php  
+	<?php  
 
-function footer(){ ?>
-<center>
-<div class="footer">
-<a href="a_propos.php">A propos d'Ecovoiture</a> | <a href="faq.php">Foire aux questions</a> | <a href="conditions_generales.php">Conditions générales d'utilisation</a> | <a href="contact_admin.php">Nous contacter</a>	
-</div>
-</center>
+	/* Création du footer des pages */
+	function footer(){ ?>
+	<center>
+		<hr />
+		<!-- Les 4 liens du footers pour rediriger sur 4 pages -->
+		<div class="footer">
+			<a href="a_propos.php">A propos d'Ecovoiture</a> | <a href="faq.php">Foire aux questions</a> | <a href="conditions_generales.php">Conditions générales d'utilisation</a> | <a href="contact_admin.php">Nous contacter</a>	
+		</div>
+	</center>
 	</body>
 	</html>	
-<?php } ?>
+	<?php } ?>
 
 

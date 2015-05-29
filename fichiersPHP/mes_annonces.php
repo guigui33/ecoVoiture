@@ -8,12 +8,12 @@ Role : Permet de visualiser les annonces de la session active.
 
 -->
 
-
 <?php
-include('entete_footer.php'); 
+include('entete_footer.php'); //inclus le fichier entete
 entete('Mes Annonces');
 require('connexion.php');
 
+//Fonction permettant d'afficher les annonces proposées par l'utilisateur
 function afficherTrajet($tabTrajet){	
 	$idlieux=$tabTrajet['iddepart'];
 	$depart=pg_query($GLOBALS['connexion'],"SELECT ville FROM lieux WHERE idlieu =$idlieux") ;
@@ -28,6 +28,7 @@ function afficherTrajet($tabTrajet){
 	echo '<a href="fiche_annonce.php">Accèder aux details</a></br>';
 	} //fin fonction afficherTrajet
 	
+//Test du champ date
 function testDateHeure($date){
 	$now = new DateTime("now");
 	$date = new DateTime("$date");
@@ -39,22 +40,27 @@ $queryIdTrajetProposer=pg_query($connexion,"SELECT * FROM proposer WHERE idchauf
 	
 ?>
 
-<h2 class="alerte alert-info" align="center"> Mes annonces </h2>
+<!-- Alignement du titre et couleur bleu de la banière du titre -->
+<h2 class="alerte alert-info"> Mes annonces </h2>
  <h4> Voici les annonces que vous avez déposées sur Ecovoiture </h4>
 		<div class="legend"> En cours </div>
 		<fieldset class="fieldset1">
 		<?php 
 		$i=0;
+		
+		//On parcours le tableau afin d'afficher les annonces proposées en cours
 		while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
 			$i++;
 			$idTrajet=$tabIdTrajets['idroute'];
 			$queryTrajetInfo=pg_query($connexion,"SELECT * FROM trajets WHERE idtrajet='$idTrajet'");
 			$tabTrajet=pg_fetch_assoc($queryTrajetInfo);
+			
 			if(testDateHeure($tabTrajet['datedepart'].' '.$tabTrajet['heuredepart'])){
 				afficherTrajet($tabTrajet);	
 				echo '<hr>';
 			}
 		}
+		
 		if($i==0){
 			echo "<center> Aucune annonce passée </center>";
 		}
@@ -65,6 +71,8 @@ $queryIdTrajetProposer=pg_query($connexion,"SELECT * FROM proposer WHERE idchauf
 		<?php 
 		$queryIdTrajetProposer=pg_query($connexion,"SELECT * FROM proposer WHERE idchauffeur='$iduser'");
 		$i=0;
+		
+		//On parcours le tableau afin d'afficher les annonces terminées
 		while(($tabIdTrajets=pg_fetch_assoc($queryIdTrajetProposer))){
 			$i++;
 			$idTrajet=$tabIdTrajets['idroute'];
@@ -82,5 +90,5 @@ $queryIdTrajetProposer=pg_query($connexion,"SELECT * FROM proposer WHERE idchauf
 	</fieldset>
 
 <?php
-footer();
+footer();//inclus le fichier footer
 ?>

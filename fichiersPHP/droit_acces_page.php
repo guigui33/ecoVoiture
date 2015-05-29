@@ -3,6 +3,7 @@
  * retourne true si oui, false sinon * 
  * */
 function isDroitAccesPage($titreFichier){ 
+	/* Liste des pages qui ne peuvent pas être visualisées par un utilisateur non authentifié */
 	$listeFichiersInterdits=array(
 	"profil_utilisateur.php",
 	"fiche_annonce.php",

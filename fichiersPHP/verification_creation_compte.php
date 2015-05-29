@@ -10,9 +10,7 @@ Role : Verifie les valeurs et données rentré lors de l'inscription. Redirectio
 <?php
 require('connexion.php');
 
-//verification des informations donnés par le client avant de les inclurent dans la BD
-
-
+//Récupération et verification des informations données par le client avant de les inclurent dans la BD
 $email=isset($_POST['email'])?$_POST['email']:'';
 $login=isset($_POST['login'])?$_POST['login']:'';
 $psswd=isset($_POST['psswd'])?$_POST['psswd']:'';

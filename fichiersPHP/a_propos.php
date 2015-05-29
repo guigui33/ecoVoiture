@@ -3,9 +3,11 @@ require_once("entete_footer.php");//inclus le fichier entete
 entete('A propos');
 ?>
 
-<h2 class="alerte alert-info" align="center"> A propos d'Ecovoiture </h2>
+<!-- Alignement du titre et couleur bleu de la banière du titre -->
+<h2 class="alerte alert-info"> A propos d'Ecovoiture </h2>
 <body>
-	<div style="margin-left:25px; margin-right:25px" align="justify">	
+	<!-- Mise en forme du texte dans les div -->
+	<div class="alignement">	
 		<h4>Qui sommes nous ?</h4>
 		<div>
 			Au cours d'un projet étudiant, nous avons décidé de mettre en place une plateforme de covoiturage gratuit pour les étudiants. Le site a été développé par nos soins et subira de régulières mises à jour pour améliorer les services proposés. Notre site web et notre base de données sont hébergées chez "Alwaysdata.com". 
@@ -36,8 +38,8 @@ entete('A propos');
 			<br><br><center><b>Ecovoiture</b></center>
 
 		</div>
-		<br>
 	</div>
 </body>
 
+<!-- inclus le fichier footer -->
 <?php footer(); ?>

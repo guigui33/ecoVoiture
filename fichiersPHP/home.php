@@ -7,12 +7,11 @@ Role :Joue le role de page d'acceuil.
 
 -->
 
-
-
-<?php include('entete_footer.php'); 
+<?php include('entete_footer.php'); //inclus le fichier entete
 entete('home');
 require('connexion.php');
 
+// Affichage des informations des 6 derniers trajets -->
 function afficherTrajet($tabTrajet){	
 	$idlieux=$tabTrajet['iddepart'];
 	$depart=pg_query($GLOBALS['connexion'],"SELECT ville FROM lieux WHERE idlieu=$idlieux") ;
@@ -24,6 +23,7 @@ function afficherTrajet($tabTrajet){
 	$nomCond=pg_query($GLOBALS['connexion'],"SELECT prenom FROM utilisateurs u, proposer p, trajets t WHERE u.iduser=p.idchauffeur AND p.idroute=$idtrajet") ;
 	$nomCond=pg_fetch_assoc($nomCond);
 ?>				
+		<!-- Affichage des informations des trajets -->
 		<div class="col-lg-3  information">	
 				<h4><?php echo $depart['ville'] ?> - <?php echo $arrivee['ville'] ?></h4>
 					<ul >
@@ -39,15 +39,16 @@ function afficherTrajet($tabTrajet){
 				</div>
 		<?php
 	} //fin fonction afficherTrajet
-	
+
+//Test du champ date
 function testDateHeure($date){
 	$now = new DateTime("now");
 	$date = new DateTime("$date");
 	return $now<$date;		
 	}	
-
 ?>
 
+<!-- Champs à remplir pour recherche de trajet -->
 <center>
 <fieldset>
  <legend> Trouvez le covoiturage qui correspond a vos attentes : </legend>
@@ -59,6 +60,7 @@ function testDateHeure($date){
 </form>
 </fieldset>
 
+<!-- Champs à remplir pour proposer un trajet -->
 <fieldset>
  <legend> Proposer un trajet : </legend>
 <form name="proposer" action="proposer_trajet.php" method="POST">
@@ -72,7 +74,9 @@ function testDateHeure($date){
 </form>
 </br>
 </br>
-<div class=" col-lg-offset-3" style=" margin-left:20%;">		
+
+<!-- Boucle pour afficher les 6 derniers trajets -->
+<div class=" col-lg-offset-3">		
 		<?php 
 		$queryTrajets=pg_query($connexion,"SELECT * FROM trajets");
 		$i=0;
@@ -86,7 +90,7 @@ function testDateHeure($date){
 </div>	
 
 </fieldset>
-<?php footer();
+<?php footer(); //inclus le fichier footer
 ?>
 
 <!--AUTOCOMPLETION VILLE API-->
@@ -146,5 +150,4 @@ function testDateHeure($date){
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
-
-	<!--FIN AUTOCOMPLETION VILLE API<input id="searchTextField" type="text" size="50">-->
+	<!--FIN AUTOCOMPLETION VILLE API-->

@@ -17,6 +17,7 @@ require('$connexion.php');
 <center>
 <legend> Donner un avis :  </legend>
 
+<!-- Choix de l'utilisateur à noter -->
 <form method="post" action="traitement.php">
  
     <label for="utilisateur">Quel utilisateur voulez vous noter ?</label><br />
@@ -34,6 +35,7 @@ while ($donnees = pg_fetch_assoc($reponse))
 }
 
 ?> 
+<!-- Champs pour écrire l'avis -->
 </select>
     <p>
        <label for="commentaire">
@@ -44,6 +46,8 @@ while ($donnees = pg_fetch_assoc($reponse))
 Poster un commentaire sur l'utilisateur (500 caracteres max)	
        </textarea>       
    </p>
+   
+   <!-- La note à attribué avec un système d'étoile colorés en fonction de la note donnée -->
    <p> Note : </p>
    <ul class="notes-echelle">
 	<li>
@@ -100,6 +104,8 @@ Poster un commentaire sur l'utilisateur (500 caracteres max)
 });
 
  </script>
+ 
+ <!-- inclus le fichier footer -->
 <?php
 footer();
 ?>

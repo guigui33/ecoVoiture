@@ -135,19 +135,18 @@ if(!$avis_passager){
 			pg_close($connexion);
 ?>
 
-<h2 class="alerte alert-info" align="center"> 
+<!-- Alignement du titre et couleur bleu de la banière du titre -->
+<h2 class="alerte alert-info"> Profil de l'utilisateur 
 
-Profil de l'utilisateur 
-
+		<!-- Affichage a coté du titre ci-dessus, du nomre de l'utilisateur (ex : "Profil de l'utilisateur thomas") -->
 		<?php echo $login; if($login === $_SESSION['login']){?>
 		<a href="modification_profil.php"><img style="margin-left: 15px; height:30px; width:30px;" src="includes/crayon.png" alt="Modifier votre profil"/></a>
 		<?php }
 		?> 
 </h2>
 
+<!-- Affichage des informations de l'utilisateur -->
 <legend> Mes informations</legend>
-
-
 Evaluation moyenne du conducteur : <?php if($notemoyenne==0.0){echo "Aucune note pour le moment";}else {echo $notemoyenne."/5";}?>
 <br><br>
 Préférences pendant un trajet : <?php echo $preferences;?>
@@ -159,13 +158,15 @@ Ma voiture préférée : <?php echo $voiturepreferee; ?>
 <?php echo $apropos;?>
 <br><br>
 
-
+<!-- Affichages des avis -->
 <legend> Mes avis</legend>
-<TABLE BORDER WIDTH="100%">
+<table border width="100%">
 	<TR>
-	<TD>Mes avis conducteur</TD><TD>Mes avis passager</TD>
+		<TD>Mes avis conducteur</TD>
+		<TD>Mes avis passager</TD>
 	</TR>
 	<TR>
+	<!-- Affichage des avis conducteur -->
 	<TD>
 		<?php 	
 			$row=pg_fetch_array($avis_conducteur); 
@@ -177,6 +178,7 @@ Ma voiture préférée : <?php echo $voiturepreferee; ?>
 				} while($row = pg_fetch_array($avis_conducteur));
 		?>
 	</TD>
+	<!-- Affichage des avis passager -->
 	<TD>
 		<?php 	
 			$row=pg_fetch_array($avis_passager); 
@@ -189,4 +191,4 @@ Ma voiture préférée : <?php echo $voiturepreferee; ?>
 		?>
 	</TD>
 	</TR>
-</TABLE>
+</table>

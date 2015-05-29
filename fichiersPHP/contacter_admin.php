@@ -50,6 +50,7 @@ $result = mail("cerberus31@live.fr",$sujet,$message,$header);
 
 if ($result)
 ?>
+<!-- Affichage d'un message de confirmation dans une pop-up -->
 <script>
 	alert("Votre message a bien été transmis. Il sera traité dans les plus brefs délais");
 	document.location.href = 'http://ecovoiture.alwaysdata.net/fichiersPHP/home.php';
